@@ -23,7 +23,7 @@ I recommend we use the [Feature Branch Workflow](https://www.atlassian.com/git/t
 
 The pull-request will start a new thread where you can discuss your implementation, request code review and merge your branch into master. You can delete your branch after it has been merged into master. 
 
-You can use `$git fetch`to fetch a list of other people's branches. 
+You can use `$ git fetch`to fetch a list of other people's branches. 
 
 # Requirements
 It's crucial we all use the same environment
