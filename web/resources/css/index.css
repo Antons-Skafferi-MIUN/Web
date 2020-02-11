@@ -46,11 +46,11 @@ nav {
 /* Header */
 
 .header {
-    background-image: url(C:/Users/joaki/OneDrive/Skrivbord/AntonsSkafferi/img-header.jpeg);
+    background-image: url(../images/img-header.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin-top: -80px;
+    margin-top: -50px;
     padding-bottom: 10px;
     box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.08);
 }
