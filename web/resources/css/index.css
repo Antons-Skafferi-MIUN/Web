@@ -175,3 +175,23 @@ nav {
     padding: 10%;
     border-radius: 5px;
 }
+
+/* FOOTER */
+
+footer {
+    position: fixed;
+    z-index: -2;
+    bottom:0;
+    width: 100%;
+    background-image: url(../images/img-footer.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer-overlay{
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    background-color: hsla(0, 0%, 0%, 0.75);
+}
