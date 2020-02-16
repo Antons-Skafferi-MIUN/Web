@@ -179,8 +179,6 @@ nav {
 /* FOOTER */
 
 footer {
-    position: fixed;
-    z-index: -2;
     bottom:0;
     width: 100%;
     background-image: url(../images/img-footer.jpeg);
