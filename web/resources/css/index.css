@@ -41,6 +41,16 @@ nav {
 .nav-item {
     color: white;
     margin: auto;
+    opacity:0.5;
+    transition: 0.1s ease-in-out;
+}
+
+.nav-item:hover{
+    opacity: 1;
+}
+
+.nav-item--active{
+    opacity: 1;
 }
 
 /* Header */
