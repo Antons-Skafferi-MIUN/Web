@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="811" height="913" viewBox="0 0 811 913">
+  <defs>
+    <filter id="Rectangle_15" x="0" y="0" width="811" height="913" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_33" x="305" y="752" width="192" height="68" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_4" x="187.027" y="384" width="102.5" height="69" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_4-2" x="543.832" y="384.35" width="154.788" height="69" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_4-3" x="330" y="384.35" width="169.978" height="69" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_91" data-name="Group 91" transform="translate(-848 -437)">
+    <g transform="matrix(1, 0, 0, 1, 848, 437)" filter="url(#Rectangle_15)">
+      <rect id="Rectangle_15-2" data-name="Rectangle 15" width="787" height="889" rx="5" transform="translate(7 7)" fill="#fff"/>
+    </g>
+    <text id="Reservera_bord" data-name="Reservera bord" transform="translate(1132 646)" font-size="30" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">Reservera bord</tspan></text>
+    <text id="Boka_via_telefon:_12-345-678" data-name="Boka via telefon: 12-345-678" transform="translate(1105 745)" font-size="20" font-family="AmericanTypewriterITCPro-Lt, American Typewriter ITC Pro"><tspan x="0" y="0">Boka via telefon: </tspan><tspan y="0" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro">12-345-678</tspan></text>
+    <g transform="matrix(1, 0, 0, 1, 848, 437)" filter="url(#Rectangle_33)">
+      <rect id="Rectangle_33-2" data-name="Rectangle 33" width="174" height="50" rx="5" transform="translate(314 758)" fill="#4a3683"/>
+    </g>
+    <text id="Nästa" transform="translate(1218 1226)" fill="#fff" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro" letter-spacing="0.05em"><tspan x="0" y="0">Nästa</tspan></text>
+    <g id="Group_62" data-name="Group 62" transform="translate(1214.152 504)">
+      <g id="Group_61" data-name="Group 61">
+        <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(-0.152)" fill="#fff" stroke="#707070" stroke-width="1" opacity="0.5">
+          <circle cx="35" cy="35" r="35" stroke="none"/>
+          <circle cx="35" cy="35" r="34.5" fill="none"/>
+        </g>
+      </g>
+      <image id="NoPath" width="49" height="49" transform="translate(10.848 9)" opacity="0.5" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAACHBJREFUeJzt3d2LXkcBx/HvJqZJE2ua1pemttXQpmls1QtFEEQUFBFRQcEbb4oXgloErwT/AK8VQShY74Qi4qUgKF4oikWLkJS2iWnStE1f0rRNE9skTXa9mD3knNlnd59zZuac55z9fuDAzpN9nnmezfyemTkvc0CSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJGkTSz3Vsx34ArAbWOmpTk3TCvAs8J+h30hOvyN8MDe3XNuP6EEfPch7gbM91KOt5RRwoHQl20pXAHy0hzq09XwI2FO6kneVrgB4YMZjLzOxMaR68Slg3+rPS8Ah4PHh3k4eD7N2/PiPQd+RxupRmu3o26UrHGqIdbiHejU9T0bl4u2oj4DcP+OxvcD+HurWtDwVlUcfkLuA96zzb/YiamtyPchGe7AMiNo6BizXyvdQeEdT6YDM2oNVMSBq6xJwslbeARwsWaEB0dj0OswyIBqbyQRkO2vf/MXaz/sJe7OkNnrdk1UyIAeBnbXyOeDv0e/Yi6ityfQg8fDqCQbYTafJidvQfRQ86bbPgBxh9oeT2ngDeKlW3k043lZEyYDEx0COMsCRUE1SbyORoXsQA6IuevuiLRWQXcDd0WNHgVeA12qPHaA5kZfmMfoe5DBhN2/leeD86s/1D7cduLfQe9B0jT4g8fzjSO1nh1lKNfqAxPOPo7WfDYhSvQC8WSvfCryvREUGRGPVy0S9r4A4xFJuow3IXuDOWvkazVA8C7xVK99b6H1o2nr5oi3RMOPe4wThPP7KCvB0rbyLHtY30uRMJiBHZvyOR9SVarQBmXWKScx5iFKdAK7UyncC785dSR89iAFRCdeA49Fj2U9+LRGQeJmfWUMsA6Icig/VcwfkNsJi1ZVLwH9n/N5xwjdAxYCoi/iL9iO5K8gdkHj+8RTNIFSuEMaQFReSUxfFRyK5AzLPHqyKwyylGn1AZk3QKwZEqZ4mHFer3A3ckLMCA6Ixews4XStvJ/NCcjkDssR8e7AqBkQ5FG1HOQNygOYdf84Dz23w+x5NVw6jCUib4RXABcJ5/ZX9rL8SvLSeyQYEHGYp3WgCMs85WDEDolRxGzpExnZdsgfZaIJeMSBKdQ54tVa+kXAH3CxyBWQHIbl19iDqS7F2lCsghwghqbxESPZmDIhyWPiAdBleQbhf+uu1sgvJqYvRBWSe4VXFheSUassEBBxmqb1iB51z3SF0o5UUNzNkQHYCDwNfpLlUqtJdAn62upV2Gvgf18/k2Ad8gDCEH9xuwq15V1a35dXH5vWV2nNXgEdzv8EN/CCq2y3/Fu/dLOXfUb2fy/GiOYZY99O8w89JmutebWbIHiT7Rf5aY8/mv5JFkXaUIyBd92BVTtFcN6vPheR+BTzeU11bzQrwCP39fYsEJMccpMspJnXLhAtfPr5arhaSO7HuM/I5B3yCsPCxc5C83ub6LS/6UOT69BwBSdmDVXmS6wGBkP4+AlI522NdKqPInqxFGGKBu3qV7jhwtVa+nQyXT6QG5Baaq5FcAY51eB0DolTvsHbUkdyOUgMSzz+OEd5oWwZEOWRvR6kByTG8ghAsF5JTqoUPSJcJOoSh2TO1sgvJqYuFD0jXHgRcxEHpsrehRelBYG36s6/UrcmLA5J8+URKQO4Abq6VLxKOinflRF2pLgDP18rJl0+kBCTuPZ6guQxkWwZEOWRtRykBST3FJGZAlMPCBCTn/APCjeHP1MpZjoRqy8k6Uc8ZkJQ9WBV7EaVaiB5k24yKU3sQMCBKF7ehpMsnuj7xHsICXZWz5Lm80YAoVbxSTnX5RCddA5J7/lExIMohWztatIB4NF05TDYgL9K8Cs2F5NRFti/argFJWeZnMy4kp1SD9iA7CZP0ulw9CDgPUbpBA3IfzWvZTxPOgcnFgCjVKZor5ewlHHhurUtAShwgrDMgSlWtlFPXqR11CUjuc7BiBkQ5ZGlHi9iDnGS4heQ0HVn2ZOUISO4eZJnmyihJR0K1ZQ3Sg9wE3FUrX2VtUnNwmKVUgwTkAZoLVR8HLnepeBMeUVeqeKWc22heATuXLgGpyz28qtiDKNVlwny2rnU7GktAXMBBXSSPRNoGpOQpJnXHCJP1ij2IukgeibQNSJd7oXdxiWb3eDNhDCm10XtAbonKp9tW2ILzEKXqPSDxHqub2lbYggFRqrgNfZhwXG1ubQMS7xX4dMvnt2FAlOo84RqjyjZa3lS0bUD+GpW/1/L5bRgQ5ZC0J6ttQOJbNH8ZeLDla8zLgCiH3tvRX2jej/od4Ic0j7Dn8mJUlwvJqa2HaLah37Z5cpebeH4f+Bewu/YaPwe+C/yGsOv37Q6vO8urNHfvHgb+mem1tTUMMhL5BuFExZWetwd7+GyaljtotqFWt6buep3F74Gv01ygqw/OQ9TWxah8Q5+V3w78mnALtT56kD/087E0IR+j2Yaea/PkLnOQujPAd4AfA18FPgl8kJDSHJP2y4Q9ZTtWy58lTNTfzPDa2hq+FpVLnT84mD/R/Ab46bBvRyNyK/AKzfbz0KDvqIBv0fyAV1cfkzayB/gzzbZzAdg35JsqYRvwGM0Pugz8go5rHWnSloAvcf2WgPXtJ11ebAwOEY5/7I0eXyYcd3mB5vUj2ppuJFzU9/4Z//Y34POEEcgkfQZ4g/6PvbiNf3uMCQ6tZql6kqH/4G7j2K4Bv6R5s6fJWwK+CfyRsBt46P8Et8XbzgGPEI6BJBnLHGQ9u4CDhN15qcd0NG4rhBNnzwDP4JxUkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiT15f9Co2CD5WhGIwAAAABJRU5ErkJggg=="/>
+    </g>
+    <g id="Group_89" data-name="Group 89" transform="translate(-20 -29)">
+      <g id="Group_82" data-name="Group 82" transform="translate(967.563 790)">
+        <text id="Antal:" transform="translate(11.437 96)" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">Antal:</tspan></text>
+        <g id="Group_81" data-name="Group 81" transform="translate(96.464 66.35)">
+          <g transform="matrix(1, 0, 0, 1, -196.03, -390.35)" filter="url(#Path_4)">
+            <path id="Path_4-4" data-name="Path 4" d="M9.389,0H75.112C80.3,0,84.5,2.239,84.5,5V46c0,2.761-4.2,5-9.389,5H9.389C4.2,51,0,48.761,0,46V5C0,2.239,4.2,0,9.389,0Z" transform="translate(196.03 390)" fill="#fafafa"/>
+          </g>
+          <text id="_2" data-name="2" transform="translate(21.973 29.65)" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">2</tspan></text>
+          <path id="Polygon_3" data-name="Polygon 3" d="M7.148,1.384a1,1,0,0,1,1.7,0l6.21,10.092A1,1,0,0,1,14.21,13H1.79a1,1,0,0,1-.852-1.524Z" transform="translate(65.5 31.65) rotate(-180)" fill="#ddd"/>
+        </g>
+      </g>
+      <g id="Group_83" data-name="Group 83" transform="translate(1420.832 856.35)">
+        <g id="Group_81-2" data-name="Group 81">
+          <g transform="matrix(1, 0, 0, 1, -552.83, -390.35)" filter="url(#Path_4-2)">
+            <path id="Path_4-5" data-name="Path 4" d="M15.2,0H121.59c8.394,0,15.2,2.239,15.2,5V46c0,2.761-6.8,5-15.2,5H15.2C6.8,51,0,48.761,0,46V5C0,2.239,6.8,0,15.2,0Z" transform="translate(552.83 390.35)" fill="#fafafa"/>
+          </g>
+          <text id="_18:00" data-name="18:00" transform="translate(20.168 31.65)" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">18:00</tspan></text>
+          <path id="Polygon_3-2" data-name="Polygon 3" d="M7.148,1.384a1,1,0,0,1,1.7,0l6.21,10.092A1,1,0,0,1,14.21,13H1.79a1,1,0,0,1-.852-1.524Z" transform="translate(117.045 34.65) rotate(-180)" fill="#ddd"/>
+        </g>
+      </g>
+      <g id="Group_84" data-name="Group 84" transform="translate(1207 856.35)">
+        <g id="Group_81-3" data-name="Group 81">
+          <g transform="matrix(1, 0, 0, 1, -339, -390.35)" filter="url(#Path_4-3)">
+            <path id="Path_4-6" data-name="Path 4" d="M16.886,0h118.2c9.326,0,16.886,2.239,16.886,5V46c0,2.761-7.56,5-16.886,5H16.886C7.56,51,0,48.761,0,46V5C0,2.239,7.56,0,16.886,0Z" transform="translate(339 390.35)" fill="#fafafa"/>
+          </g>
+          <text id="Idag" transform="translate(23 29.65)" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">Idag</tspan></text>
+          <path id="Polygon_3-3" data-name="Polygon 3" d="M7.148,1.384a1,1,0,0,1,1.7,0l6.21,10.092A1,1,0,0,1,14.21,13H1.79a1,1,0,0,1-.852-1.524Z" transform="translate(136.133 33.5) rotate(-180)" fill="#ddd"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_90" data-name="Group 90" transform="translate(-34 14)">
+      <g id="Group_67" data-name="Group 67" transform="translate(-188 83)">
+        <g id="Group_64" data-name="Group 64" transform="translate(1160 881)">
+          <g id="Path_6" data-name="Path 6" fill="#0382a2">
+            <path d="M 109 58.5 L 5 58.5 C 2.518685817718506 58.5 0.5 56.48131561279297 0.5 54 L 0.5 5 C 0.5 2.518685817718506 2.518685817718506 0.5 5 0.5 L 109 0.5 C 111.481315612793 0.5 113.5 2.518685817718506 113.5 5 L 113.5 54 C 113.5 56.48131561279297 111.481315612793 58.5 109 58.5 Z" stroke="none"/>
+            <path d="M 5 1 C 2.794403076171875 1 1 2.794399261474609 1 5 L 1 54 C 1 56.20560073852539 2.794403076171875 58 5 58 L 109 58 C 111.2055969238281 58 113 56.20560073852539 113 54 L 113 5 C 113 2.794399261474609 111.2055969238281 1 109 1 L 5 1 M 5 0 L 109 0 C 111.7614135742188 0 114 2.238567352294922 114 5 L 114 54 C 114 56.76142883300781 111.7614135742188 59 109 59 L 5 59 C 2.238571166992188 59 0 56.76142883300781 0 54 L 0 5 C 0 2.238567352294922 2.238571166992188 0 5 0 Z" stroke="none" fill="#f1f1f1"/>
+          </g>
+          <text id="_17:30" data-name="17:30" transform="translate(27 34)" fill="#fff" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">17:30</tspan></text>
+        </g>
+      </g>
+      <g id="Group_85" data-name="Group 85" transform="translate(-61 83)">
+        <g id="Group_64-2" data-name="Group 64" transform="translate(1160 881)">
+          <g id="Rectangle_35" data-name="Rectangle 35" fill="#0382a2" stroke="#f1f1f1" stroke-width="1">
+            <rect width="114" height="59" rx="5" stroke="none"/>
+            <rect x="0.5" y="0.5" width="113" height="58" rx="4.5" fill="none"/>
+          </g>
+          <text id="_17:45" data-name="17:45" transform="translate(27 34)" fill="#fff" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">17:45</tspan></text>
+        </g>
+      </g>
+      <g id="Group_86" data-name="Group 86" transform="translate(66 83)">
+        <g id="Group_64-3" data-name="Group 64" transform="translate(1160 881)">
+          <g id="Rectangle_35-2" data-name="Rectangle 35" fill="#0382a2" stroke="#f1f1f1" stroke-width="1">
+            <rect width="114" height="59" rx="5" stroke="none"/>
+            <rect x="0.5" y="0.5" width="113" height="58" rx="4.5" fill="none"/>
+          </g>
+          <text id="_18:00-2" data-name="18:00" transform="translate(27 34)" fill="#fff" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">18:00</tspan></text>
+        </g>
+      </g>
+      <g id="Group_87" data-name="Group 87" transform="translate(320 83)">
+        <g id="Group_64-4" data-name="Group 64" transform="translate(1160 881)">
+          <g id="Rectangle_35-3" data-name="Rectangle 35" fill="#0382a2" stroke="#f1f1f1" stroke-width="1">
+            <rect width="114" height="59" rx="5" stroke="none"/>
+            <rect x="0.5" y="0.5" width="113" height="58" rx="4.5" fill="none"/>
+          </g>
+          <text id="_18:30" data-name="18:30" transform="translate(27 34)" fill="#fff" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">18:30</tspan></text>
+        </g>
+      </g>
+      <g id="Group_88" data-name="Group 88" transform="translate(193 83)">
+        <g id="Group_64-5" data-name="Group 64" transform="translate(1160 881)">
+          <g id="Rectangle_35-4" data-name="Rectangle 35" fill="#0382a2" stroke="#f1f1f1" stroke-width="1">
+            <rect width="114" height="59" rx="5" stroke="none"/>
+            <rect x="0.5" y="0.5" width="113" height="58" rx="4.5" fill="none"/>
+          </g>
+          <text id="_18:15" data-name="18:15" transform="translate(27 34)" fill="#fff" font-size="20" font-family="AmericanTypewriterITCPro-Med, American Typewriter ITC Pro"><tspan x="0" y="0">18:15</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
