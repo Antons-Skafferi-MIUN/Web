@@ -1,0 +1,18 @@
+
+.wrapper-reservation {
+    margin: 5% 20%;
+}
+
+.reservation-container {
+    display: grid;
+    grid-template-columns: 550px auto;
+    margin: 80px auto;
+}
+
+.card-image-reservation{
+    margin: auto 120px;
+    z-index: -1;
+    height: 690px;
+    box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.16);
+    border-radius: 5px;
+}
