@@ -23,6 +23,7 @@ public class MyBean implements Serializable {
      * Creates a new instance of MyBean
      */
     public MyBean() {
+        System.out.println("Bean CTOR");
     }
 
     public int getCount() {
