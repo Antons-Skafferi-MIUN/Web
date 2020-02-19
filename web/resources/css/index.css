@@ -30,7 +30,7 @@ li {
 
 nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: hsla(0, 0%, 0%, 0.9);
     position: fixed;
     height: 50px;
@@ -40,7 +40,7 @@ nav {
 
 .nav-item {
     color: white;
-    margin: auto;
+    margin: auto 5%;
     opacity:0.5;
     transition: 0.1s ease-in-out;
 }
@@ -76,6 +76,7 @@ nav {
 
 .header-title {
     padding-top: 80px;
+    
 }
 
 .header-open-hours {
