@@ -61,7 +61,8 @@ nav {
 /* Header */
 
 .header {
-    background-image: url(../../resources/images/img-header.jpeg);
+    
+    background-image: url(../../../resources/images/img-header.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -12,11 +12,6 @@ import javax.inject.Named;
 @SessionScoped
 public class CalendarManagedBean implements Serializable{
 	private Date date = new Date();
-        private String hello = "Hello";
-
-        public String getHello(){
-            return hello;
-        }
         
 	public Date getDate() {
 		return date;

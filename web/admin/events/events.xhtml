@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
         <link rel="stylesheet" href="https://use.typekit.net/pdn3fnm.css" />
-        <link rel="stylesheet" href="../css/events.css" />
+        <link rel="stylesheet" href="../resources/css/events.css" />
         <script name="jquery/jquery.js" library="primefaces"></script>
         <title>Reservation and Contact</title>
     </h:head>
@@ -84,7 +84,6 @@
                     <div class="events-center-buttons">
                         <button class="new-event-entry">Lägg till ny</button>
                         <button class="cancel-event-entry">Avbryt</button>
-                        <h:inputText value="#{calendarManagedBean.hello}"></h:inputText>
                     </div>
                 </footer>
             </section>
@@ -92,6 +91,7 @@
             <div class="events-edit-data">
                     <div class="events-calendar-form">
                         <h:form>
+                            <h:inputText value="#{calendarManagedBean.date}"></h:inputText>
                             <p:calendar value="#{calendarManagedBean.date}" mode="inline"></p:calendar>
                         </h:form>
                     </div>
