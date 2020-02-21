@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class JsonParser<T> {
     private final Gson parser;
     
-    JsonParser(){
+    public JsonParser(){
         parser = new Gson();
     }
     

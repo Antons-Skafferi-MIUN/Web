@@ -5,10 +5,15 @@
  */
 package beans;
 
+import General.JsonParser;
+import General.Lunch;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.TreeMap;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import networking.JsonURLReader;
+import java.util.Date;
 
 /**
  *
@@ -18,9 +23,36 @@ import javax.enterprise.context.Dependent;
 @Dependent
 public class PrintMenu {
 
+    private ArrayList<Lunch> lunchList;
+    private JsonURLReader urlReader;
+    private JsonParser jsonParser;
+    private String lunch_id;
+    private String lunch_name;
+    private String lunch_week;
+    private String lunch_day;
+
     public PrintMenu() {
-        
+        urlReader = new JsonURLReader();
+        lunchList = new ArrayList<>();
+        jsonParser = new JsonParser();
+
+        String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches");
+        lunchList = jsonParser.parseJson(response, Lunch[].class);
+
     }
-    
-    
+
+    public ArrayList<Lunch> getLunch() {
+        return lunchList;
+    }
+
+    public int getDay() {
+        Calendar cal = Calendar.getInstance();
+        return cal.get(Calendar.DAY_OF_WEEK);
+    }
+
+    public int getWeek() {
+        Calendar cal = Calendar.getInstance();
+        return cal.get(Calendar.WEEK_OF_YEAR);
+    }
+
 }
