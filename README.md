@@ -45,6 +45,7 @@ $sudo pacman -S jdk8-openjdk
 
 * JavaDB (bundled with netbeans 8.2) 
 * JavaServer Faces JSF 2.2 (bundled with netbeans 8.2)  
+* Download gson2.8.6 jar from https://search.maven.org/artifact/com.google.code.gson/gson/2.8.6/jar
 
 
 # Netbeans configuration
