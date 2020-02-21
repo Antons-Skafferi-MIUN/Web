@@ -36,6 +36,10 @@ public class PrintMenu {
         lunchList = new ArrayList<>();
         jsonParser = new JsonParser();
 
+//        String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches/week?="+getWeek());
+//        if(!response){
+//            response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches/week?="+getWeek()-1;
+//        }
         String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches");
         lunchList = jsonParser.parseJson(response, Lunch[].class);
 
@@ -54,5 +58,15 @@ public class PrintMenu {
         Calendar cal = Calendar.getInstance();
         return cal.get(Calendar.WEEK_OF_YEAR);
     }
+
+//    public String getWeekClass(int i) {
+//        if (i == getDay()) {
+//            return "menu-container--current";
+//        } else if (i < getDay()) {
+//            return "menu-container--past";
+//        } else {
+//            return "menu-container--next";
+//        }
+//    }
 
 }
