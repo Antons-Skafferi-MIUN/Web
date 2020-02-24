@@ -5,6 +5,8 @@
  */
 package beans;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 
@@ -16,10 +18,25 @@ import javax.enterprise.context.Dependent;
 @Dependent
 public class PrintAdmin {
 
-    /**
-     * Creates a new instance of PrintAdmin
-     */
+    private ArrayList<Integer> weekList;
+
     public PrintAdmin() {
+        this.weekList = new ArrayList<>();
+        updateWeeks();
     }
-    
+
+    public ArrayList<Integer> getWeeks() {
+        return weekList;
+    }
+
+    private void updateWeeks() {
+
+        ArrayList<Integer> tempList = new ArrayList<>();
+
+        Calendar cal = Calendar.getInstance();
+        for (int i = 0; i < 3; i++) {
+            tempList.add(cal.get(Calendar.WEEK_OF_YEAR) + i);
+        }
+        this.weekList = tempList;
+    }
 }
