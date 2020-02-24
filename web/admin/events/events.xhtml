@@ -4,8 +4,7 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:c="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:c="http://java.sun.com/jsf/core">
     <h:head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -89,13 +88,7 @@
             </section>
 
             <div class="events-edit-data">
-                    <div class="events-calendar-form">
-                        <h:form>
-                            <p:calendar value="#{calendarManagedBean.date}" mode="inline">
-                                <p:ajax event="dateSelect" listener="#{calendarManagedBean.dateSelectedAction}"></p:ajax>
-                            </p:calendar>
-                        </h:form>
-                    </div>
+                    
             </div>
         </main>
     </h:body>
