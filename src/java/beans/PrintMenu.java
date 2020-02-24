@@ -21,7 +21,7 @@ import java.util.Date;
  */
 @Named(value = "printMenu")
 @Dependent
-public class PrintMenu {
+public final class PrintMenu {
 
     private ArrayList<Lunch> lunchList;
     private JsonURLReader urlReader;
@@ -36,13 +36,13 @@ public class PrintMenu {
         lunchList = new ArrayList<>();
         jsonParser = new JsonParser();
 
-//        String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches/week?="+getWeek());
-//        if(!response){
-//            response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches/week?="+getWeek()-1;
-//        }
-        String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches");
-        lunchList = jsonParser.parseJson(response, Lunch[].class);
+        String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches?week=" + getWeek());
 
+        if(response.isEmpty()){
+            response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches/week?="+(getWeek() -1));
+        }
+        lunchList = jsonParser.parseJson(response, Lunch[].class);
+        //String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches");
     }
 
     public ArrayList<Lunch> getLunch() {
@@ -59,14 +59,16 @@ public class PrintMenu {
         return cal.get(Calendar.WEEK_OF_YEAR);
     }
 
-//    public String getWeekClass(int i) {
-//        if (i == getDay()) {
-//            return "menu-container--current";
-//        } else if (i < getDay()) {
-//            return "menu-container--past";
-//        } else {
-//            return "menu-container--next";
-//        }
-//    }
+    public String getDayClass(int i) {
+        System.out.println(i);
+        System.out.println(getDay());
+        if (i == getDay()) {
+            return "menu-item--current";
+        } else if (i < getDay()) {
+            return "menu-item--past";
+        } else {
+            return "menu-item--next";
+        }
+    }
 
 }
