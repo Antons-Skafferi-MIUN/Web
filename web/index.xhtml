@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html lang="en" 
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsf/core">
     <h:head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,44 +33,77 @@
                 </div>
             </div>
         </header>
-        
+
         <main class="wrapper">
             <section class="menu-container">
                 <div class="menu-card">
+
                     <h1 class="menu-title">
-                        Meny
+                        Meny 
                     </h1>
                     <div class="menu-btn-container">
                         <button class="menu-btn menu-btn--active">Lunch</button>
                         <button class="menu-btn">Middag</button>
                     </div>
-                    <p class="menu-week">Vecka 5</p>
+                    <h:form>
+
+                        <p class="menu-week">Week <h:outputText value='#{printMenu.week}'/></p>
+                    </h:form>
                     <ul class="menu-item-list">
-                        <li class="menu-item menu-item--past">
+                        <li class="menu-item #{printMenu.getDayClass(2)}">
                             <p class="menu-day">M</p>
-                            <p class="menu-course">Raggmunk med fläsk</p>
-                            <p class="menu-price">90;-</p>
+                            <div class="menu-course-container">
+                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                    <ui:fragment rendered="#{lunch.lunch_day == '1'}">
+                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    </ui:fragment>
+                                </ui:repeat> 
+                            </div>
                         </li>
-                        <li class="menu-item menu-item--past">
+                        <li class="menu-item #{printMenu.getDayClass(3)}">
                             <p class="menu-day">T</p>
-                            <p class="menu-course">Skärgårdssoppa</p>
-                            <p class="menu-price">110;-</p>
+                            <div class="menu-course-container">
+                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                    <ui:fragment rendered="#{lunch.lunch_day == '2'}">
+                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    </ui:fragment>
+                                </ui:repeat> 
+                            </div>
                         </li>
-                        <li class="menu-item menu-item--past">
+                        <li class="menu-item #{printMenu.getDayClass(4)}">
                             <p class="menu-day">O</p>
-                            <p class="menu-course">Pannbiff med lök</p>
-                            <p class="menu-price">89;-</p>
+                            <div class="menu-course-container">
+                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                    <ui:fragment rendered="#{lunch.lunch_day == '3'}">
+                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    </ui:fragment>
+                                </ui:repeat> 
+                            </div>
                         </li>
-                        <li class="menu-item menu-item--current">
+                        <li class="menu-item #{printMenu.getDayClass(5)}">
                             <p class="menu-day">T</p>
-                            <p class="menu-course">Köttbullar med potatis</p>
-                            <p class="menu-price">89;-</p>
+                            <div class="menu-course-container">
+                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                    <ui:fragment rendered="#{lunch.lunch_day == '4'}">
+                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    </ui:fragment>
+                                </ui:repeat> 
+                            </div>
                         </li>
-                        <li class="menu-item menu-item--coming">
+                        <li class="menu-item #{printMenu.getDayClass(6)}">
                             <p class="menu-day">F</p>
-                            <p class="menu-course">Pasta Carbonara</p>
-                            <p class="menu-price">89;-</p>
+                            <div class="menu-course-container">
+                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                    <ui:fragment rendered="#{lunch.lunch_day == '5'}">
+                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    </ui:fragment>
+                                </ui:repeat> 
+                            </div>
                         </li>
+
+
+
+
                     </ul>
                 </div>
                 <img
@@ -137,5 +172,5 @@
                 </div>
             </div>
         </footer>
-        </h:body>
+    </h:body>
 </html>
