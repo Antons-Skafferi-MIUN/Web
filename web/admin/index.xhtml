@@ -32,47 +32,65 @@
             <section class="lunch-container">
                 <h1>Veckans Lunch</h1>
                 <div class="week-container">
-                    <form action="submit">
-                        <label class="week-label" for="week-label">Vecka:</label>
-                        <select name="week-select" >
-                            <ui:repeat var="weekList" value="#{printAdmin.weeks}" varStatus="status">
-                                <option value="#{printAdmin.weeks}" class="week-select-option">Vecka #{weekList}</option>
-                            </ui:repeat>
-                        </select>
-                        <div class="day-container">
-                            <label class="day-label" for="day-label">Måndag:</label>
-                            <input class="food-input" type="text" placeholder="Kött" />
-                            <input class="food-input" type="text" placeholder="Fisk" />
-                            <input class="food-input" type="text" placeholder="Vegetariskt" />
-                        </div>
-                        <div class="day-container">
-                            <label class="day-label" for="day-label">Tisdag:</label>
-                            <input class="food-input" type="text" placeholder="Kött" />
-                            <input class="food-input" type="text" placeholder="Fisk" />
-                            <input class="food-input" type="text" placeholder="Vegetariskt" />
-                        </div>
-                        <div class="day-container">
-                            <label class="day-label" for="day-label">Onsdag:</label>
-                            <input class="food-input" type="text" placeholder="Kött" />
-                            <input class="food-input" type="text" placeholder="Fisk" />
-                            <input class="food-input" type="text" placeholder="Vegetariskt" />
-                        </div>
-                        <div class="day-container">
-                            <label class="day-label" for="day-label">Torsdag:</label>
-                            <input class="food-input" type="text" placeholder="Kött" />
-                            <input class="food-input" type="text" placeholder="Fisk" />
-                            <input class="food-input" type="text" placeholder="Vegetariskt" />
-                        </div>
-                        <div class="day-container">
-                            <label class="day-label" for="day-label">Fredag:</label>
-                            <input class="food-input" type="text" placeholder="Kött" />
-                            <input class="food-input" type="text" placeholder="Fisk" />
-                            <input class="food-input" type="text" placeholder="Vegetariskt" />
-                        </div>
-                        <button>Submit</button>
-                    </form>
+                    <h:form id="formId">
+                        <h:inputText id="i_x" value="Food"/>
+                        <h:inputHidden id="x" value="#{submitBean.meal}" />
+                        <h:commandButton value="submit" onclick="update()" action="#{submitBean.submit}" />
+                        <h:outputText value="Result= #{submitBean.result}" />
+                    </h:form>
+                    <!--                    <h:form>
+                                            <label class="week-label" for="week-label">Vecka:</label>
+                                            <h:selectOneMenu value="#{submitBean.week}">
+                                                <ui:repeat var="weekList" value="#{printAdmin.weeks}" varStatus="status">
+                                                    <option value="#{printAdmin.weeks}" class="week-select-option">Vecka #{weekList}</option>
+                                                </ui:repeat>
+                                            </h:selectOneMenu>
+                                            <div class="day-container">
+                                                <label class="day-label" for="day-label">Måndag:</label>
+                                                <input class="food-input" type="text" placeholder="Kött" />
+                                                <input class="food-input" type="text" placeholder="Fisk" />
+                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
+                                            </div>
+                                            <div class="day-container">
+                                                <label class="day-label" for="day-label">Tisdag:</label>
+                                                <input class="food-input" type="text" placeholder="Kött" />
+                                                <input class="food-input" type="text" placeholder="Fisk" />
+                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
+                                            </div>
+                                            <div class="day-container">
+                                                <label class="day-label" for="day-label">Onsdag:</label>
+                                                <input class="food-input" type="text" placeholder="Kött" />
+                                                <input class="food-input" type="text" placeholder="Fisk" />
+                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
+                                            </div>
+                                            <div class="day-container">
+                                                <label class="day-label" for="day-label">Torsdag:</label>
+                                                <input class="food-input" type="text" placeholder="Kött" />
+                                                <input class="food-input" type="text" placeholder="Fisk" />
+                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
+                                            </div>
+                                            <div class="day-container">
+                                                <label class="day-label" for="day-label">Fredag:</label>
+                                                <input class="food-input" type="text" placeholder="Kött" />
+                                                <input class="food-input" type="text" placeholder="Fisk" />
+                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
+                                            </div>
+                                            <input type="submit" value="Spara"/>
+                                        </h:form>-->
                 </div>
             </section>
         </main>
+        <script>
+            function update() {
+//                event.preventDefault();
+                
+                let value = document.getElementById("formId:i_x").value;
+                document.getElementById("formId:x").value = value;
+
+                console.log(value);
+
+
+            }
+        </script>
     </h:body>
 </html>

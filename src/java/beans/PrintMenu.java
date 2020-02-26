@@ -54,7 +54,7 @@ public final class PrintMenu {
         return cal.get(Calendar.DAY_OF_WEEK);
     }
 
-    public int getWeek() {
+    public static int getWeek() {
         Calendar cal = Calendar.getInstance();
         return cal.get(Calendar.WEEK_OF_YEAR);
     }
