@@ -18,7 +18,7 @@ public class ManagerBeanTemplate {
     private DBAccessBean dbAccessBean;
 
     public ManagerBeanTemplate() {
-        for(Map.entry<String, Employee> item :  staffMap) {
+        for(Map.entry<String, Employee> item :  staffMap.entrySet()) {
             item.getKey();
             List<Shift> schedule = item.getValue().getSchedule().getShifts;
 
