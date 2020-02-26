@@ -4,19 +4,14 @@ import java.io.Serializable;
 
 import java.util.Date;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.Dependent;
 import javax.inject.Named;
 
 @Named(value = "calendarManagedBean")
-@SessionScoped
+@Dependent
 public class CalendarManagedBean implements Serializable{
 	private Date date = new Date();
-        private String hello = "Hello";
-
-        public String getHello(){
-            return hello;
-        }
+        private String temp = "test";
         
 	public Date getDate() {
 		return date;
@@ -25,4 +20,8 @@ public class CalendarManagedBean implements Serializable{
 	public void setDate(Date date) {
 		this.date = date;
 	}
+        
+        public String getTemp() {
+            return temp;
+        }
 }
