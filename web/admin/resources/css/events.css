@@ -150,15 +150,20 @@ nav {
 
 .wrapper-update-events {
     position: absolute;
-    margin: 5%;
-    box-shadow: 3px 3px 5px gray;
+    margin: 5% auto 5% auto;
+    box-shadow: 3px 3px 5px grey;
+    z-index: 20;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgba(0,0,0,0.4);*/
 }
 
 .events-edit-data {
-    display: grid;
-    position: relative;
-    grid-template-columns: auto 30px;
-    padding: 20px;
+    /*display: grid;*/ 
+    /* position: relative; */
+    /* grid-template-columns: auto 30px; */
+    padding: 16px;
     background-color: white;
 }
 
@@ -168,7 +173,7 @@ nav {
 }
 
 .event-update-form * {
-    padding-top: 5px;
+    padding-top: 8px;
 }
 
 .events-calendar-form {
