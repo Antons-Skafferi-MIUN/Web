@@ -54,8 +54,8 @@
                             <p class="menu-day">M</p>
                             <div class="menu-course-container">
                                 <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
-                                    <ui:fragment rendered="#{lunch.lunch_day == '1'}">
-                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    <ui:fragment rendered="#{lunch.lunchDay == '1'}">
+                                        <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
                                 </ui:repeat> 
                             </div>
@@ -64,8 +64,8 @@
                             <p class="menu-day">T</p>
                             <div class="menu-course-container">
                                 <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
-                                    <ui:fragment rendered="#{lunch.lunch_day == '2'}">
-                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    <ui:fragment rendered="#{lunch.lunchDay == '2'}">
+                                        <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
                                 </ui:repeat> 
                             </div>
@@ -74,8 +74,8 @@
                             <p class="menu-day">O</p>
                             <div class="menu-course-container">
                                 <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
-                                    <ui:fragment rendered="#{lunch.lunch_day == '3'}">
-                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    <ui:fragment rendered="#{lunch.lunchDay == '3'}">
+                                        <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
                                 </ui:repeat> 
                             </div>
@@ -84,8 +84,8 @@
                             <p class="menu-day">T</p>
                             <div class="menu-course-container">
                                 <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
-                                    <ui:fragment rendered="#{lunch.lunch_day == '4'}">
-                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    <ui:fragment rendered="#{lunch.lunchDay == '4'}">
+                                        <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
                                 </ui:repeat> 
                             </div>
@@ -94,8 +94,8 @@
                             <p class="menu-day">F</p>
                             <div class="menu-course-container">
                                 <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
-                                    <ui:fragment rendered="#{lunch.lunch_day == '5'}">
-                                        <p class="menu-course">#{lunch.lunch_name}</p>
+                                    <ui:fragment rendered="#{lunch.lunchDay == '5'}">
+                                        <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
                                 </ui:repeat> 
                             </div>

@@ -1,51 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package beans;
 
-import General.JsonParser;
-import General.Lunch;
-import java.util.ArrayList;
+import General.Lunches;
 import java.util.Calendar;
-import java.util.TreeMap;
+import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
-import networking.JsonURLReader;
-import java.util.Date;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
-/**
- *
- * @author joaki
- */
 @Named(value = "printMenu")
 @Dependent
 public final class PrintMenu {
 
-    private ArrayList<Lunch> lunchList;
-    private JsonURLReader urlReader;
-    private JsonParser jsonParser;
-    private String lunch_id;
-    private String lunch_name;
-    private String lunch_week;
-    private String lunch_day;
+    @PersistenceContext(unitName = "AntonSkafferiWebPU")
+    private EntityManager em;
+    private List<Lunches> lunchList;  
 
     public PrintMenu() {
-        urlReader = new JsonURLReader();
-        lunchList = new ArrayList<>();
-        jsonParser = new JsonParser();
-
-        String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches?week=" + getWeek());
-
-        if(response.isEmpty()){
-            response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches/week?="+(getWeek() -1));
-        }
-        lunchList = jsonParser.parseJson(response, Lunch[].class);
-        //String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches");
     }
 
-    public ArrayList<Lunch> getLunch() {
+    public List<Lunches> getLunch() {
+        TypedQuery<Lunches> query = em.createNamedQuery("Lunches.findAll", Lunches.class);
+        lunchList = query.getResultList();
         return lunchList;
     }
 
