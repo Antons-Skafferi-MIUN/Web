@@ -3,7 +3,8 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:c="http://java.sun.com/jsf/core">
+      xmlns:c="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,64 +34,61 @@
                 <h1>Veckans Lunch</h1>
                 <div class="week-container">
                     <h:form id="formId">
-                        <h:inputText id="i_x" value="Food"/>
-                        <h:inputHidden id="x" value="#{submitBean.meal}" />
-                        <h:commandButton value="submit" onclick="update()" action="#{submitBean.submit}" />
-                        <h:outputText value="Result= #{submitBean.result}" />
+                        <h:inputText value="#{editLunchBean.meal}"/>
                     </h:form>
-                    <!--                    <h:form>
-                                            <label class="week-label" for="week-label">Vecka:</label>
-                                            <h:selectOneMenu value="#{submitBean.week}">
-                                                <ui:repeat var="weekList" value="#{printAdmin.weeks}" varStatus="status">
-                                                    <option value="#{printAdmin.weeks}" class="week-select-option">Vecka #{weekList}</option>
-                                                </ui:repeat>
-                                            </h:selectOneMenu>
-                                            <div class="day-container">
-                                                <label class="day-label" for="day-label">Måndag:</label>
-                                                <input class="food-input" type="text" placeholder="Kött" />
-                                                <input class="food-input" type="text" placeholder="Fisk" />
-                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
-                                            </div>
-                                            <div class="day-container">
-                                                <label class="day-label" for="day-label">Tisdag:</label>
-                                                <input class="food-input" type="text" placeholder="Kött" />
-                                                <input class="food-input" type="text" placeholder="Fisk" />
-                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
-                                            </div>
-                                            <div class="day-container">
-                                                <label class="day-label" for="day-label">Onsdag:</label>
-                                                <input class="food-input" type="text" placeholder="Kött" />
-                                                <input class="food-input" type="text" placeholder="Fisk" />
-                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
-                                            </div>
-                                            <div class="day-container">
-                                                <label class="day-label" for="day-label">Torsdag:</label>
-                                                <input class="food-input" type="text" placeholder="Kött" />
-                                                <input class="food-input" type="text" placeholder="Fisk" />
-                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
-                                            </div>
-                                            <div class="day-container">
-                                                <label class="day-label" for="day-label">Fredag:</label>
-                                                <input class="food-input" type="text" placeholder="Kött" />
-                                                <input class="food-input" type="text" placeholder="Fisk" />
-                                                <input class="food-input" type="text" placeholder="Vegetariskt" />
-                                            </div>
-                                            <input type="submit" value="Spara"/>
-                                        </h:form>-->
+                    <h:form>
+                        <label class="week-label" for="week-label">Vecka:</label>
+                        <h:selectOneMenu value="#{editLunchBean.week}" >
+                            <c:selectItems var="week" value="#{editLunchBean.weeks}" itemLabel="Vecka #{week}" />
+                        </h:selectOneMenu>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Måndag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 0}">
+                                    <h:inputText class="food-input" value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                            <!--                            <h:inputText value="# {editLunchBean.meal}" a:placeholder="Fisk"/>
+                                                        <h:inputText value="# {editLunchBean.meal}" a:placeholder="Veg"/>
+                                                        <h:inputHidden value="# {editLunchBean.day}" />-->
+                        </div>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Tisdag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 1}">
+                                    <h:inputText class="food-input"  value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                        </div>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Onsdag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 2}">
+                                    <h:inputText class="food-input"  value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                        </div>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Torsdag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 3}">
+                                    <h:inputText class="food-input" value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                        </div>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Fredag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 4}">
+                                    <h:inputText class="food-input" value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                        </div>
+                        <h:commandButton value="Spara ändringar" type="submit" action="#{editLunchBean.submit}" />
+
+                    </h:form>
                 </div>
             </section>
         </main>
-        <script>
-            function update() {
-//                event.preventDefault();
-                
-                let value = document.getElementById("formId:i_x").value;
-                document.getElementById("formId:x").value = value;
-
-                console.log(value);
-
-
-            }
-        </script>
     </h:body>
 </html>
