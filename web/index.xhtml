@@ -47,53 +47,53 @@
                     </div>
                     <h:form>
 
-                        <p class="menu-week">Week <h:outputText value='#{printMenu.week}'/></p>
+                        <p class="menu-week">Week <h:outputText value='#{lunchBean.week}'/></p>
                     </h:form>
                     <ul class="menu-item-list">
-                        <li class="menu-item #{printMenu.getDayClass(2)}">
+                        <li class="menu-item #{lunchBean.getDayClass(2)}">
                             <p class="menu-day">M</p>
                             <div class="menu-course-container">
-                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                <ui:repeat var="lunch" value="#{lunchBean.lunch}" varStatus="status">
                                     <ui:fragment rendered="#{lunch.lunchDay == '1'}">
                                         <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
                                 </ui:repeat> 
                             </div>
                         </li>
-                        <li class="menu-item #{printMenu.getDayClass(3)}">
+                        <li class="menu-item #{lunchBean.getDayClass(3)}">
                             <p class="menu-day">T</p>
                             <div class="menu-course-container">
-                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                <ui:repeat var="lunch" value="#{lunchBean.lunch}" varStatus="status">
                                     <ui:fragment rendered="#{lunch.lunchDay == '2'}">
                                         <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
                                 </ui:repeat> 
                             </div>
                         </li>
-                        <li class="menu-item #{printMenu.getDayClass(4)}">
+                        <li class="menu-item #{lunchBean.getDayClass(4)}">
                             <p class="menu-day">O</p>
                             <div class="menu-course-container">
-                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                <ui:repeat var="lunch" value="#{lunchBean.lunch}" varStatus="status">
                                     <ui:fragment rendered="#{lunch.lunchDay == '3'}">
                                         <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
                                 </ui:repeat> 
                             </div>
                         </li>
-                        <li class="menu-item #{printMenu.getDayClass(5)}">
+                        <li class="menu-item #{lunchBean.getDayClass(5)}">
                             <p class="menu-day">T</p>
                             <div class="menu-course-container">
-                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                <ui:repeat var="lunch" value="#{lunchBean.lunch}" varStatus="status">
                                     <ui:fragment rendered="#{lunch.lunchDay == '4'}">
                                         <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
                                 </ui:repeat> 
                             </div>
                         </li>
-                        <li class="menu-item #{printMenu.getDayClass(6)}">
+                        <li class="menu-item #{lunchBean.getDayClass(6)}">
                             <p class="menu-day">F</p>
                             <div class="menu-course-container">
-                                <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                                <ui:repeat var="lunch" value="#{lunchBean.lunch}" varStatus="status">
                                     <ui:fragment rendered="#{lunch.lunchDay == '5'}">
                                         <p class="menu-course">#{lunch.lunchName}</p>
                                     </ui:fragment>
