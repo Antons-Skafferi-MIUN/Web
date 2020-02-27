@@ -14,9 +14,6 @@ import javax.persistence.TypedQuery;
 public final class LunchBean {
 
     @PersistenceContext(unitName = "AntonSkafferiWebPU")
-    private String lunchName;
-    private String lunchWeek;
-    private String lunchDay;
     private EntityManager em;
     private List<Lunches> lunchList;  
 
@@ -51,29 +48,4 @@ public final class LunchBean {
             return "menu-item--next";
         }
     }
-
-    public String getLunchName() {
-        return lunchName;
-    }
-
-    public void setLunchName(String lunchName) {
-        this.lunchName = lunchName;
-    }
-
-    public String getLunchWeek() {
-        return lunchWeek;
-    }
-
-    public void setLunchWeek(String lunchWeek) {
-        this.lunchWeek = lunchWeek;
-    }
-
-    public String getLunchDay() {
-        return lunchDay;
-    }
-
-    public void setLunchDay(String lunchDay) {
-        this.lunchDay = lunchDay;
-    }
-
 }
