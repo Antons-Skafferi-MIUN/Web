@@ -21,7 +21,8 @@ public final class PrintMenu {
     }
 
     public List<Lunches> getLunch() {
-        TypedQuery<Lunches> query = em.createNamedQuery("Lunches.findAll", Lunches.class);
+        TypedQuery<Lunches> query = em.createNamedQuery("Lunches.findByLunchWeek", Lunches.class);
+        query.setParameter("lunchWeek",getWeek());
         lunchList = query.getResultList();
         return lunchList;
     }
