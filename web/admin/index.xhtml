@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="admin/resources/css/admin-index.css" />
+        <link rel="stylesheet" href="admin/resources/css/admin-navbar.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/pdn3fnm.css" />
+        <title>Admins Skafferi</title>
+    </h:head>
+    <h:body>
+        <nav>
+            <a href="./index.html" class="nav-item nav-item--active">Meny</a>
+            <a href="./event.html" class="nav-item">Event</a>
+            <a href="./schema.html" class="nav-item">Schema</a>
+            <a href="./personal.html" class="nav-item">Personal</a>
+        </nav>
+        <header class="header">
+            <div class="header-title-container">
+                <div class="header-title">
+                    <h1>ADMINS</h1>
+                    <h2>SKAFFERI</h2>
+                </div>
+            </div>
+        </header>
+        <main class="wrapper">
+            <section class="lunch-container">
+                <h1>Veckans Lunch</h1>
+                <div class="week-container">
+                    <h:form id="formId">
+                        <h:inputText value="#{editLunchBean.meal}"/>
+                    </h:form>
+                    <h:form>
+                        <label class="week-label" for="week-label">Vecka:</label>
+                        <h:selectOneMenu value="#{editLunchBean.week}" >
+                            <c:selectItems var="week" value="#{editLunchBean.weeks}" itemLabel="Vecka #{week}" />
+                        </h:selectOneMenu>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Måndag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 1}">
+                                    <h:inputText class="food-input" value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                            <!--                            <h:inputText value="# {editLunchBean.meal}" a:placeholder="Fisk"/>
+                                                        <h:inputText value="# {editLunchBean.meal}" a:placeholder="Veg"/>
+                                                        <h:inputHidden value="# {editLunchBean.day}" />-->
+                        </div>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Tisdag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 2}">
+                                    <h:inputText class="food-input"  value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                        </div>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Onsdag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 3}">
+                                    <h:inputText class="food-input"  value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                        </div>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Torsdag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 4}">
+                                    <h:inputText class="food-input" value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                        </div>
+                        <div class="day-container">
+                            <label class="day-label" for="day-label">Fredag:</label>
+                            <ui:repeat var="editLunch" value="#{editLunchBean.loadLunches}" varStatus="status">
+                                <ui:fragment rendered="#{editLunch.lunch_day == 5}">
+                                    <h:inputText class="food-input" value="#{editLunch.lunch_name}" a:placeholder="Kött"/>
+                                </ui:fragment>
+                            </ui:repeat> 
+                        </div>
+                        <h:commandButton value="Spara ändringar" type="submit" action="#{editLunchBean.submit}" />
+
+                    </h:form>
+                </div>
+            </section>
+        </main>
+    </h:body>
+</html>
