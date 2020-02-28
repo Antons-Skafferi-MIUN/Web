@@ -5,7 +5,7 @@
  */
 package beans;
 
-import General.JsonParser;
+//import General.JsonParser;
 import General.Lunch;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -25,7 +25,7 @@ public final class PrintMenu {
 
     private ArrayList<Lunch> lunchList;
     private JsonURLReader urlReader;
-    private JsonParser jsonParser;
+//    private JsonParser jsonParser;
     private String lunch_id;
     private String lunch_name;
     private String lunch_week;
@@ -34,14 +34,14 @@ public final class PrintMenu {
     public PrintMenu() {
         urlReader = new JsonURLReader();
         lunchList = new ArrayList<>();
-        jsonParser = new JsonParser();
+//        jsonParser = new JsonParser();
 
         String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches?week=" + getWeek());
 
         if(response.isEmpty()){
             response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches/week?="+(getWeek() -1));
         }
-        lunchList = jsonParser.parseJson(response, Lunch[].class);
+//        lunchList = jsonParser.parseJson(response, Lunch[].class);
         //String response = urlReader.readJsonFromURL("http://antons-skafferi-api.herokuapp.com/lunches");
     }
 

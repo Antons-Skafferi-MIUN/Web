@@ -156,15 +156,19 @@ nav {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: rgba(0,0,0,0.4);*/
+    /*background-color: rgba(0,0,0,0.4);*/
 }
 
 .events-edit-data {
-    /*display: grid;*/ 
-    /* position: relative; */
-    /* grid-template-columns: auto 30px; */
-    padding: 16px;
+    display: grid;  
+    /*position: relative;*/ 
+    grid-template-rows: auto auto auto auto auto auto auto auto auto 60px;
+    padding: 16px 16px 0 16px;
     background-color: white;
+}
+
+.events-edit-data label, .events-edit-data input  {
+   margin-top: 5px;
 }
 
 .event-update-form {
@@ -173,7 +177,11 @@ nav {
 }
 
 .event-update-form * {
-    padding-top: 8px;
+    margin: 8px 0;
+}
+
+.event-input {
+    padding: 4px;
 }
 
 .events-calendar-form {
@@ -197,6 +205,9 @@ nav {
   width: 32px;
   height: 32px;
   opacity: 0.3;
+  border: none;
+  background: none;
+  
 }
 .close:hover {
   opacity: 1;
