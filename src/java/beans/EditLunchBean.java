@@ -12,13 +12,13 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 
 public class EditLunchBean {
-    
+
     private Integer day;
 
     private Integer week;
     private ArrayList<Integer> weekList;
     private Integer thisWeek;
-    
+
     private String meal;
     private ArrayList<Lunch> lunchList;
     private ArrayList<Lunch> loadLunches;
@@ -41,12 +41,17 @@ public class EditLunchBean {
 
     public void submit() {
         // Call entity bean.
+
         for (Lunch meals : loadLunches) {
-            System.out.println("Dag: " + meals.getLunch_day());
-            System.out.println("Namn: " + meals.getLunch_name());
-            System.out.println("Week: " + meals.getLunch_week());
+            if (!meals.getLunch_name().isEmpty()) {
+                lunchList.add(meals);
+            }
         }
 
+        
+        //lunchList to DB.
+
+        
     }
 
     public String getMeal() {
@@ -55,19 +60,12 @@ public class EditLunchBean {
 
     public void setMeal(String meal) {
         this.meal = meal;
-        Lunch lunch = new Lunch();
-        lunch.setLunch_name(meal);
-        lunch.setLunch_week(week);
-        lunch.setLunch_day(day);
-        lunchList.add(lunch);
 
     }
-    
-    public void setMealTest (Integer i){
+
+    public void setMealTest(Integer i) {
         System.out.println(i);
     }
-    
-    
 
     public Integer getWeek() {
         return week;
@@ -77,7 +75,6 @@ public class EditLunchBean {
         this.week = week;
         updateWeeksInList();
     }
-
 
     public Integer getThisWeek() {
         Calendar cal = Calendar.getInstance();
@@ -113,11 +110,11 @@ public class EditLunchBean {
 
     private void generateLunches() {
         ArrayList<Lunch> tempLunchList = new ArrayList<>();
-        for(int i = 1; i<6; i++){
+        for (int i = 1; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
                 Lunch lunch = new Lunch();
                 lunch.setLunch_day(i);
-                lunch.setLunch_name("");
+                lunch.setLunch_name(null);
                 lunch.setLunch_week(week);
                 tempLunchList.add(lunch);
             }
@@ -126,11 +123,9 @@ public class EditLunchBean {
     }
 
     private void updateWeeksInList() {
-        for(Lunch lunches : loadLunches){
+        for (Lunch lunches : loadLunches) {
             lunches.setLunch_week(week);
         }
     }
-
-
 
 }
