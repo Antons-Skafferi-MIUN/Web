@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsf/core">
+    <h:head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -8,8 +12,8 @@
         <link rel="stylesheet" href="resources/css/admin-navbar.css" />
         <link rel="stylesheet" href="https://use.typekit.net/pdn3fnm.css" />
         <title>Admins Skafferi</title>
-    </head>
-    <body>
+    </h:head>
+    <h:body>
         <nav>
             <a href="./index.html" class="nav-item nav-item--active">Meny</a>
             <a href="./event.html" class="nav-item">Event</a>
@@ -29,19 +33,24 @@
                 <h1>Veckans Lunch</h1>
                 <div class="week-container">
                     <form action="submit">
+                        <ui:repeat var="lunch" value="#{printMenu.lunch}" varStatus="status">
+                            <ui:fragment rendered="#{lunch.lunch_day == '1'}">
+                                <p class="menu-course">#{lunch.lunch_name}</p>
+                            </ui:fragment>
+                        </ui:repeat>
                         <label class="week-label" for="week-label">Vecka:</label>
                         <select name="week-select" >
                             <option value="8" class="week-select-option"
-                                >Vecka 8</option
+                                    >Vecka 8</option
                             >
                             <option value="9" class="week-select-option"
-                                >Vecka 9</option
+                                    >Vecka 9</option
                             >
                             <option value="10" class="week-select-option"
-                                >Vecka 10</option
+                                    >Vecka 10</option
                             >
                             <option value="11" class="week-select-option"
-                                >Vecka 11</option
+                                    >Vecka 11</option
                             >
                         </select>
                         <div class="day-container">
@@ -79,5 +88,5 @@
                 </div>
             </section>
         </main>
-    </body>
+    </h:body>
 </html>

@@ -3,8 +3,24 @@ package General;
 public class Lunch {
     private String lunch_id;
     private String lunch_name;
-    private String lunch_week;
-    private String lunch_day;
+    private Integer lunch_week;
+    private Integer lunch_day;
+
+    public Integer getLunch_week() {
+        return lunch_week;
+    }
+
+    public void setLunch_week(Integer lunch_week) {
+        this.lunch_week = lunch_week;
+    }
+
+    public Integer getLunch_day() {
+        return lunch_day;
+    }
+
+    public void setLunch_day(Integer lunch_day) {
+        this.lunch_day = lunch_day;
+    }
 
     public String getLunch_id() {
         return lunch_id;
@@ -22,19 +38,4 @@ public class Lunch {
         this.lunch_name = lunch_name;
     }
 
-    public String getLunch_week() {
-        return lunch_week;
-    }
-
-    public void setLunch_week(String lunch_week) {
-        this.lunch_week = lunch_week;
-    }
-
-    public String getLunch_day() {
-        return lunch_day;
-    }
-
-    public void setLunch_day(String lunch_day) {
-        this.lunch_day = lunch_day;
-    }
 }
