@@ -1,17 +1,27 @@
 package beans;
 
-import General.Lunch;
+//import General.Lunch;
+import General.Lunches;
 import java.util.ArrayList;
 import java.util.Calendar;
+import javax.annotation.Resource;
 import javax.inject.Named;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @Named(value = "editLunchBean")
 @ManagedBean
 @SessionScoped
 
 public class EditLunchBean {
+
+    @PersistenceContext(unitName = "AntonSkafferiWebPU")
+    private EntityManager em;
+    @Resource
+    private javax.transaction.UserTransaction utx;
+    private ArrayList<Lunches> lunchList;
 
     private Integer day;
 
@@ -20,8 +30,7 @@ public class EditLunchBean {
     private Integer thisWeek;
 
     private String meal;
-    private ArrayList<Lunch> lunchList;
-    private ArrayList<Lunch> loadLunches;
+    private ArrayList<Lunches> loadLunches;
 
     public EditLunchBean() {
         this.lunchList = new ArrayList<>();
@@ -42,16 +51,20 @@ public class EditLunchBean {
     public void submit() {
         // Call entity bean.
 
-        for (Lunch meals : loadLunches) {
-            if (!meals.getLunch_name().isEmpty()) {
+        for (Lunches meals : loadLunches) {
+            if (!meals.getLunchName().equals("Maträtt")) {
                 lunchList.add(meals);
+//                System.out.println(meals.getLunchName() + ", " + meals.getLunchDay() + ", " + meals.getLunchWeek());
             }
         }
 
-        
         //lunchList to DB.
+        for (Lunches meal : lunchList) {
 
-        
+            System.out.println(meal.getLunchName() + ", " + meal.getLunchDay() + ", " + meal.getLunchWeek());
+            persist(meal);
+        }
+
     }
 
     public String getMeal() {
@@ -94,28 +107,29 @@ public class EditLunchBean {
         ArrayList<Integer> tempList = new ArrayList<>();
 
         Calendar cal = Calendar.getInstance();
+        setWeek(cal.get(Calendar.WEEK_OF_YEAR));
         for (int i = 0; i < 3; i++) {
             tempList.add(cal.get(Calendar.WEEK_OF_YEAR) + i);
         }
         this.weekList = tempList;
     }
 
-    public ArrayList<Lunch> getLoadLunches() {
+    public ArrayList<Lunches> getLoadLunches() {
         return loadLunches;
     }
 
-    public void setLoadLunches(ArrayList<Lunch> loadLunches) {
+    public void setLoadLunches(ArrayList<Lunches> loadLunches) {
         this.loadLunches = loadLunches;
     }
 
     private void generateLunches() {
-        ArrayList<Lunch> tempLunchList = new ArrayList<>();
+        ArrayList<Lunches> tempLunchList = new ArrayList<>();
         for (int i = 1; i < 6; i++) {
             for (int j = 0; j < 3; j++) {
-                Lunch lunch = new Lunch();
-                lunch.setLunch_day(i);
-                lunch.setLunch_name(null);
-                lunch.setLunch_week(week);
+                Lunches lunch = new Lunches();
+                lunch.setLunchDay(i);
+                lunch.setLunchName("Maträtt");
+                lunch.setLunchWeek(week);
                 tempLunchList.add(lunch);
             }
         }
@@ -123,8 +137,19 @@ public class EditLunchBean {
     }
 
     private void updateWeeksInList() {
-        for (Lunch lunches : loadLunches) {
-            lunches.setLunch_week(week);
+        for (Lunches lunches : loadLunches) {
+            lunches.setLunchWeek(week);
+        }
+    }
+
+    public void persist(Lunches meal) {
+        try {
+            utx.begin();
+            em.persist(meal);
+            utx.commit();
+        } catch (Exception e) {
+            System.err.println(e);
+            throw new RuntimeException(e);
         }
     }
 
