@@ -1,29 +1,40 @@
 package General;
 
 public class Event {
-    
+
     private String date;
     private String time;
     private String name;
     private String description;
     private String price;
-    
-    public Event(String date, String time, String name, String description, String price) {
-        this.date = date;
+
+    boolean editable;
+
+    public Event(String date, String time, String name, String description,
+		 String price) {
+	this.date = date;
 	this.time = time;
-        this.name = name;
-        this.description = description;
-        this.price = price;
+	this.name = name;
+	this.description = description;
+	this.price = price;
+    }
+    
+    public boolean isEditable() {
+	return editable;
+    }
+
+    public void setEditable(boolean editable) {
+	this.editable = editable;
     }
 
     public String getDate() {
-        return date;
+	return date;
     }
 
     public void setDate(String date) {
-        this.date = date;
+	this.date = date;
     }
-    
+
     public String getTime() {
 	return time;
     }
@@ -33,27 +44,27 @@ public class Event {
     }
 
     public String getName() {
-        return name;
+	return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+	this.name = name;
     }
 
     public String getDescription() {
-        return description;
+	return description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+	this.description = description;
     }
 
     public String getPrice() {
-        return price;
+	return price;
     }
 
     public void setPrice(String price) {
-        this.price = price;
+	this.price = price;
     }
 
     @Override

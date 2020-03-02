@@ -20,9 +20,9 @@ public class EventTableBean implements Serializable {
 
     private List<Event> eventList = new ArrayList<>(
 	    Arrays.asList(
-	    new Event("20/07", "17:00", "Smalare än Thord1", "Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem", "120"),
-	    new Event("20/07", "17:00", "Smalare än Thord2", "Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem", "120"),
-	    new Event("20/07", "17:00", "Smalare än Thord3", "Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem", "120"))
+	    new Event("20/07", "17:00", "Smalare än Thord1", "Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem Lorem ipsum lo9rm ups laealfaewfl rem Lorem ipsum lo9rm ups", "120"),
+	    new Event("20/07", "17:00", "Smalare än Thord2", "Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem Lorem ipsum lo9rm ups laealfaewfl rem Lorem ipsum lo9rm ups", "120"),
+	    new Event("20/07", "17:00", "Smalare än Thord3", "Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem Lorem ipsum lo9rm ups laealfaewfl rem Lorem ipsum lo9rm ups", "120"))
     );
     {};
 
@@ -41,6 +41,19 @@ public class EventTableBean implements Serializable {
         System.out.println("Price is: " + price);
 	eventList.add(new Event(date, time, name, description, price));
     }
+    
+    public String saveAction() {
+	for (Event event : eventList){
+		event.setEditable(false);
+	}
+	return null;
+    }
+    
+    public String editAction(Event event) {
+	    
+	event.setEditable(true);
+	return null;
+}
     
     public String deleteAction(Event event) {
 	System.out.println("Removed this entry: " + event);
