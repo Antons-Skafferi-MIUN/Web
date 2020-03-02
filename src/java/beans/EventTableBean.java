@@ -42,6 +42,12 @@ public class EventTableBean implements Serializable {
 	eventList.add(new Event(date, time, name, description, price));
     }
     
+    public String deleteAction(Event event) {
+	System.out.println("Removed this entry: " + event);
+	eventList.remove(event);
+	return null;
+    }
+    
     public String getDate() {
         return date;
     }

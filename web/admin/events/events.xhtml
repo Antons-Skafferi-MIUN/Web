@@ -4,7 +4,8 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:c="http://java.sun.com/jsf/core">
+      xmlns:c="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -35,28 +36,39 @@
             <section class="events-container">
                 <h1>Events</h1>
                 <h4>KOMMANDE EVENEMANG</h4>
-		<h:dataTable styleClass="events-table" value="#{eventTable.eventList}" var="event" cellspacing="0">
-		    <h:column>
-			<c:facet name="header">Datum</c:facet>
-			#{event.date}
-		    </h:column>
-		    <h:column>
-			<c:facet name="header">Tid</c:facet>
-			#{event.time}
-		    </h:column>
-		    <h:column>
-			<c:facet name="header">Namn</c:facet>
-			#{event.name}
-		    </h:column>
-		    <h:column>
-			<c:facet name="header">Beskrivning</c:facet>
-			#{event.description}
-		    </h:column>
-		    <h:column>
-			<c:facet name="header">Pris</c:facet>
-			#{event.price}
-		    </h:column>
-		</h:dataTable>
+		<h:form>
+		    <h:dataTable styleClass="events-table" value="#{eventTable.eventList}" var="event" cellspacing="0">
+			<h:column>
+			    <c:facet name="header">Datum</c:facet>
+				#{event.date}
+			</h:column>
+			
+			<h:column>
+			    <c:facet name="header">Tid</c:facet>
+				#{event.time}
+			</h:column>
+			
+			<h:column>
+			    <c:facet name="header">Namn</c:facet>
+				#{event.name}
+			</h:column>
+			
+			<h:column>
+			    <c:facet name="header">Beskrivning</c:facet>
+				#{event.description}
+			</h:column>
+			
+			<h:column>
+			    <c:facet name="header">Pris</c:facet>
+				#{event.price}
+			</h:column>
+			
+			<h:column>
+			    <c:facet name="header"></c:facet>
+			    <h:commandLink value="Delete" action="#{eventTable.deleteAction(event)}" />
+			</h:column>
+		    </h:dataTable>
+		</h:form>
                 <h:form class="event-popup-form">
                     <footer class="events-footer">
                         <div class="events-center-buttons">
@@ -70,34 +82,36 @@
                             <section class="events-edit-data">
                                 <h:form class="event-update-form">
                                     <h1>Lägg till eller ändra event</h1>
-                                    <h:outputLabel id="id1" for="date">DATUM (format: dd/mm)</h:outputLabel>
+                                    <h:outputLabel id="id1" for="date">DATUM:</h:outputLabel>
 				    <h:message for="date" class="error-message"/>
-                                    <h:inputText class="event-date event-input" id="date" required="true" validatorMessage="Fel format, använd dd/mm" requiredMessage="Ange ett datum." value="#{eventTable.date}">
+                                    <h:inputText class="event-date event-input" id="date" required="true" validatorMessage="Fel format, använd dd/mm" requiredMessage="Ange ett datum." a:placeholder="dd/mm" value="#{eventTable.date}">
                                         <c:validateRegex pattern="[0-9]{1,2}/[0-9]{1,2}" />
                                     </h:inputText>
-                                    <h:outputLabel class="event-label" for="time">TID</h:outputLabel>
+                                    <h:outputLabel class="event-label" for="time">TID:</h:outputLabel>
 				    <h:message for="time" class="error-message"/>
                                     <h:inputText class="event-name event-input" id="time" required="true" requiredMessage="Ange tid." value="#{eventTable.time}"/>
-                                    <h:outputLabel class="event-label" for="name">NAMN</h:outputLabel>
+                                    <h:outputLabel class="event-label" for="name">NAMN:</h:outputLabel>
 				    <h:message for="name" class="error-message"/>
                                     <h:inputText class="event-name event-input" id="name" required="true" requiredMessage="Ange evenemangsnamn." value="#{eventTable.name}"/>
-                                    <h:outputLabel class="event-label" for="description">BESKRIVNING</h:outputLabel>
+                                    <h:outputLabel class="event-label" for="description">BESKRIVNING:</h:outputLabel>
 				    <h:message for="description" class="error-message"/>
                                     <h:inputTextarea cols="40" rows="5" class="event-description event-input" id="description" required="true" requiredMessage="Ange evenemangsbeskrivning." value="#{eventTable.description}"/>
-                                    <h:outputLabel class="event-label" for="price">PRIS</h:outputLabel>
+                                    <h:outputLabel class="event-label" for="price">PRIS:</h:outputLabel>
 				    <h:message for="price" class="error-message"/>
                                     <h:inputText class="event-price event-input" id="price" required="true" requiredMessage="Ange ett pris." value="#{eventTable.price}"/>
 
                                     <footer class="events-popup-footer">
                                         <div class="events-center-buttons">
                                             <h:commandButton value="Uppdatera" type="submit" class="new-event-entry" action="#{eventTable.submitted}"/>
-                                            <!--<input class="events-clear-fields" type="reset" value="Avbryt"/>-->
 					    <h:commandButton value="Avbryt" class="events-popup-close" action="#{eventPopupController.hide()}">
 						<c:ajax render="@form"/>
 					    </h:commandButton>
                                         </div>
                                     </footer>
                                 </h:form>
+				<h:commandButton value="&#215;" class="close-popup" action="#{eventPopupController.hide()}">
+				    <c:ajax render="@form"/>
+				</h:commandButton>
                             </section>
                         </div>
                     </h:panelGroup>

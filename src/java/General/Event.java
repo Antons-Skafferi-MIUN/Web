@@ -55,4 +55,9 @@ public class Event {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+	return "Event{" + "date=" + date + ", time=" + time + ", name=" + name + ", description=" + description + ", price=" + price + '}';
+    }
 }
