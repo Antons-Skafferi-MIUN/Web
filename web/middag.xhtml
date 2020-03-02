@@ -5,12 +5,12 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html 
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:c="http://java.sun.com/jsf/core"
-    xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<html     xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:ui="http://java.sun.com/jsf/facelets"
+          xmlns:c="http://java.sun.com/jsf/core"
+          xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+          >
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,13 +20,13 @@ and open the template in the editor.
 
         <title>Middag</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
-    <body>
+    <h:body>
         <nav>
             <h:link class="nav-item nav-item--active" value="Hem" outcome="faces/index.xhtml"/>
             <h:link class="nav-item" value="Reservation/Kontakt" outcome="faces/reservation.xhtml"/>
             <h:link class="nav-item" value="Admin" outcome="faces/admin/index.xhtml"/>
-
         </nav>
         <header class="header">
             <div class="header-title-container">
@@ -42,7 +42,6 @@ and open the template in the editor.
                 </div>
             </div>
         </header>
-
         <main class="wrapper">
 
             <section class="menu-container">
@@ -59,17 +58,43 @@ and open the template in the editor.
                     <ul id="dinner-list">
                         <h3 class="menu-dinner-title">Middag</h3>
                         <ui:repeat var="dinner" value="#{dinnerBean.dinner}" varStatus="status">
-                            <li class = "menu-item" >#{dinner.foodName}: #{dinner.foodPrice} Kronor</li>
-                        </ui:repeat> 
+                            <div class="menu-item-container">
+                                <li class = "dinner-item" >#{dinner.foodName}</li>
+                                <li class="dinner-price"> #{dinner.foodPrice};-</li>
+                            </div>
+                        </ui:repeat>
                     </ul>
+
                     <ul id="drinks-list">
                         <h3 class="menu-drink-title">Dryck</h3>
                         <ui:repeat var="drinks" value="#{drinksBean.drinks}" varStatus="status">
-                            <li class = "menu-item">#{drinks.drinkName}: #{drinks.drinkPrice} Kronor</li>
+                            <div class="menu-item-container">
+                                <li class = "dinner-item" >#{drinks.drinkName}</li>
+                                <li class="dinner-price">#{drinks.drinkPrice};-</li>
+                            </div>
                         </ui:repeat> 
                     </ul>
                 </div>
+                <img
+                    src="resources/images/img-reservation.jpeg"
+                    alt=""
+                    class="card-image--dinner"
+                    id="menu-image"
+                    />
             </section>
         </main>
-    </body>
+        <footer>
+            <div class="footer-overlay">
+                <h4>Antons Skafferi</h4>
+                <div class="footer-cols">
+                    <div class="footer-addr">
+                        Adress 12, 12345 Sundsvall
+                    </div>
+                    <div class="footer-tel">
+                        070 123 4567
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </h:body>
 </html>
