@@ -61,7 +61,7 @@ nav {
 /* Header */
 
 .header {
-    
+
     background-image: url(../../../resources/images/img-header.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -109,13 +109,17 @@ nav {
     padding: 20px;
 }
 
+.events-table th {
+    text-align: left;
+}
+
 .events-table tr td{
     border: none;
     font-family: revert;
     padding: 5px;
 }
 
-.events-table tr:nth-child(even) {
+.events-table tbody tr:nth-child(odd) {
     background-color: #ededed;
 }
 
@@ -138,16 +142,24 @@ nav {
 .new-event-entry {
     background-color: #03fc17;
     margin-right: 10px;
+    box-shadow: 0 3px 0 #02b110;
 }
 
-.cancel-event-entry, .events-clear-fields {
+.events-popup-close {
     background-color: #e00909;
+    box-shadow: 0 3px 0 #ab0707;
 }
 
-.new-event-entry, .cancel-event-entry, .events-clear-fields {
+.new-event-entry, .events-popup-close {
+    position: relative;
     border: none;
     border-radius: 4px;
     padding: 8px;
+}
+
+.new-event-entry:active, .events-popup-close:active {
+    box-shadow: none;
+    top: 3px;
 }
 
 /* Modal popup */
@@ -165,14 +177,16 @@ nav {
 
 .events-edit-data {
     display: grid;  
-    /*position: relative;*/ 
-    grid-template-rows: auto auto auto auto auto auto auto auto auto 60px;
     padding: 16px 16px 0 16px;
     background-color: white;
 }
 
-.events-edit-data label, .events-edit-data input  {
-   margin-top: 5px;
+.events-edit-data label, .events-edit-data input, .events-edit-data textarea {
+    margin-top: 5px;
+}
+
+.events-edit-data input, .events-edit-data textarea {
+    border: 1px solid #aaa;
 }
 
 .event-update-form {
@@ -196,6 +210,21 @@ nav {
 
 .event-description {
     resize: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+.events-popup-footer {
+    position: relative;
+    height: 70px;
+}
+
+.events-popup-footer input {
+    margin: 0;
+    border: none;
 }
 
 /*.event-date, .event-name, .event-description, .event-price, .events-footer*/

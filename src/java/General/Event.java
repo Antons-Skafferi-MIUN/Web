@@ -3,12 +3,14 @@ package General;
 public class Event {
     
     private String date;
+    private String time;
     private String name;
     private String description;
     private String price;
     
-    public Event(String date, String name, String description, String price) {
+    public Event(String date, String time, String name, String description, String price) {
         this.date = date;
+	this.time = time;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -20,6 +22,14 @@ public class Event {
 
     public void setDate(String date) {
         this.date = date;
+    }
+    
+    public String getTime() {
+	return time;
+    }
+
+    public void setTime(String time) {
+	this.time = time;
     }
 
     public String getName() {

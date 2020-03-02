@@ -35,106 +35,34 @@
             <section class="events-container">
                 <h1>Events</h1>
                 <h4>KOMMANDE EVENEMANG</h4>
-                <table class="events-table" cellspacing="0">
-                    <tr>
-                        <th align="left">Datum</th>
-                        <th align="left">Tid</th>
-                        <th align="left">Namn</th>
-                        <th align="left">Beskrivning</th>
-                        <th align="left">Pris</th>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                    <tr>
-                        <td>21/2</td>
-                        <td>17:00</td>
-                        <td>Smalare än Thord</td>
-                        <td>Lorem ipsum lo9rm ups lkslsldl lsle rl laealfaewfl rem upsum logea ups kheaogjpeng</td>
-                        <td>120;-</td>
-                    </tr>
-                </table>
+		<h:dataTable styleClass="events-table" value="#{eventTable.eventList}" var="event" cellspacing="0">
+		    <h:column>
+			<c:facet name="header">Datum</c:facet>
+			#{event.date}
+		    </h:column>
+		    <h:column>
+			<c:facet name="header">Tid</c:facet>
+			#{event.time}
+		    </h:column>
+		    <h:column>
+			<c:facet name="header">Namn</c:facet>
+			#{event.name}
+		    </h:column>
+		    <h:column>
+			<c:facet name="header">Beskrivning</c:facet>
+			#{event.description}
+		    </h:column>
+		    <h:column>
+			<c:facet name="header">Pris</c:facet>
+			#{event.price}
+		    </h:column>
+		</h:dataTable>
                 <h:form class="event-popup-form">
                     <footer class="events-footer">
                         <div class="events-center-buttons">
                             <h:commandButton value="Lägg till ny" class="new-event-entry" action="#{eventPopupController.show()}">
                                 <c:ajax render="@form"/>
                             </h:commandButton>
-                            <button class="cancel-event-entry">Avbryt</button>
                         </div>
                     </footer>
                     <h:panelGroup layout="block" styleClass="popup-panel-overlay" rendered="#{eventPopupController.showPopup}">
@@ -143,26 +71,33 @@
                                 <h:form class="event-update-form">
                                     <h1>Lägg till eller ändra event</h1>
                                     <h:outputLabel id="id1" for="date">DATUM (format: dd/mm)</h:outputLabel>
-                                    <h:inputText class="event-date event-input" id="date" required="true" value="#{manageEventBean.date}">
+				    <h:message for="date" class="error-message"/>
+                                    <h:inputText class="event-date event-input" id="date" required="true" validatorMessage="Fel format, använd dd/mm" requiredMessage="Ange ett datum." value="#{eventTable.date}">
                                         <c:validateRegex pattern="[0-9]{1,2}/[0-9]{1,2}" />
                                     </h:inputText>
+                                    <h:outputLabel class="event-label" for="time">TID</h:outputLabel>
+				    <h:message for="time" class="error-message"/>
+                                    <h:inputText class="event-name event-input" id="time" required="true" requiredMessage="Ange tid." value="#{eventTable.time}"/>
                                     <h:outputLabel class="event-label" for="name">NAMN</h:outputLabel>
-                                    <h:inputText class="event-name event-input" id="name" required="true" value="#{manageEventBean.name}"/>
+				    <h:message for="name" class="error-message"/>
+                                    <h:inputText class="event-name event-input" id="name" required="true" requiredMessage="Ange evenemangsnamn." value="#{eventTable.name}"/>
                                     <h:outputLabel class="event-label" for="description">BESKRIVNING</h:outputLabel>
-                                    <h:inputTextarea cols="40" rows="5" class="event-description event-input" required="true" id="description" value="#{manageEventBean.description}"/>
+				    <h:message for="description" class="error-message"/>
+                                    <h:inputTextarea cols="40" rows="5" class="event-description event-input" id="description" required="true" requiredMessage="Ange evenemangsbeskrivning." value="#{eventTable.description}"/>
                                     <h:outputLabel class="event-label" for="price">PRIS</h:outputLabel>
-                                    <h:inputText class="event-price event-input" id="price" required="true" value="#{manageEventBean.price}"/>
+				    <h:message for="price" class="error-message"/>
+                                    <h:inputText class="event-price event-input" id="price" required="true" requiredMessage="Ange ett pris." value="#{eventTable.price}"/>
 
-                                    <footer class="events-footer">
+                                    <footer class="events-popup-footer">
                                         <div class="events-center-buttons">
-                                            <h:commandButton value="Uppdatera" type="submit" class="new-event-entry" action="#{manageEventBean.submitted}"/>
-                                            <input class="events-clear-fields" type="reset" value="Rensa alla fält"/>
+                                            <h:commandButton value="Uppdatera" type="submit" class="new-event-entry" action="#{eventTable.submitted}"/>
+                                            <!--<input class="events-clear-fields" type="reset" value="Avbryt"/>-->
+					    <h:commandButton value="Avbryt" class="events-popup-close" action="#{eventPopupController.hide()}">
+						<c:ajax render="@form"/>
+					    </h:commandButton>
                                         </div>
                                     </footer>
                                 </h:form>
-                                <h:commandButton value="" class="close" action="#{eventPopupController.hide()}">
-                                    <c:ajax render="@form"/>
-                                </h:commandButton>
                             </section>
                         </div>
                     </h:panelGroup>
