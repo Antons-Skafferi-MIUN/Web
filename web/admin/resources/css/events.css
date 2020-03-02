@@ -119,6 +119,10 @@ nav {
     background-color: #ededed;
 }
 
+.event-popup-form {
+    margin-top: 35px;
+}
+
 .events-footer {
     position: relative;
 }
@@ -207,7 +211,6 @@ nav {
   opacity: 0.3;
   border: none;
   background: none;
-  
 }
 .close:hover {
   opacity: 1;
