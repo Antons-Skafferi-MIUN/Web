@@ -123,12 +123,12 @@ nav {
     letter-spacing: 1px;
     font-size: 1.1em;
     cursor: pointer;
-    color: #7f7f7f;
+    color: #7f7f7f !important;
 }
 
 .menu-btn--active {
     border-bottom: 2px solid black;
-    color: black;
+    color: black !important;
 }
 
 .menu-btn-container {
@@ -153,6 +153,14 @@ nav {
     padding: 25px 0 40px 0;
     margin: 0;
 }
+
+.menu-dinner-title, .menu-drink-title{
+    font-weight:normal;
+    color: #7f7f7f;
+    padding: 25px 0 40px 0;
+    margin: 0;    
+}
+
 
 .menu-item {
     display: flex;

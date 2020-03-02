@@ -16,8 +16,9 @@
     </h:head>
     <h:body>
         <nav>
-            <a href="./index.xhtml" class="nav-item nav-item--active">Hem</a>
-            <a href="./reservation.xhtml" class="nav-item">Reservation/Kontakt</a>
+            <h:link class="nav-item nav-item--active" value="Hem" outcome="faces/index.xhtml"/>
+            <h:link class="nav-item" value="Reservation/Kontakt" outcome="faces/reservation.xhtml"/>
+            <h:link class="nav-item" value="Admin" outcome="faces/admin/index.xhtml"/>
         </nav>
         <header class="header">
             <div class="header-title-container">
@@ -42,8 +43,8 @@
                         Meny 
                     </h1>
                     <div class="menu-btn-container">
-                        <button class="menu-btn menu-btn--active">Lunch</button>
-                        <button class="menu-btn">Middag</button>
+                        <h:link class="menu-btn menu-btn--active" value="Lunch" outcome="faces/index.xhtml"/>
+                        <h:link class="menu-btn" value="Middag" outcome="/faces/middag.xhtml"/>
                     </div>
                     <h:form>
 
