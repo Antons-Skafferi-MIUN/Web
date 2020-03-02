@@ -158,9 +158,9 @@ nav {
     font-weight:normal;
     color: black;
     padding: 60px 0 20px 90px;
+
     margin: 0;    
 }
-
 
 
 .menu-item-container{
@@ -185,11 +185,6 @@ nav {
 
 .menu-item--current {
     background-color: #ebebeb;
-}
-
-
-.menu-price{
-
 }
 
 .card-image {
