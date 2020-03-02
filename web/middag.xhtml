@@ -5,17 +5,28 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+<html 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:c="http://java.sun.com/jsf/core"
+    xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" href="resources/css/index.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/pdn3fnm.css" />
+
         <title>Middag</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
         <nav>
-            <a href="./index.xhtml" class="nav-item nav-item--active">Hem</a>
-            <a href="./reservation.xhtml" class="nav-item">Reservation/Kontakt</a>
+            <h:link class="nav-item nav-item--active" value="Hem" outcome="faces/index.xhtml"/>
+            <h:link class="nav-item" value="Reservation/Kontakt" outcome="faces/reservation.xhtml"/>
+            <h:link class="nav-item" value="Admin" outcome="faces/admin/index.xhtml"/>
+
         </nav>
         <header class="header">
             <div class="header-title-container">
@@ -31,17 +42,34 @@ and open the template in the editor.
                 </div>
             </div>
         </header>
-        <ul id="dinner-list">
-            <h3>Middag</h3>
-            <ui:repeat var="dinner" value="#{dinnerBean.dinner}" varStatus="status">
-                <li class = "menu-item" >#{dinner.foodName}: #{dinner.foodPrice} Kronor</li>
-            </ui:repeat> 
-        </ul>
-        <ul id="drinks-list">
-            <h3>Dryck</h3>
-            <ui:repeat var="drinks" value="#{drinksBean.drinks}" varStatus="status">
-                <li class = "menu-item">#{drinks.drinkName}: #{drinks.drinkPrice} Kronor</li>
-            </ui:repeat> 
-        </ul>
+
+        <main class="wrapper">
+
+            <section class="menu-container">
+
+                <div class="menu-card">
+                    <h1 class="menu-title">
+                        Meny 
+                    </h1>
+                    <div class="menu-btn-container">
+                        <h:link class="menu-btn" value="Lunch" outcome="faces/index.xhtml"/>
+                        <h:link class="menu-btn menu-btn--active" value="Middag" outcome="/faces/middag.xhtml"/>
+                    </div>
+
+                    <ul id="dinner-list">
+                        <h3 class="menu-dinner-title">Middag</h3>
+                        <ui:repeat var="dinner" value="#{dinnerBean.dinner}" varStatus="status">
+                            <li class = "menu-item" >#{dinner.foodName}: #{dinner.foodPrice} Kronor</li>
+                        </ui:repeat> 
+                    </ul>
+                    <ul id="drinks-list">
+                        <h3 class="menu-drink-title">Dryck</h3>
+                        <ui:repeat var="drinks" value="#{drinksBean.drinks}" varStatus="status">
+                            <li class = "menu-item">#{drinks.drinkName}: #{drinks.drinkPrice} Kronor</li>
+                        </ui:repeat> 
+                    </ul>
+                </div>
+            </section>
+        </main>
     </body>
 </html>
