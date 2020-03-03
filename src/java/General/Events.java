@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author jonte
+ * @author shawk
  */
 @Entity
 @Table(name = "EVENTS")
@@ -30,7 +30,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Events.findAll", query = "SELECT e FROM Events e")
     , @NamedQuery(name = "Events.findByEventId", query = "SELECT e FROM Events e WHERE e.eventId = :eventId")
     , @NamedQuery(name = "Events.findByEventName", query = "SELECT e FROM Events e WHERE e.eventName = :eventName")
-    , @NamedQuery(name = "Events.findByEventDate", query = "SELECT e FROM Events e WHERE e.eventDate = :eventDate")})
+    , @NamedQuery(name = "Events.findByEventDate", query = "SELECT e FROM Events e WHERE e.eventDate = :eventDate")
+    , @NamedQuery(name = "Events.findByEventDescription", query = "SELECT e FROM Events e WHERE e.eventDescription = :eventDescription")
+    , @NamedQuery(name = "Events.findByEventPrice", query = "SELECT e FROM Events e WHERE e.eventPrice = :eventPrice")
+    , @NamedQuery(name = "Events.findByEventTime", query = "SELECT e FROM Events e WHERE e.eventTime = :eventTime")
+    , @NamedQuery(name = "Events.findByEventImage", query = "SELECT e FROM Events e WHERE e.eventImage = :eventImage")})
 public class Events implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +53,29 @@ public class Events implements Serializable {
     @Size(min = 1, max = 10)
     @Column(name = "EVENT_DATE")
     private String eventDate;
+    @Size(max = 100)
+    @Column(name = "EVENT_DESCRIPTION")
+    private String eventDescription;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "EVENT_PRICE")
+    private int eventPrice;
+    @Size(max = 5)
+    @Column(name = "EVENT_TIME")
+    private String eventTime;
+    @Size(max = 100)
+    @Column(name = "EVENT_IMAGE")
+    private String eventImage;
+    
+//    boolean editable;
+//    
+//    public boolean isEditable() {
+//	return editable;
+//    }
+//
+//    public void setEditable(boolean editable) {
+//	this.editable = editable;
+//    }
 
     public Events() {
     }
@@ -57,10 +84,11 @@ public class Events implements Serializable {
         this.eventId = eventId;
     }
 
-    public Events(Integer eventId, String eventName, String eventDate) {
+    public Events(Integer eventId, String eventName, String eventDate, int eventPrice) {
         this.eventId = eventId;
         this.eventName = eventName;
         this.eventDate = eventDate;
+        this.eventPrice = eventPrice;
     }
 
     public Integer getEventId() {
@@ -85,6 +113,38 @@ public class Events implements Serializable {
 
     public void setEventDate(String eventDate) {
         this.eventDate = eventDate;
+    }
+
+    public String getEventDescription() {
+        return eventDescription;
+    }
+
+    public void setEventDescription(String eventDescription) {
+        this.eventDescription = eventDescription;
+    }
+
+    public int getEventPrice() {
+        return eventPrice;
+    }
+
+    public void setEventPrice(int eventPrice) {
+        this.eventPrice = eventPrice;
+    }
+
+    public String getEventTime() {
+        return eventTime;
+    }
+
+    public void setEventTime(String eventTime) {
+        this.eventTime = eventTime;
+    }
+
+    public String getEventImage() {
+        return eventImage;
+    }
+
+    public void setEventImage(String eventImage) {
+        this.eventImage = eventImage;
     }
 
     @Override
