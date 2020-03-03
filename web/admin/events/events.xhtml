@@ -38,8 +38,8 @@
                 <h1>Events</h1>
                 <h4>KOMMANDE EVENEMANG</h4>
 		<h:form>
-<!--                    <ui:repeat value="#{eventTable.eventsList}" var="event" varStatus="status">
-                        <p>#{event.eventName}</p>
+<!--                    <ui:repeat value="# {eventTable.eventsList}" var="event" varStatus="status">
+                        <p># {event.eventName}</p>
                     </ui:repeat>-->
                     
                     
@@ -47,53 +47,53 @@
 			<h:column>
 			    <c:facet name="header">Datum:</c:facet>
                             #{event.eventDate}
-                            <!--<h:inputText value="#{event.eventDate}" size="5" rendered="#{event.editable}" required="true"/>-->
+                            <!--<h:inputText value="# {event.eventDate}" size="5" rendered="# {event.editable}" required="true"/>-->
 
-			    <!--<h:outputText value="#{event.eventDate}" rendered="#{not event.editable}" />-->
+			    <!--<h:outputText value="# {event.eventDate}" rendered="# {not event.editable}" />-->
 			</h:column>
 
 			<h:column>
 			    <c:facet name="header">Tid:</c:facet>
                             #{event.eventTime}
-<!--			    <h:inputText value="#{event.eventTime}" size="5" rendered="#{event.editable}" required="true"/>
+<!--			    <h:inputText value="# {event.eventTime}" size="5" rendered="# {event.editable}" required="true"/>
 
-			    <h:outputText value="#{event.eventTime}" rendered="#{not event.editable}" />-->
+			    <h:outputText value="# {event.eventTime}" rendered="# {not event.editable}" />-->
 			</h:column>
 
 			<h:column>
 			    <c:facet name="header">Namn:</c:facet>
                             #{event.eventName}
-<!--			    <h:inputText value="#{event.eventName}" size="25" rendered="#{event.editable}" required="true"/>
+<!--			    <h:inputText value="# {event.eventName}" size="25" rendered="# {event.editable}" required="true"/>
 
-			    <h:outputText value="#{event.eventName}" rendered="#{not event.editable}" />-->
+			    <h:outputText value="# {event.eventName}" rendered="# {not event.editable}" />-->
 			</h:column>
 
 			<h:column>
 			    <c:facet name="header">Beskrivning:</c:facet>
                             #{event.eventDescription}
-<!--			    <h:inputTextarea value="#{event.eventDescription}" cols="100" rendered="#{event.editable}" required="true"/>
+<!--			    <h:inputTextarea value="# {event.eventDescription}" cols="100" rendered="# {event.editable}" required="true"/>
 
-			    <h:outputText value="#{event.eventDescription}" rendered="#{not event.editable}" />-->
+			    <h:outputText value="# {event.eventDescription}" rendered="# {not event.editable}" />-->
 			</h:column>
 
 			<h:column>
 			    <c:facet name="header">Pris:</c:facet>
                             #{event.eventPrice}
-<!--			    <h:inputText value="#{event.eventPrice}" size="4" rendered="#{event.editable}" required="true"/>
+<!--			    <h:inputText value="# {event.eventPrice}" size="4" rendered="# {event.editable}" required="true"/>
 
-			    <h:outputText value="#{event.eventPrice}:-" rendered="#{not event.editable}" />-->
+			    <h:outputText value="# {event.eventPrice}:-" rendered="# {not event.editable}" />-->
 			</h:column>
 
 <!--			<h:column>
 			    <c:facet name="header"></c:facet>
-			    <h:commandLink action="#{eventTable.editAction(event)}" rendered="#{not event.editable}">
+			    <h:commandLink action="# {eventTable.editAction(event)}" rendered="# {not event.editable}">
 				<h:graphicImage styleClass="icon-edit-pencil" name="images/noun_Pencil_629289.svg" />
 			    </h:commandLink>
 			</h:column>
 
 			<h:column>
 			    <c:facet name="header"></c:facet>
-			    <h:commandLink action="#{eventTable.deleteAction(event)}">
+			    <h:commandLink action="# {eventTable.deleteAction(event)}">
 				<h:graphicImage styleClass="icon-remove-trash" name="images/noun_Trash_2117822.svg" />
 			    </h:commandLink>
 			</h:column>-->
