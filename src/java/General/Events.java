@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package General;
 
 import java.io.Serializable;
@@ -19,10 +14,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author jonte
- */
 @Entity
 @Table(name = "EVENTS")
 @XmlRootElement
@@ -32,6 +23,21 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Events.findByEventName", query = "SELECT e FROM Events e WHERE e.eventName = :eventName")
     , @NamedQuery(name = "Events.findByEventDate", query = "SELECT e FROM Events e WHERE e.eventDate = :eventDate")})
 public class Events implements Serializable {
+
+    @Size(max = 5)
+    @Column(name = "EVENT_TIME")
+    private String eventTime;
+    @Size(max = 100)
+    @Column(name = "EVENT_IMAGE")
+    private String eventImage;
+
+    @Size(max = 100)
+    @Column(name = "EVENT_DESCRIPTION")
+    private String eventDescription;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "EVENT_PRICE")
+    private int eventPrice;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -111,5 +117,37 @@ public class Events implements Serializable {
     public String toString() {
         return "General.Events[ eventId=" + eventId + " ]";
     }
-    
+
+    public String getEventDescription() {
+        return eventDescription;
+    }
+
+    public void setEventDescription(String eventDescription) {
+        this.eventDescription = eventDescription;
+    }
+
+    public int getEventPrice() {
+        return eventPrice;
+    }
+
+    public void setEventPrice(int eventPrice) {
+        this.eventPrice = eventPrice;
+    }
+
+    public String getEventTime() {
+        return eventTime;
+    }
+
+    public void setEventTime(String eventTime) {
+        this.eventTime = eventTime;
+    }
+
+    public String getEventImage() {
+        return eventImage;
+    }
+
+    public void setEventImage(String eventImage) {
+        this.eventImage = eventImage;
+    }
+
 }
