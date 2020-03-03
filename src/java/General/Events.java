@@ -67,15 +67,15 @@ public class Events implements Serializable {
     @Column(name = "EVENT_IMAGE")
     private String eventImage;
     
-//    boolean editable;
-//    
-//    public boolean isEditable() {
-//	return editable;
-//    }
-//
-//    public void setEditable(boolean editable) {
-//	this.editable = editable;
-//    }
+    boolean editable;
+    
+    public boolean isEditable() {
+	return editable;
+    }
+
+    public void setEditable(boolean editable) {
+	this.editable = editable;
+    }
 
     public Events() {
     }

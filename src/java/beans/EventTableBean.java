@@ -57,18 +57,18 @@ public class EventTableBean {
 //	eventsList.add(new Event(date, time, name, description, price));
     }
     
-//    public String saveAction() {
-//	for (Events event : eventsList){
-//		event.setEditable(false);
-//	}
-//	return null;
-//    }
-//    
-//    public String editAction(Events event) {
-//	    
-//	event.setEditable(true); 
-//	return null;
-//}
+    public String saveAction() {
+	for (Events event : eventsList){
+		event.setEditable(false);
+	}
+	return null;
+    }
+    
+    public String editAction(Events event) {
+	    
+	event.setEditable(true); 
+	return null;
+}
     
     public String deleteAction(Events event) {
 	System.out.println("Removed this entry: " + event);
