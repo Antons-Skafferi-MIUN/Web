@@ -37,6 +37,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Events.findByEventImage", query = "SELECT e FROM Events e WHERE e.eventImage = :eventImage")})
 public class Events implements Serializable {
 
+    @Column(name = "EVENT_EDITABLE")
+    private Boolean eventEditable;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,14 +70,13 @@ public class Events implements Serializable {
     @Column(name = "EVENT_IMAGE")
     private String eventImage;
     
-    boolean editable;
     
     public boolean isEditable() {
-	return editable;
+	return eventEditable;
     }
 
     public void setEditable(boolean editable) {
-	this.editable = editable;
+	this.eventEditable = editable;
     }
 
     public Events() {
@@ -170,6 +172,14 @@ public class Events implements Serializable {
     @Override
     public String toString() {
         return "General.Events[ eventId=" + eventId + " ]";
+    }
+
+    public Boolean getEventEditable() {
+        return eventEditable;
+    }
+
+    public void setEventEditable(Boolean eventEditable) {
+        this.eventEditable = eventEditable;
     }
     
 }
