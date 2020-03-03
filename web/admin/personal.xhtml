@@ -42,24 +42,14 @@
                     <p>Telefon</p>
                     <p>Arbete</p>
                 </div>
-                <div class="employee-card">
-                    <p>1</p>
-                    <p>Anton Karlsson</p>
-                    <p>070-5095050</p>
-                    <p>Kök</p>
-                </div>
-                <div class="employee-card">
-                    <p>1</p>
-                    <p>Anton Karlsson</p>
-                    <p>070-5095050</p>
-                    <p>Kök</p>
-                </div>
-                <div class="employee-card">
-                    <p>1</p>
-                    <p>Anton Karlsson</p>
-                    <p>070-5095050</p>
-                    <p>Kök</p>
-                </div>
+                <ui:repeat value="#{personnelBean.personnelList}" var="p">
+                    <div class="employee-card">
+                        <p>#{p.personnelId}</p>
+                        <p>#{p.personnelName}</p>
+                        <p>#{p.personnelPhone}</p>
+                        <p>#{p.personnelType}</p>
+                    </div>
+                </ui:repeat>
             </section>
         </main>
     </h:body>
