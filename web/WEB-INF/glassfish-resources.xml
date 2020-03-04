@@ -6,7 +6,7 @@
         <property name="portNumber" value="1527"/>
         <property name="databaseName" value="Antonsskafferi"/>
         <property name="User" value="administrator"/>
-        <property name="Password" value="LABCIk"/>
+        <property name="Password" value="LABCIK"/>
         <property name="URL" value="jdbc:derby://localhost:1527/Antonsskafferi"/>
         <property name="driverClass" value="org.apache.derby.jdbc.ClientDriver"/>
     </jdbc-connection-pool>

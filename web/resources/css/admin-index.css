@@ -1,0 +1,69 @@
+* {
+    font-family: itc-american-typewriter, serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #f3f3f3, #f4f4f4);
+    scroll-behavior: smooth;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a:hover,
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a,
+li {
+    list-style: none;
+}
+
+select{
+    padding: 10px;
+}
+
+.wrapper {
+    margin: 5% 10%;
+}
+
+
+/* ADMIN INDEX */
+
+
+
+.lunch-container{
+    padding: 5%;
+    background: white;
+}
+
+.day-label{
+    padding: 10px 5px;
+}
+
+.week-label{
+    margin: 3%;
+}
+
+.day-container{
+    display: grid;
+    margin: 5% auto;
+    
+}
+
+.food-input{
+    width: 50%;
+    padding: 15px 10px;
+    margin: 5px 0;
+    border: none;
+    background: #dadada;
+    box-shadow: 1px 1px 3px hsla(0,0%,0%,0.08);
+    border-radius: 5px;
+}

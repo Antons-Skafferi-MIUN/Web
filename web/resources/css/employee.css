@@ -1,0 +1,18 @@
+.employee-container{
+    padding: 5% 2%;
+    background: white;
+}
+
+.employee-card,.employee-card-title{
+    padding: 0 2%;
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+}
+
+.employee-card-title{
+    opacity: 0.7;
+}
+
+.employee-card:nth-child(even){
+    background:#f1f1f1;
+}
