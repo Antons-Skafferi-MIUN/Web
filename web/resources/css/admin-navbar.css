@@ -1,0 +1,57 @@
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: hsla(0, 0%, 0%, 0.9);
+    position: fixed;
+    height: 50px;
+    top: 0;
+    width: 100%;
+}
+
+.nav-item {
+    color: white;
+    margin: auto;
+    opacity:0.5;
+    transition: 0.1s ease-in-out;
+}
+
+.nav-item:hover{
+    opacity: 1;
+}
+
+.nav-item--active{
+    opacity: 1;
+}
+
+.header {
+    background-image: url(../../../resources/images/img-header.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -50px;
+    padding-bottom: 10px;
+    box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.08);
+}
+
+.header-title-container {
+    margin: 1% 15%;
+}
+
+.header-title,
+.header-open-hours {
+    color: white;
+}
+
+.header-title {
+    padding-top: 80px;
+}
+
+.header-open-hours {
+    display: grid;
+    grid-template-columns: 20% 50%;
+}
+
+.header-open-hours-items {
+    margin: auto 0;
+    padding: 2% 0;
+}

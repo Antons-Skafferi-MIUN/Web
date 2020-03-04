@@ -6,7 +6,9 @@
 package General;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,10 +16,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -33,6 +37,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Personnel.findByPersonnelPhone", query = "SELECT p FROM Personnel p WHERE p.personnelPhone = :personnelPhone")
     , @NamedQuery(name = "Personnel.findByPersonnelType", query = "SELECT p FROM Personnel p WHERE p.personnelType = :personnelType")})
 public class Personnel implements Serializable {
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personnelId")
+    private List<Shifts> shiftsList;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -124,7 +131,16 @@ public class Personnel implements Serializable {
 
     @Override
     public String toString() {
-        return "General.Personnel[ personnelId=" + personnelId + " ]";
+        return personnelId.toString();
+    }
+
+    @XmlTransient
+    public List<Shifts> getShiftsList() {
+        return shiftsList;
+    }
+
+    public void setShiftsList(List<Shifts> shiftsList) {
+        this.shiftsList = shiftsList;
     }
     
 }
