@@ -5,7 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:composition template="/template.xhtml">
+    <ui:composition template="/adminTemplate.xhtml">
         <ui:define name="title">
             <h:outputText value="#{bundle.ListShiftsTitle}"></h:outputText>
         </ui:define>
@@ -55,7 +55,6 @@
                 <h:commandLink action="#{shiftsController.prepareCreate}" value="#{bundle.ListShiftsCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListShiftsIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
