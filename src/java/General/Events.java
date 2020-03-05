@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package General;
 
 import java.io.Serializable;
@@ -14,6 +19,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ *
+ * @author shawk
+ */
 @Entity
 @Table(name = "EVENTS")
 @XmlRootElement
@@ -21,23 +30,15 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Events.findAll", query = "SELECT e FROM Events e")
     , @NamedQuery(name = "Events.findByEventId", query = "SELECT e FROM Events e WHERE e.eventId = :eventId")
     , @NamedQuery(name = "Events.findByEventName", query = "SELECT e FROM Events e WHERE e.eventName = :eventName")
-    , @NamedQuery(name = "Events.findByEventDate", query = "SELECT e FROM Events e WHERE e.eventDate = :eventDate")})
+    , @NamedQuery(name = "Events.findByEventDate", query = "SELECT e FROM Events e WHERE e.eventDate = :eventDate")
+    , @NamedQuery(name = "Events.findByEventDescription", query = "SELECT e FROM Events e WHERE e.eventDescription = :eventDescription")
+    , @NamedQuery(name = "Events.findByEventPrice", query = "SELECT e FROM Events e WHERE e.eventPrice = :eventPrice")
+    , @NamedQuery(name = "Events.findByEventTime", query = "SELECT e FROM Events e WHERE e.eventTime = :eventTime")
+    , @NamedQuery(name = "Events.findByEventImage", query = "SELECT e FROM Events e WHERE e.eventImage = :eventImage")})
 public class Events implements Serializable {
 
-    @Size(max = 5)
-    @Column(name = "EVENT_TIME")
-    private String eventTime;
-    @Size(max = 100)
-    @Column(name = "EVENT_IMAGE")
-    private String eventImage;
-
-    @Size(max = 100)
-    @Column(name = "EVENT_DESCRIPTION")
-    private String eventDescription;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "EVENT_PRICE")
-    private int eventPrice;
+    @Column(name = "EVENT_EDITABLE")
+    private Boolean eventEditable;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -55,6 +56,28 @@ public class Events implements Serializable {
     @Size(min = 1, max = 10)
     @Column(name = "EVENT_DATE")
     private String eventDate;
+    @Size(max = 100)
+    @Column(name = "EVENT_DESCRIPTION")
+    private String eventDescription;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "EVENT_PRICE")
+    private int eventPrice;
+    @Size(max = 5)
+    @Column(name = "EVENT_TIME")
+    private String eventTime;
+    @Size(max = 100)
+    @Column(name = "EVENT_IMAGE")
+    private String eventImage;
+    
+    
+    public boolean isEditable() {
+	return eventEditable;
+    }
+
+    public void setEditable(boolean editable) {
+	this.eventEditable = editable;
+    }
 
     public Events() {
     }
@@ -62,11 +85,14 @@ public class Events implements Serializable {
     public Events(Integer eventId) {
         this.eventId = eventId;
     }
-
-    public Events(Integer eventId, String eventName, String eventDate) {
-        this.eventId = eventId;
+    
+    public Events(String eventName, String eventTime, String eventDate, String eventDescription, int eventPrice, String eventImage) {
         this.eventName = eventName;
+        this.eventTime = eventTime;
         this.eventDate = eventDate;
+        this.eventDescription = eventDescription;
+        this.eventPrice = eventPrice;
+        this.eventImage = eventImage;
     }
 
     public Integer getEventId() {
@@ -91,31 +117,6 @@ public class Events implements Serializable {
 
     public void setEventDate(String eventDate) {
         this.eventDate = eventDate;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (eventId != null ? eventId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Events)) {
-            return false;
-        }
-        Events other = (Events) object;
-        if ((this.eventId == null && other.eventId != null) || (this.eventId != null && !this.eventId.equals(other.eventId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "General.Events[ eventId=" + eventId + " ]";
     }
 
     public String getEventDescription() {
@@ -150,4 +151,37 @@ public class Events implements Serializable {
         this.eventImage = eventImage;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (eventId != null ? eventId.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Events)) {
+            return false;
+        }
+        Events other = (Events) object;
+        if ((this.eventId == null && other.eventId != null) || (this.eventId != null && !this.eventId.equals(other.eventId))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Events{" + "eventId=" + eventId + ", eventName=" + eventName + ", eventDate=" + eventDate + ", eventDescription=" + eventDescription + ", eventPrice=" + eventPrice + ", eventTime=" + eventTime + ", eventImage=" + eventImage + '}';
+    }
+
+    public Boolean getEventEditable() {
+        return eventEditable;
+    }
+
+    public void setEventEditable(Boolean eventEditable) {
+        this.eventEditable = eventEditable;
+    }
+    
 }
