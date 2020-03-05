@@ -10,6 +10,7 @@ body {
 }
 
 a {
+    color:black;
 }
 
 table {
@@ -67,4 +68,9 @@ tr.jsfcrud_even_row {
     position: absolute;
     left: 50%;
     top: 50%;
+}
+
+.main-section{
+    padding: 5% 2%;
+    background: white;
 }
