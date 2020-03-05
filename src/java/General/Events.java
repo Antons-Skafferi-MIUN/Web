@@ -85,12 +85,14 @@ public class Events implements Serializable {
     public Events(Integer eventId) {
         this.eventId = eventId;
     }
-
-    public Events(Integer eventId, String eventName, String eventDate, int eventPrice) {
-        this.eventId = eventId;
+    
+    public Events(String eventName, String eventTime, String eventDate, String eventDescription, int eventPrice, String eventImage) {
         this.eventName = eventName;
+        this.eventTime = eventTime;
         this.eventDate = eventDate;
+        this.eventDescription = eventDescription;
         this.eventPrice = eventPrice;
+        this.eventImage = eventImage;
     }
 
     public Integer getEventId() {
@@ -171,7 +173,7 @@ public class Events implements Serializable {
 
     @Override
     public String toString() {
-        return "General.Events[ eventId=" + eventId + " ]";
+        return "Events{" + "eventId=" + eventId + ", eventName=" + eventName + ", eventDate=" + eventDate + ", eventDescription=" + eventDescription + ", eventPrice=" + eventPrice + ", eventTime=" + eventTime + ", eventImage=" + eventImage + '}';
     }
 
     public Boolean getEventEditable() {
