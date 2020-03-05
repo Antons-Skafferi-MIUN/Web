@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./resources/css/admin-index.css" />
+        <link rel="stylesheet" href="./resources/css/admin-navbar.css" />
+        <link rel="stylesheet" href="./resources/css/employee.css"/>
+        <link rel="stylesheet" href="./admin/resources/css/employee.css"/>
+        <link rel="stylesheet" href="./admin/resources/css/admin-index.css" />
+        <link rel="stylesheet" href="./admin/resources/css/admin-navbar.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/pdn3fnm.css" />
+        <title>Admins Skafferi</title>
+    </h:head>
+    <h:body>
+        <nav>
+            <h:link outcome="/faces/admin/index.xhtml" class="nav-item" value="Meny"/>
+            <h:link outcome="/faces/admin/events/events.xhtml" class="nav-item" value="Event"/>
+            <h:link outcome="/faces/admin/schema.xhtml" class="nav-item" value="Schema"/>
+            <h:link outcome="/faces/admin/personal.xhtml" class="nav-item  nav-item--active" value="Personal"/>
+        </nav>
+        <header class="header">
+            <div class="header-title-container">
+                <div class="header-title">
+                    <h1>ADMINS</h1>
+                    <h2>SKAFFERI</h2>
+                </div>
+            </div>
+        </header>
+        <main class="wrapper">
+            <section class="employee-container">
+                <h1>Personal</h1>
+                <div class="employee-card-title">
+                    <p>ID</p>
+                    <p>Namn</p>
+                    <p>Telefon</p>
+                    <p>Arbete</p>
+                </div>
+                <ui:repeat value="#{personnelBean.personnelList}" var="p">
+                    <div class="employee-card">
+                        <p>#{p.personnelId}</p>
+                        <p>#{p.personnelName}</p>
+                        <p>#{p.personnelPhone}</p>
+                        <p>#{p.personnelType}</p>
+                    </div>
+                </ui:repeat>
+            </section>
+        </main>
+    </h:body>
+</html>

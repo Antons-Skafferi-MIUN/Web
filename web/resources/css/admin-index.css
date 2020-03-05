@@ -14,9 +14,12 @@ ul {
     padding: 0;
 }
 
-a,
-a:hover,
-a:visited {
+a.nav-item,
+a.nav-item:hover,
+a.nav-item:visited,
+a.nav-item--active,
+a.nav-item--active:hover,
+a.nav-item--active:visited{
     color: white;
     text-decoration: none;
 }

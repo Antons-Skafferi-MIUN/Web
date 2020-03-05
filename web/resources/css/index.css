@@ -123,12 +123,12 @@ nav {
     letter-spacing: 1px;
     font-size: 1.1em;
     cursor: pointer;
-    color: #7f7f7f;
+    color: #7f7f7f !important;
 }
 
 .menu-btn--active {
     border-bottom: 2px solid black;
-    color: black;
+    color: black !important;
 }
 
 .menu-btn-container {
@@ -154,10 +154,29 @@ nav {
     margin: 0;
 }
 
-.menu-item {
+.menu-dinner-title, .menu-drink-title{
+    font-weight:normal;
+    color: black;
+    padding: 60px 0 20px 90px;
+    margin: 0;    
+}
+
+
+.menu-item-container{
+    display:flex;
+    justify-content: space-between;
+}
+
+.dinner-item,.dinner-price{
+    padding: 20px 100px 20px 100px;
+    color: #6b6b6b;
+}
+
+.menu-item, .menu-price{
     display: flex;
     padding: 20px 9rem;
 }
+
 
 .menu-item--past {
     opacity: 0.5;
@@ -167,6 +186,11 @@ nav {
     background-color: #ebebeb;
 }
 
+
+.menu-price{
+
+}
+
 .card-image {
     margin: auto 0;
     z-index: -1;
@@ -174,6 +198,11 @@ nav {
 
     box-shadow: 5px 8px 10px hsla(0, 0%, 0%, 0.16);
     border-radius: 5px;
+}
+
+.card-image--dinner{
+    height:800px;
+    margin: auto 0;
 }
 
 /* EVENT */
