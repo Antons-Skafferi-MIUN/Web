@@ -5,7 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:composition template="/template.xhtml">
+    <ui:composition template="/adminTemplate.xhtml">
         <ui:define name="title">
             <h:outputText value="#{bundle.CreatePersonnelTitle}"></h:outputText>
         </ui:define>
@@ -29,7 +29,6 @@
                 <h:commandLink action="#{personnelController.prepareList}" value="#{bundle.CreatePersonnelShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreatePersonnelIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
