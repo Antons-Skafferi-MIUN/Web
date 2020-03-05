@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEventsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEventsLabel_eventId}" for="eventId" />
+                    <h:inputText id="eventId" value="#{eventsController.selected.eventId}" title="#{bundle.EditEventsTitle_eventId}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventId}"/>
+                    <h:outputLabel value="#{bundle.EditEventsLabel_eventName}" for="eventName" />
+                    <h:inputText id="eventName" value="#{eventsController.selected.eventName}" title="#{bundle.EditEventsTitle_eventName}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventName}"/>
+                    <h:outputLabel value="#{bundle.EditEventsLabel_eventDate}" for="eventDate" />
+                    <h:inputText id="eventDate" value="#{eventsController.selected.eventDate}" title="#{bundle.EditEventsTitle_eventDate}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventDate}"/>
+                    <h:outputLabel value="#{bundle.EditEventsLabel_eventDescription}" for="eventDescription" />
+                    <h:inputText id="eventDescription" value="#{eventsController.selected.eventDescription}" title="#{bundle.EditEventsTitle_eventDescription}" />
+                    <h:outputLabel value="#{bundle.EditEventsLabel_eventPrice}" for="eventPrice" />
+                    <h:inputText id="eventPrice" value="#{eventsController.selected.eventPrice}" title="#{bundle.EditEventsTitle_eventPrice}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventPrice}"/>
+                    <h:outputLabel value="#{bundle.EditEventsLabel_eventTime}" for="eventTime" />
+                    <h:inputText id="eventTime" value="#{eventsController.selected.eventTime}" title="#{bundle.EditEventsTitle_eventTime}" />
+                    <h:outputLabel value="#{bundle.EditEventsLabel_eventImage}" for="eventImage" />
+                    <h:inputText id="eventImage" value="#{eventsController.selected.eventImage}" title="#{bundle.EditEventsTitle_eventImage}" />
+                    <h:outputLabel value="#{bundle.EditEventsLabel_eventEditable}" for="eventEditable" />
+                    <h:inputText id="eventEditable" value="#{eventsController.selected.eventEditable}" title="#{bundle.EditEventsTitle_eventEditable}" />
+                </h:panelGrid>
+                <h:commandLink action="#{eventsController.update}" value="#{bundle.EditEventsSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEventsViewLink}"/>
+                <br />
+                <h:commandLink action="#{eventsController.prepareList}" value="#{bundle.EditEventsShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEventsIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
