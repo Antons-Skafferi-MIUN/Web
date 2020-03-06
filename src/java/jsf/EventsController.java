@@ -1,11 +1,15 @@
 package jsf;
 
 import General.Events;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import jsf.util.JsfUtil;
 import jsf.util.PaginationHelper;
 import session.EventsFacade;
 
 import java.io.Serializable;
+import java.nio.file.Files;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -17,6 +21,7 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import javax.servlet.http.Part;
 
 @Named("eventsController")
 @SessionScoped
@@ -80,6 +85,8 @@ public class EventsController implements Serializable {
     }
 
     public String create() {
+        saveFile();
+        current.setEventImage(fileName);
         try {
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundles/Bundle").getString("EventsCreated"));
@@ -87,6 +94,28 @@ public class EventsController implements Serializable {
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundles/Bundle").getString("PersistenceErrorOccured"));
             return null;
+        }
+    }
+
+    private Part uploadedFile;
+    private String fileName;
+    private String folder = "C:\\Users\\shawk\\Documents\\GitHub\\Web\\web\\resources\\images";
+
+    public Part getUploadedFile() {
+        return uploadedFile;
+    }
+
+    public void setUploadedFile(Part uploadedFile) {
+        this.uploadedFile = uploadedFile;
+    }
+
+    public void saveFile() {
+
+        try (InputStream input = uploadedFile.getInputStream()) {
+            fileName = uploadedFile.getSubmittedFileName();
+            Files.copy(input, new File(folder, fileName).toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
