@@ -20,8 +20,8 @@ public class EventsBean {
     }
 
     public List<Events> getEvents() {
-        TypedQuery<Events> query = em.createNamedQuery("Events.findAll", Events.class);
-        eventsList = query.getResultList();
+        TypedQuery<Events> query = em.createNamedQuery("Events.findAllReverse", Events.class);
+        eventsList = query.setMaxResults(2).getResultList();
         return eventsList;
     }
 }
