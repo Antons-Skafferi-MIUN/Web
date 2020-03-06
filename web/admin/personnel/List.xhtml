@@ -19,6 +19,12 @@
                     <h:dataTable value="#{personnelController.items}" var="item" cellpadding="2" cellspacing="0" styleClass="main-table" rules="all">
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPersonnelTitle_personnelId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.personnelId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="#{bundle.ListPersonnelTitle_personnelName}"/>
                             </f:facet>
                             <h:outputText value="#{item.personnelName}"/>
