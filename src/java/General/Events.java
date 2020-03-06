@@ -34,7 +34,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Events.findByEventDescription", query = "SELECT e FROM Events e WHERE e.eventDescription = :eventDescription")
     , @NamedQuery(name = "Events.findByEventPrice", query = "SELECT e FROM Events e WHERE e.eventPrice = :eventPrice")
     , @NamedQuery(name = "Events.findByEventTime", query = "SELECT e FROM Events e WHERE e.eventTime = :eventTime")
-    , @NamedQuery(name = "Events.findByEventImage", query = "SELECT e FROM Events e WHERE e.eventImage = :eventImage")})
+    , @NamedQuery(name = "Events.findByEventImage", query = "SELECT e FROM Events e WHERE e.eventImage = :eventImage")
+    ,@NamedQuery(name = "Events.findAllReverse", query = "SELECT e FROM Events e ORDER BY e.eventId DESC")})
 public class Events implements Serializable {
 
     @Column(name = "EVENT_EDITABLE")
@@ -69,14 +70,13 @@ public class Events implements Serializable {
     @Size(max = 100)
     @Column(name = "EVENT_IMAGE")
     private String eventImage;
-    
-    
+
     public boolean isEditable() {
-	return eventEditable;
+        return eventEditable;
     }
 
     public void setEditable(boolean editable) {
-	this.eventEditable = editable;
+        this.eventEditable = editable;
     }
 
     public Events() {
@@ -85,7 +85,7 @@ public class Events implements Serializable {
     public Events(Integer eventId) {
         this.eventId = eventId;
     }
-    
+
     public Events(String eventName, String eventTime, String eventDate, String eventDescription, int eventPrice, String eventImage) {
         this.eventName = eventName;
         this.eventTime = eventTime;
@@ -183,5 +183,5 @@ public class Events implements Serializable {
     public void setEventEditable(Boolean eventEditable) {
         this.eventEditable = eventEditable;
     }
-    
+
 }
