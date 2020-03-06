@@ -25,13 +25,17 @@
                     <h:outputText value="#{personnelController.selected.personnelType}" title="#{bundle.ViewPersonnelTitle_personnelType}"/>
                 </h:panelGrid>
                 <br />
+                <br />
                 <h:commandLink action="#{personnelController.destroyAndView}" class="button-red" value="#{bundle.ViewPersonnelDestroyLink}"/>
+                <br />
                 <br />
                 <br />
                 <h:link outcome="Edit" class="button-green" value="#{bundle.ViewPersonnelEditLink}"/>
                 <br />
                 <br />
+                <br />
                 <h:commandLink action="#{personnelController.prepareCreate}" class="button-green" value="#{bundle.ViewPersonnelCreateLink}" />
+                <br />
                 <br />
                 <br />
                 <h:commandLink action="#{personnelController.prepareList}" class="button-red" value="#{bundle.ViewPersonnelShowAllLink}"/>

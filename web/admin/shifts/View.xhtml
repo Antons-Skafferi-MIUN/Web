@@ -25,13 +25,17 @@
                     <h:outputText value="#{shiftsController.selected.personnelId}" title="#{bundle.ViewShiftsTitle_personnelId}"/>
                 </h:panelGrid>
                 <br />
+                <br />
                 <h:commandLink action="#{shiftsController.destroyAndView}" class="button-red" value="#{bundle.ViewShiftsDestroyLink}"/>
+                <br />
                 <br />
                 <br />
                 <h:link outcome="Edit" class="button-green" value="#{bundle.ViewShiftsEditLink}"/>
                 <br />
                 <br />
+                <br />
                 <h:commandLink action="#{shiftsController.prepareCreate}" class="button-green" value="#{bundle.ViewShiftsCreateLink}" />
+                <br />
                 <br />
                 <br />
                 <h:commandLink action="#{shiftsController.prepareList}" class="button-red" value="#{bundle.ViewShiftsShowAllLink}"/>

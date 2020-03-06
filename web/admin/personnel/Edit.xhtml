@@ -22,7 +22,10 @@
                     <h:outputLabel value="#{bundle.EditPersonnelLabel_personnelType}" for="personnelType" />
                     <h:inputText id="personnelType" value="#{personnelController.selected.personnelType}" title="#{bundle.EditPersonnelTitle_personnelType}" required="true" requiredMessage="#{bundle.EditPersonnelRequiredMessage_personnelType}"/>
                 </h:panelGrid>
+                <br />
+                <br />
                 <h:commandLink action="#{personnelController.update}" class="button-green" value="#{bundle.EditPersonnelSaveLink}"/>
+                <br />
                 <br />
                 <br />
                 <h:commandLink action="#{personnelController.prepareList}" class="button-red" value="#{bundle.EditPersonnelShowAllLink}" immediate="true"/>

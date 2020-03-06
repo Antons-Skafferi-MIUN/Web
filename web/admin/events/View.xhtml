@@ -29,13 +29,17 @@
                     <h:outputText value="#{eventsController.selected.eventImage}" title="#{bundle.ViewEventsTitle_eventImage}"/>
                 </h:panelGrid>
                 <br />
+                <br />
                 <h:commandLink action="#{eventsController.destroyAndView}" class="button-red" value="#{bundle.ViewEventsDestroyLink}"/>
+                <br />
                 <br />
                 <br />
                 <h:link outcome="Edit" class="button-green" value="#{bundle.ViewEventsEditLink}"/>
                 <br />
                 <br />
+                <br />
                 <h:commandLink action="#{eventsController.prepareCreate}" class="button-green" value="#{bundle.ViewEventsCreateLink}" />
+                <br />
                 <br />
                 <br />
                 <h:commandLink action="#{eventsController.prepareList}" class="button-red" value="#{bundle.ViewEventsShowAllLink}"/>

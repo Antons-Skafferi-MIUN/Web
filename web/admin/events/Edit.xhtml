@@ -28,7 +28,10 @@
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventImage}" for="eventImage" />
                     <h:inputText id="eventImage" value="#{eventsController.selected.eventImage}" title="#{bundle.EditEventsTitle_eventImage}" />
                 </h:panelGrid>
+                <br />
+                <br />
                 <h:commandLink action="#{eventsController.update}" class="button-green" value="#{bundle.EditEventsSaveLink}"/>
+                <br />
                 <br />
                 <br />
                 <h:commandLink action="#{eventsController.prepareList}" class="button-red" value="#{bundle.EditEventsShowAllLink}" immediate="true"/>
