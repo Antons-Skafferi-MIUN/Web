@@ -1,0 +1,33 @@
+.wrapper-main-section {
+    position: relative;
+    margin: 5% 10%;
+    box-shadow: 3px 3px 5px gray;
+}
+
+.main-section {
+    display: grid;
+    padding: 5% 2%;
+    background-color: white;
+}
+
+.main-table {
+    width: 100%;
+}
+
+.main-table th {
+    text-align: left;
+}
+
+.main-table tr td{
+    border: none;
+    font-family: revert;
+    padding: 5px;
+}
+
+.main-table tbody tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.main-table td:nth-last-child(1) {
+    background-color: white;
+}
