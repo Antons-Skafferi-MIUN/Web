@@ -1,6 +1,6 @@
 .wrapper-main-section {
     position: relative;
-    margin: 5% 10%;
+    margin: 4% 8%;
     box-shadow: 3px 3px 5px gray;
 }
 
@@ -14,8 +14,14 @@
     width: 100%;
 }
 
+.main-table tr:nth-child(1) {
+    margin-bottom: 16px;
+}
+
 .main-table th {
     text-align: left;
+    border: none;
+    opacity: 0.7;
 }
 
 .main-table tr td{
@@ -30,4 +36,40 @@
 
 .main-table td:nth-last-child(1) {
     background-color: white;
+}
+
+.icon-edit-pencil, .icon-remove-trash {
+    height: 28px;
+    width: 40px;
+    border-radius: 3px;
+    padding-top: 4px;
+}
+
+.icon-edit-pencil {
+    background-color: orange;
+}
+
+.icon-remove-trash {
+    background-color: red;
+}
+
+.new-entry {
+    background-color: #27c32c;
+    margin-right: 10px;
+    box-shadow: 0 3px 0 #188015;
+    text-decoration: none;
+}
+
+.new-entry {
+    position: relative;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.new-entry:active {
+    box-shadow: none;
+    top: 3px;
 }
