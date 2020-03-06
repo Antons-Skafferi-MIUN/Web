@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditEventsLabel_eventId}" for="eventId" />
-                    <h:inputText id="eventId" value="#{eventsController.selected.eventId}" title="#{bundle.EditEventsTitle_eventId}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventId}"/>
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventName}" for="eventName" />
                     <h:inputText id="eventName" value="#{eventsController.selected.eventName}" title="#{bundle.EditEventsTitle_eventName}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventName}"/>
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventDate}" for="eventDate" />
@@ -29,18 +27,11 @@
                     <h:inputText id="eventTime" value="#{eventsController.selected.eventTime}" title="#{bundle.EditEventsTitle_eventTime}" />
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventImage}" for="eventImage" />
                     <h:inputText id="eventImage" value="#{eventsController.selected.eventImage}" title="#{bundle.EditEventsTitle_eventImage}" />
-                    <h:outputLabel value="#{bundle.EditEventsLabel_eventEditable}" for="eventEditable" />
-                    <h:inputText id="eventEditable" value="#{eventsController.selected.eventEditable}" title="#{bundle.EditEventsTitle_eventEditable}" />
                 </h:panelGrid>
-                <h:commandLink action="#{eventsController.update}" value="#{bundle.EditEventsSaveLink}"/>
+                <h:commandLink action="#{eventsController.update}" class="button-green" value="#{bundle.EditEventsSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditEventsViewLink}"/>
-                <br />
-                <h:commandLink action="#{eventsController.prepareList}" value="#{bundle.EditEventsShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditEventsIndexLink}" />
+                <h:commandLink action="#{eventsController.prepareList}" class="button-red" value="#{bundle.EditEventsShowAllLink}" immediate="true"/>
             </h:form>
             <script>
                 document.getElementById('nav-events').className += " nav-item--active";

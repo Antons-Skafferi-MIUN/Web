@@ -22,14 +22,10 @@
                     <h:outputLabel value="#{bundle.EditPersonnelLabel_personnelType}" for="personnelType" />
                     <h:inputText id="personnelType" value="#{personnelController.selected.personnelType}" title="#{bundle.EditPersonnelTitle_personnelType}" required="true" requiredMessage="#{bundle.EditPersonnelRequiredMessage_personnelType}"/>
                 </h:panelGrid>
-                <h:commandLink action="#{personnelController.update}" value="#{bundle.EditPersonnelSaveLink}"/>
+                <h:commandLink action="#{personnelController.update}" class="button-green" value="#{bundle.EditPersonnelSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditPersonnelViewLink}"/>
-                <br />
-                <h:commandLink action="#{personnelController.prepareList}" value="#{bundle.EditPersonnelShowAllLink}" immediate="true"/>
-                <br />
-                <br />
+                <h:commandLink action="#{personnelController.prepareList}" class="button-red" value="#{bundle.EditPersonnelShowAllLink}" immediate="true"/>
             </h:form>
             <script>
                 document.getElementById('nav-personnel').className += " nav-item--active";

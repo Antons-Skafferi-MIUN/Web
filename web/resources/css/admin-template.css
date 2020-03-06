@@ -6,7 +6,7 @@
 
 .main-section {
     display: grid;
-    padding: 2% 2% 8% 2%;
+    padding: 2% 2% 10% 2%;
     background-color: white;
 }
 
@@ -53,20 +53,22 @@
     background-color: red;
 }
 
-.new-entry {
+.button-green {
     background-color: #27c32c;
     margin-right: 10px;
     box-shadow: 0 3px 0 #188015;
     text-decoration: none;
+    /*top: 10px;*/
 }
 
-.list-view {
+.button-red {
     background-color: #ff3939;
     box-shadow: 0 3px 0 #b41717;
-    top: 30px;
+    /*top: 40px;*/
+    text-decoration: none;
 }
 
-.new-entry, .list-view {
+.button-green, .button-red {
     position: relative;
     border: none;
     border-radius: 4px;
@@ -75,7 +77,7 @@
     color: white;
 }
 
-.new-entry:active, .list-view:active {
+.button-green:active, .button-red:active {
     box-shadow: none;
     top: 3px;
 }

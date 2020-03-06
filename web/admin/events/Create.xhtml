@@ -29,9 +29,9 @@
                     <h:inputText id="eventImage" value="#{eventsController.selected.eventImage}" title="#{bundle.CreateEventsTitle_eventImage}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{eventsController.create}" class="new-entry" value="#{bundle.CreateEventsSaveLink}" />
+                <h:commandLink action="#{eventsController.create}" class="button-green" value="#{bundle.CreateEventsSaveLink}" />
                 <br />
-                <h:commandLink action="#{eventsController.prepareList}" class="list-view" value="#{bundle.CreateEventsShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{eventsController.prepareList}" class="button-red" value="#{bundle.CreateEventsShowAllLink}" immediate="true"/>
             </h:form>
             <script>
                 document.getElementById('nav-events').className += " nav-item--active";

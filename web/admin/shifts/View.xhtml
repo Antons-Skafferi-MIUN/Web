@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewShiftsLabel_shiftId}"/>
-                    <h:outputText value="#{shiftsController.selected.shiftId}" title="#{bundle.ViewShiftsTitle_shiftId}"/>
                     <h:outputText value="#{bundle.ViewShiftsLabel_shiftDate}"/>
                     <h:outputText value="#{shiftsController.selected.shiftDate}" title="#{bundle.ViewShiftsTitle_shiftDate}">
                         <f:convertDateTime pattern="MM/dd/yyyy" />
@@ -27,17 +25,16 @@
                     <h:outputText value="#{shiftsController.selected.personnelId}" title="#{bundle.ViewShiftsTitle_personnelId}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{shiftsController.destroyAndView}" value="#{bundle.ViewShiftsDestroyLink}"/>
+                <h:commandLink action="#{shiftsController.destroyAndView}" class="button-red" value="#{bundle.ViewShiftsDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewShiftsEditLink}"/>
-                <br />
-                <h:commandLink action="#{shiftsController.prepareCreate}" value="#{bundle.ViewShiftsCreateLink}" />
-                <br />
-                <h:commandLink action="#{shiftsController.prepareList}" value="#{bundle.ViewShiftsShowAllLink}"/>
+                <h:link outcome="Edit" class="button-green" value="#{bundle.ViewShiftsEditLink}"/>
                 <br />
                 <br />
-
+                <h:commandLink action="#{shiftsController.prepareCreate}" class="button-green" value="#{bundle.ViewShiftsCreateLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{shiftsController.prepareList}" class="button-red" value="#{bundle.ViewShiftsShowAllLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

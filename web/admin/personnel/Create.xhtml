@@ -23,9 +23,9 @@
                     <h:inputText id="personnelType" value="#{personnelController.selected.personnelType}" title="#{bundle.CreatePersonnelTitle_personnelType}" required="true" requiredMessage="#{bundle.CreatePersonnelRequiredMessage_personnelType}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{personnelController.create}" class="new-entry" value="#{bundle.CreatePersonnelSaveLink}" />
+                <h:commandLink action="#{personnelController.create}" class="button-green" value="#{bundle.CreatePersonnelSaveLink}" />
                 <br />
-                <h:commandLink action="#{personnelController.prepareList}" class="list-view" value="#{bundle.CreatePersonnelShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{personnelController.prepareList}" class="button-red" value="#{bundle.CreatePersonnelShowAllLink}" immediate="true"/>
             </h:form>
             <script>
                 document.getElementById('nav-personnel').className += " nav-item--active";
