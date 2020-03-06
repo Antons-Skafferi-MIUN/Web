@@ -16,9 +16,7 @@
                 </h:panelGroup>
                 <h:outputText escape="false" value="#{bundle.ListShiftsEmpty}" rendered="#{shiftsController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{shiftsController.items.rowCount > 0}">
-                    <h:commandLink action="#{shiftsController.previous}" value="#{bundle.Previous} #{shiftsController.pagination.pageSize}" rendered="#{shiftsController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{shiftsController.next}" value="#{bundle.Next} #{shiftsController.pagination.pageSize}" rendered="#{shiftsController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{shiftsController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{shiftsController.items}" var="item" cellpadding="2" cellspacing="0" styleClass="main-table" rules="all">
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListShiftsTitle_shiftDate}"/>
@@ -43,19 +41,23 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{shiftsController.prepareView}" value="#{bundle.ListShiftsViewLink}"/>
+                            <h:commandLink action="#{shiftsController.prepareEdit}">
+                                <h:graphicImage styleClass="icon-edit-pencil" library="images" name="noun_Pencil_629289.svg" />
+                            </h:commandLink>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{shiftsController.prepareEdit}" value="#{bundle.ListShiftsEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink action="#{shiftsController.destroy}" value="#{bundle.ListShiftsDestroyLink}"/>
+                            <h:commandLink action="#{shiftsController.destroy}">
+                                <h:graphicImage styleClass="icon-remove-trash" name="images/noun_Trash_2117822.svg" />
+                            </h:commandLink>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{shiftsController.prepareCreate}" value="#{bundle.ListShiftsCreateLink}"/>
                 <br />
-                <br />
+                <h:commandLink action="#{shiftsController.prepareCreate}" class="new-entry" value="#{bundle.ListShiftsCreateLink}"/>
             </h:form>
+            <script>
+                document.getElementById('nav-shifts').className += " nav-item--active";
+            </script>
         </ui:define>
     </ui:composition>
 
