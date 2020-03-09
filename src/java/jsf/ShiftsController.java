@@ -17,6 +17,9 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 @Named("shiftsController")
 @SessionScoped
@@ -28,8 +31,16 @@ public class ShiftsController implements Serializable {
     private session.ShiftsFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    @PersistenceContext(unitName = "AntonSkafferiWebPU")
+    private EntityManager em;
 
     public ShiftsController() {
+    }
+    
+    public String getNameById(Shifts temp) {
+	Integer pid = temp.getPersonnelId().getPersonnelId();
+	Query query = em.createNamedQuery("Personnel.findByPersonnelId").setParameter("personnelId", pid);
+	return query.getSingleResult().toString();
     }
 
     public Shifts getSelected() {
