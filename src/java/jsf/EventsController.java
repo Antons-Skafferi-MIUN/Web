@@ -1,11 +1,15 @@
 package jsf;
 
-import General.Shifts;
+import General.Events;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import jsf.util.JsfUtil;
 import jsf.util.PaginationHelper;
-import session.ShiftsFacade;
+import session.EventsFacade;
 
 import java.io.Serializable;
+import java.nio.file.Files;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -17,41 +21,31 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.servlet.http.Part;
 
-@Named("shiftsController")
+@Named("eventsController")
 @SessionScoped
-public class ShiftsController implements Serializable {
+public class EventsController implements Serializable {
 
-    private Shifts current;
+    private Events current;
     private DataModel items = null;
     @EJB
-    private session.ShiftsFacade ejbFacade;
+    private session.EventsFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
-    @PersistenceContext(unitName = "AntonSkafferiWebPU")
-    private EntityManager em;
 
-    public ShiftsController() {
-    }
-    
-    public String getNameById(Shifts temp) {
-	Integer pid = temp.getPersonnelId().getPersonnelId();
-	Query query = em.createNamedQuery("Personnel.findByPersonnelId").setParameter("personnelId", pid);
-	return query.getSingleResult().toString();
+    public EventsController() {
     }
 
-    public Shifts getSelected() {
+    public Events getSelected() {
         if (current == null) {
-            current = new Shifts();
+            current = new Events();
             selectedItemIndex = -1;
         }
         return current;
     }
 
-    private ShiftsFacade getFacade() {
+    private EventsFacade getFacade() {
         return ejbFacade;
     }
 
@@ -79,21 +73,23 @@ public class ShiftsController implements Serializable {
     }
 
     public String prepareView() {
-        current = (Shifts) getItems().getRowData();
+        current = (Events) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
 
     public String prepareCreate() {
-        current = new Shifts();
+        current = new Events();
         selectedItemIndex = -1;
         return "Create";
     }
 
     public String create() {
+        saveFile();
+        current.setEventImage(fileName);
         try {
             getFacade().create(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundles/Bundle").getString("ShiftsCreated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundles/Bundle").getString("EventsCreated"));
             return prepareCreate();
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundles/Bundle").getString("PersistenceErrorOccured"));
@@ -101,8 +97,30 @@ public class ShiftsController implements Serializable {
         }
     }
 
+    private Part uploadedFile;
+    private String fileName;
+    private String folder = "C:\\Users\\shawk\\Documents\\GitHub\\Web\\web\\resources\\images";
+
+    public Part getUploadedFile() {
+        return uploadedFile;
+    }
+
+    public void setUploadedFile(Part uploadedFile) {
+        this.uploadedFile = uploadedFile;
+    }
+
+    public void saveFile() {
+
+        try (InputStream input = uploadedFile.getInputStream()) {
+            fileName = uploadedFile.getSubmittedFileName();
+            Files.copy(input, new File(folder, fileName).toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public String prepareEdit() {
-        current = (Shifts) getItems().getRowData();
+        current = (Events) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
@@ -110,7 +128,7 @@ public class ShiftsController implements Serializable {
     public String update() {
         try {
             getFacade().edit(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundles/Bundle").getString("ShiftsUpdated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundles/Bundle").getString("EventsUpdated"));
             return "View";
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundles/Bundle").getString("PersistenceErrorOccured"));
@@ -119,7 +137,7 @@ public class ShiftsController implements Serializable {
     }
 
     public String destroy() {
-        current = (Shifts) getItems().getRowData();
+        current = (Events) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         performDestroy();
         recreatePagination();
@@ -143,7 +161,7 @@ public class ShiftsController implements Serializable {
     private void performDestroy() {
         try {
             getFacade().remove(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundles/Bundle").getString("ShiftsDeleted"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundles/Bundle").getString("EventsDeleted"));
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundles/Bundle").getString("PersistenceErrorOccured"));
         }
@@ -199,21 +217,21 @@ public class ShiftsController implements Serializable {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
 
-    public Shifts getShifts(java.lang.Integer id) {
+    public Events getEvents(java.lang.Integer id) {
         return ejbFacade.find(id);
     }
 
-    @FacesConverter(forClass = Shifts.class)
-    public static class ShiftsControllerConverter implements Converter {
+    @FacesConverter(forClass = Events.class)
+    public static class EventsControllerConverter implements Converter {
 
         @Override
         public Object getAsObject(FacesContext facesContext, UIComponent component, String value) {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            ShiftsController controller = (ShiftsController) facesContext.getApplication().getELResolver().
-                    getValue(facesContext.getELContext(), null, "shiftsController");
-            return controller.getShifts(getKey(value));
+            EventsController controller = (EventsController) facesContext.getApplication().getELResolver().
+                    getValue(facesContext.getELContext(), null, "eventsController");
+            return controller.getEvents(getKey(value));
         }
 
         java.lang.Integer getKey(String value) {
@@ -233,11 +251,11 @@ public class ShiftsController implements Serializable {
             if (object == null) {
                 return null;
             }
-            if (object instanceof Shifts) {
-                Shifts o = (Shifts) object;
-                return getStringKey(o.getShiftId());
+            if (object instanceof Events) {
+                Events o = (Events) object;
+                return getStringKey(o.getEventId());
             } else {
-                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Shifts.class.getName());
+                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Events.class.getName());
             }
         }
 

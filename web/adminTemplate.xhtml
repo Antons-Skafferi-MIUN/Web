@@ -7,32 +7,37 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><ui:insert name="title">Default Title</ui:insert></title>
-        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <!--<h:outputStylesheet library="css" name="jsfcrud.css"/>-->
         <h:outputStylesheet library="css" name="admin-index.css"/>
         <h:outputStylesheet library="css" name="admin-navbar.css"/>
-        <h:outputStylesheet library="css" name="employee.css"/>
+        <h:outputStylesheet library="css" name="admin-template.css"/>
         <link type="text/css" rel="stylesheet" href="https://use.typekit.net/pdn3fnm.css"/> 
 
     </h:head>
     <h:body>
         <nav>
-            <h:link class="nav-item nav-item--active" value="Hem" outcome="/faces/index.xhtml"/>
-            <h:link class="nav-item" value="Reservation/Kontakt" outcome="/faces/reservation.xhtml"/>
-            <h:link class="nav-item" value="Admin" outcome="/faces/admin/index.xhtml"/>
+            <h:link outcome="/faces/index.xhtml" class="nav-item" value="Hem"/>
+            <h:link outcome="/faces/admin/index.xhtml" class="nav-item" value="Meny" id="nav-menu"/>
+            <h:link outcome="/faces/admin/events/List.xhtml" class="nav-item" value="Evenemang" id="nav-events"/>
+            <h:link outcome="/faces/admin/shifts/List.xhtml" class="nav-item" value="Schema" id="nav-shifts"/>
+            <h:link outcome="/faces/admin/personnel/List.xhtml" class="nav-item" value="Personal" id="nav-personnel"/>
         </nav>
         <header class="header">
             <div class="header-title-container">
                 <div class="header-title">
-                    <h1>Admins SKAFFERI</h1>
+                    <h1>ADMINS</h1>
+                    <h2>SKAFFERI</h2>
                 </div>
             </div>
         </header>
-        <h1>
-            <ui:insert name="title">Default Title</ui:insert>
-        </h1>
-        <section class="main-section">
-            <ui:insert name="body">Default Body</ui:insert>
-        </section>
+	<main class="wrapper-main-section">
+	    <section class="main-section">
+		<h1>
+		    <ui:insert name="title">Default Title</ui:insert>
+		</h1>
+		<ui:insert name="body">Default Body</ui:insert>
+	    </section>
+	</main>
     </h:body>
 
 </html>

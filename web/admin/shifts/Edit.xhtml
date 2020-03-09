@@ -26,15 +26,17 @@
                         <f:selectItems value="#{personnelController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
-                <h:commandLink action="#{shiftsController.update}" value="#{bundle.EditShiftsSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditShiftsViewLink}"/>
-                <br />
-                <h:commandLink action="#{shiftsController.prepareList}" value="#{bundle.EditShiftsShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{shiftsController.update}" class="button-green" value="#{bundle.EditShiftsSaveLink}"/>
                 <br />
                 <br />
+                <br />
+                <h:commandLink action="#{shiftsController.prepareList}" class="button-red" value="#{bundle.EditShiftsShowAllLink}" immediate="true"/>
             </h:form>
+            <script>
+                document.getElementById('nav-shifts').className += " nav-item--active";
+            </script>
         </ui:define>
     </ui:composition>
 

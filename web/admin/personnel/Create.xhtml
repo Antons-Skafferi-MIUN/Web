@@ -23,13 +23,15 @@
                     <h:inputText id="personnelType" value="#{personnelController.selected.personnelType}" title="#{bundle.CreatePersonnelTitle_personnelType}" required="true" requiredMessage="#{bundle.CreatePersonnelRequiredMessage_personnelType}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{personnelController.create}" value="#{bundle.CreatePersonnelSaveLink}" />
+                <h:commandLink action="#{personnelController.create}" class="button-green" value="#{bundle.CreatePersonnelSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{personnelController.prepareList}" value="#{bundle.CreatePersonnelShowAllLink}" immediate="true"/>
                 <br />
-                <br />
+                <h:commandLink action="#{personnelController.prepareList}" class="button-red" value="#{bundle.CreatePersonnelShowAllLink}" immediate="true"/>
             </h:form>
+            <script>
+                document.getElementById('nav-personnel').className += " nav-item--active";
+            </script>
         </ui:define>
     </ui:composition>
 

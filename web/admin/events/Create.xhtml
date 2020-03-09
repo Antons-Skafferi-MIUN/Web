@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/adminTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEventsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form enctype="multipart/form-data"  prependId="false">
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateEventsLabel_eventName}" for="eventName" />
+                    <h:inputText id="eventName" value="#{eventsController.selected.eventName}" title="#{bundle.CreateEventsTitle_eventName}" required="true" requiredMessage="#{bundle.CreateEventsRequiredMessage_eventName}"/>
+                    <h:outputLabel value="#{bundle.CreateEventsLabel_eventDate}" for="eventDate" />
+                    <h:inputText id="eventDate" value="#{eventsController.selected.eventDate}" title="#{bundle.CreateEventsTitle_eventDate}" required="true" requiredMessage="#{bundle.CreateEventsRequiredMessage_eventDate}"/>
+                    <h:outputLabel value="#{bundle.CreateEventsLabel_eventDescription}" for="eventDescription" />
+                    <h:inputText id="eventDescription" value="#{eventsController.selected.eventDescription}" title="#{bundle.CreateEventsTitle_eventDescription}" />
+                    <h:outputLabel value="#{bundle.CreateEventsLabel_eventPrice}" for="eventPrice" />
+                    <h:inputText id="eventPrice" value="#{eventsController.selected.eventPrice}" title="#{bundle.CreateEventsTitle_eventPrice}" required="true" requiredMessage="#{bundle.CreateEventsRequiredMessage_eventPrice}"/>
+                    <h:outputLabel value="#{bundle.CreateEventsLabel_eventTime}" for="eventTime" />
+                    <h:inputText id="eventTime" value="#{eventsController.selected.eventTime}" title="#{bundle.CreateEventsTitle_eventTime}" />
+                    <h:outputLabel value="#{bundle.CreateEventsLabel_eventImage}" for="eventImage" />
+                    <h:inputText id="eventImage" value="#{eventsController.selected.eventImage}" title="#{bundle.CreateEventsTitle_eventImage}" />
+                    <h:inputFile value="#{eventsController.uploadedFile}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{eventsController.create}" class="button-green" value="#{bundle.CreateEventsSaveLink}" />
+                <br />
+                <br />
+                <br />
+                <h:commandLink action="#{eventsController.prepareList}" class="button-red" value="#{bundle.CreateEventsShowAllLink}" immediate="true"/>
+            </h:form>
+            <script>
+                document.getElementById('nav-events').className += " nav-item--active";
+            </script>
+        </ui:define>
+    </ui:composition>
+
+</html>

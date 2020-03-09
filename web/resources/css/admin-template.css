@@ -1,0 +1,83 @@
+.wrapper-main-section {
+    position: relative;
+    margin: 4% 8%;
+    box-shadow: 3px 3px 5px gray;
+}
+
+.main-section {
+    display: grid;
+    padding: 2% 2% 10% 2%;
+    background-color: white;
+}
+
+.main-table {
+    width: 100%;
+}
+
+.main-table tr:nth-child(1) {
+    margin-bottom: 16px;
+}
+
+.main-table th {
+    text-align: left;
+    border: none;
+    opacity: 0.7;
+}
+
+.main-table tr td{
+    border: none;
+    font-family: revert;
+    padding: 5px;
+}
+
+.main-table tbody tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.main-table td:nth-last-child(1) {
+    background-color: white;
+}
+
+.icon-edit-pencil, .icon-remove-trash {
+    height: 28px;
+    width: 40px;
+    border-radius: 3px;
+    padding-top: 4px;
+}
+
+.icon-edit-pencil {
+    background-color: orange;
+}
+
+.icon-remove-trash {
+    background-color: red;
+}
+
+.button-green {
+    background-color: #27c32c;
+    margin-right: 10px;
+    box-shadow: 0 3px 0 #188015;
+    text-decoration: none;
+    /*top: 10px;*/
+}
+
+.button-red {
+    background-color: #ff3939;
+    box-shadow: 0 3px 0 #b41717;
+    /*top: 40px;*/
+    text-decoration: none;
+}
+
+.button-green, .button-red {
+    position: relative;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.button-green:active, .button-red:active {
+    box-shadow: none;
+    top: 3px;
+}

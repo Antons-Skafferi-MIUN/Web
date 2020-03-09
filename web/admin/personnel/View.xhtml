@@ -25,17 +25,20 @@
                     <h:outputText value="#{personnelController.selected.personnelType}" title="#{bundle.ViewPersonnelTitle_personnelType}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{personnelController.destroyAndView}" value="#{bundle.ViewPersonnelDestroyLink}"/>
+                <br />
+                <h:commandLink action="#{personnelController.destroyAndView}" class="button-red" value="#{bundle.ViewPersonnelDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewPersonnelEditLink}"/>
                 <br />
-                <h:commandLink action="#{personnelController.prepareCreate}" value="#{bundle.ViewPersonnelCreateLink}" />
-                <br />
-                <h:commandLink action="#{personnelController.prepareList}" value="#{bundle.ViewPersonnelShowAllLink}"/>
+                <h:link outcome="Edit" class="button-green" value="#{bundle.ViewPersonnelEditLink}"/>
                 <br />
                 <br />
-
+                <br />
+                <h:commandLink action="#{personnelController.prepareCreate}" class="button-green" value="#{bundle.ViewPersonnelCreateLink}" />
+                <br />
+                <br />
+                <br />
+                <h:commandLink action="#{personnelController.prepareList}" class="button-red" value="#{bundle.ViewPersonnelShowAllLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

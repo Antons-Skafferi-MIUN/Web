@@ -27,13 +27,15 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{shiftsController.create}" value="#{bundle.CreateShiftsSaveLink}" />
+                <h:commandLink action="#{shiftsController.create}" class="button-green" value="#{bundle.CreateShiftsSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{shiftsController.prepareList}" value="#{bundle.CreateShiftsShowAllLink}" immediate="true"/>
                 <br />
-                <br />
+                <h:commandLink action="#{shiftsController.prepareList}" class="button-red" value="#{bundle.CreateShiftsShowAllLink}" immediate="true"/>
             </h:form>
+            <script>
+                document.getElementById('nav-shifts').className += " nav-item--active";
+            </script>
         </ui:define>
     </ui:composition>
 
