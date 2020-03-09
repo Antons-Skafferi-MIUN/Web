@@ -33,10 +33,17 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListShiftsTitle_personnelId}"/>
+                                <h:outputText value="#{bundle.ListShiftsTitle_personnelIdName}"/>
                             </f:facet>
 			    
                             <h:outputText value="#{shiftsController.getNameById(item)}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListShiftsTitle_personnelId}"/>
+                            </f:facet>
+			    
+                            <h:outputText value="#{item.personnelId}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
