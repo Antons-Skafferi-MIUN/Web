@@ -35,7 +35,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Events.findByEventPrice", query = "SELECT e FROM Events e WHERE e.eventPrice = :eventPrice")
     , @NamedQuery(name = "Events.findByEventTime", query = "SELECT e FROM Events e WHERE e.eventTime = :eventTime")
     , @NamedQuery(name = "Events.findByEventImage", query = "SELECT e FROM Events e WHERE e.eventImage = :eventImage")
-    ,@NamedQuery(name = "Events.findAllReverse", query = "SELECT e FROM Events e ORDER BY e.eventId DESC")})
+    , @NamedQuery(name = "Events.findTwoFutureEvents", query = "SELECT e FROM Events e WHERE e.eventDate > CURRENT_DATE ORDER BY e.eventDate")
+    , @NamedQuery(name = "Events.findAllReverse", query = "SELECT e FROM Events e ORDER BY e.eventId DESC")})
 public class Events implements Serializable {
 
     @Column(name = "EVENT_EDITABLE")

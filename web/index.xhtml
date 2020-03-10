@@ -18,7 +18,7 @@
         <nav>
             <h:link class="nav-item nav-item--active" value="Hem" outcome="faces/index.xhtml"/>
             <h:link class="nav-item" value="Reservation/Kontakt" outcome="faces/reservation.xhtml"/>
-            <h:link class="nav-item" value="Admin" outcome="faces/admin/index.xhtml"/>
+            <h:link class="nav-item" value="Admin" outcome="faces/admin/lunches.xhtml"/>
         </nav>
         <header class="header">
             <div class="header-title-container">
@@ -28,9 +28,11 @@
                 </div>
                 <div class="header-open-hours">
                     <p class="header-open-hours-items">Måndag - Torsdag</p>
-                    <p class="header-open-hours-items">11 - 14</p>
-                    <p class="header-open-hours-items">Fredag - Söndag</p>
+                    <p class="header-open-hours-items">11 - 21</p>
+                    <p class="header-open-hours-items">Fredag - Lördag</p>
                     <p class="header-open-hours-items">11 - 23</p>
+                    <p class="header-open-hours-items">Söndag</p>
+                    <p class="header-open-hours-items">Stängt</p>
                 </div>
             </div>
         </header>
@@ -111,23 +113,16 @@
                     />
             </section>
             <section class="event-container">
-                <img
-                    src="resources/images/img-event.jpeg"
-                    alt=""
-                    class="card-image"
-                    id="event-image"
-                    />
                 <ui:repeat var="event" value="#{eventsBean.events}" varStatus="status">
+                    <h:graphicImage styleClass="card-image" library="uploads" name="#{event.eventImage}" />
                     <div class="event-card">
                         <div class="event-card-top">
-                            <img src="" alt="" />
                             <h1 class="event-title event-title--active">
-                                Evenemang #{event.eventId}
+                                #{event.eventName}
                             </h1>
-                            <h3>#{event.eventName}</h3>
                             <div class="event-date-time">
-                                Date: #{event.eventDate}
-                                Time: #{event.eventTime}
+                                Datum: #{event.eventDate}
+                                Tid: #{event.eventTime}
                             </div>
                             <h3>Pris: #{event.eventPrice} kronor</h3>
                             <p class="event-description">
