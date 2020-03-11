@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/adminTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateFoodsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateFoodsLabel_foodName}" for="foodName" />
+                    <h:inputText id="foodName" value="#{foodsController.selected.foodName}" title="#{bundle.CreateFoodsTitle_foodName}" required="true" requiredMessage="#{bundle.CreateFoodsRequiredMessage_foodName}"/>
+                    <h:outputLabel value="#{bundle.CreateFoodsLabel_foodPrice}" for="foodPrice" />
+                    <h:inputText id="foodPrice" value="#{foodsController.selected.foodPrice}" title="#{bundle.CreateFoodsTitle_foodPrice}" required="true" requiredMessage="#{bundle.CreateFoodsRequiredMessage_foodPrice}"/>
+                    <h:outputLabel value="#{bundle.CreateFoodsLabel_foodCategory}" for="foodCategory" />
+                    <h:inputText id="foodCategory" value="#{foodsController.selected.foodCategory}" title="#{bundle.CreateFoodsTitle_foodCategory}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{foodsController.create}" class="button-green" value="#{bundle.CreateFoodsSaveLink}" />
+                <br />
+                <br />
+                <br />
+                <h:commandLink action="#{foodsController.prepareList}" class="button-red" value="#{bundle.CreateFoodsShowAllLink}" immediate="true"/>
+            </h:form>
+            <script>
+                document.getElementById('nav-foods').className += " nav-item--active";
+            </script>
+        </ui:define>
+    </ui:composition>
+
+</html>

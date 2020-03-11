@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle2.CreateRestaurantTablesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle2.CreateRestaurantTablesLabel_tableId}" for="tableId" />
+                    <h:inputText id="tableId" value="#{restaurantTablesController.selected.tableId}" title="#{bundle2.CreateRestaurantTablesTitle_tableId}" required="true" requiredMessage="#{bundle2.CreateRestaurantTablesRequiredMessage_tableId}"/>
+                    <h:outputLabel value="#{bundle2.CreateRestaurantTablesLabel_tableTotalSeats}" for="tableTotalSeats" />
+                    <h:inputText id="tableTotalSeats" value="#{restaurantTablesController.selected.tableTotalSeats}" title="#{bundle2.CreateRestaurantTablesTitle_tableTotalSeats}" />
+                    <h:outputLabel value="#{bundle2.CreateRestaurantTablesLabel_tableAvailableSeats}" for="tableAvailableSeats" />
+                    <h:inputText id="tableAvailableSeats" value="#{restaurantTablesController.selected.tableAvailableSeats}" title="#{bundle2.CreateRestaurantTablesTitle_tableAvailableSeats}" />
+                    <h:outputLabel value="#{bundle2.CreateRestaurantTablesLabel_tableStatus}" for="tableStatus" />
+                    <h:inputText id="tableStatus" value="#{restaurantTablesController.selected.tableStatus}" title="#{bundle2.CreateRestaurantTablesTitle_tableStatus}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{restaurantTablesController.create}" value="#{bundle2.CreateRestaurantTablesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{restaurantTablesController.prepareList}" value="#{bundle2.CreateRestaurantTablesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle2.CreateRestaurantTablesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -44,6 +44,9 @@
                 <br />
                 <h:commandLink action="#{eventsController.prepareList}" class="button-red" value="#{bundle.ViewEventsShowAllLink}"/>
             </h:form>
+            <script>
+                document.getElementById('nav-events').className += " nav-item--active";
+            </script>
         </ui:define>
     </ui:composition>
 

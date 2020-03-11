@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/adminTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditReservationsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditReservationsLabel_reservationName}" for="reservationName" />
+                    <h:inputText id="reservationName" value="#{reservationsController.selected.reservationName}" title="#{bundle.EditReservationsTitle_reservationName}" />
+                    <h:outputLabel value="#{bundle.EditReservationsLabel_reservationPhone}" for="reservationPhone" />
+                    <h:inputText id="reservationPhone" value="#{reservationsController.selected.reservationPhone}" title="#{bundle.EditReservationsTitle_reservationPhone}" required="true" requiredMessage="#{bundle.EditReservationsRequiredMessage_reservationPhone}"/>
+                    <h:outputLabel value="#{bundle.EditReservationsLabel_reservationDate}" for="reservationDate" />
+                    <h:inputText id="reservationDate" value="#{reservationsController.selected.reservationDate}" title="#{bundle.EditReservationsTitle_reservationDate}" >
+                        <f:convertDateTime pattern="yyyy-MM-dd HH:mm" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditReservationsLabel_tableId}" for="tableId" />
+                    <h:selectOneMenu id="tableId" value="#{reservationsController.selected.tableId}" title="#{bundle.EditReservationsTitle_tableId}" required="true" requiredMessage="#{bundle.EditReservationsRequiredMessage_tableId}">
+                        <f:selectItems value="#{restaurantTablesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <br />
+                <h:commandLink action="#{reservationsController.update}" class="button-green" value="#{bundle.EditReservationsSaveLink}"/>
+                <br />
+                <br />
+                <br />
+                <h:commandLink action="#{reservationsController.prepareList}" class="button-red" value="#{bundle.EditReservationsShowAllLink}" immediate="true"/>
+            </h:form>
+            <script>
+                document.getElementById('nav-reservation').className += " nav-item--active";
+            </script>
+        </ui:define>
+    </ui:composition>
+
+</html>

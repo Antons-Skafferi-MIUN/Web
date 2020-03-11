@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle2.ListRestaurantTablesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle2.ListRestaurantTablesEmpty}" rendered="#{restaurantTablesController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{restaurantTablesController.items.rowCount > 0}">
+                    <h:outputText value="#{restaurantTablesController.pagination.pageFirstItem + 1}..#{restaurantTablesController.pagination.pageLastItem + 1}/#{restaurantTablesController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{restaurantTablesController.previous}" value="#{bundle2.Previous} #{restaurantTablesController.pagination.pageSize}" rendered="#{restaurantTablesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{restaurantTablesController.next}" value="#{bundle2.Next} #{restaurantTablesController.pagination.pageSize}" rendered="#{restaurantTablesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{restaurantTablesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle2.ListRestaurantTablesTitle_tableId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tableId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle2.ListRestaurantTablesTitle_tableTotalSeats}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tableTotalSeats}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle2.ListRestaurantTablesTitle_tableAvailableSeats}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tableAvailableSeats}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle2.ListRestaurantTablesTitle_tableStatus}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tableStatus}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{restaurantTablesController.prepareView}" value="#{bundle2.ListRestaurantTablesViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{restaurantTablesController.prepareEdit}" value="#{bundle2.ListRestaurantTablesEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{restaurantTablesController.destroy}" value="#{bundle2.ListRestaurantTablesDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{restaurantTablesController.prepareCreate}" value="#{bundle2.ListRestaurantTablesCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle2.ListRestaurantTablesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

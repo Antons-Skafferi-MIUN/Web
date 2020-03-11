@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/adminTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateDrinksTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateDrinksLabel_drinkName}" for="drinkName" />
+                    <h:inputText id="drinkName" value="#{drinksController.selected.drinkName}" title="#{bundle.CreateDrinksTitle_drinkName}" required="true" requiredMessage="#{bundle.CreateDrinksRequiredMessage_drinkName}"/>
+                    <h:outputLabel value="#{bundle.CreateDrinksLabel_drinkType}" for="drinkType" />
+                    <h:inputText id="drinkType" value="#{drinksController.selected.drinkType}" title="#{bundle.CreateDrinksTitle_drinkType}" required="true" requiredMessage="#{bundle.CreateDrinksRequiredMessage_drinkType}"/>
+                    <h:outputLabel value="#{bundle.CreateDrinksLabel_drinkCategory}" for="drinkCategory" />
+                    <h:inputText id="drinkCategory" value="#{drinksController.selected.drinkCategory}" title="#{bundle.CreateDrinksTitle_drinkCategory}" />
+                    <h:outputLabel value="#{bundle.CreateDrinksLabel_drinkPrice}" for="drinkPrice" />
+                    <h:inputText id="drinkPrice" value="#{drinksController.selected.drinkPrice}" title="#{bundle.CreateDrinksTitle_drinkPrice}" required="true" requiredMessage="#{bundle.CreateDrinksRequiredMessage_drinkPrice}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{drinksController.create}" class="button-green" value="#{bundle.CreateDrinksSaveLink}" />
+                <br />
+                <br />
+                <br />
+                <h:commandLink action="#{drinksController.prepareList}" class="button-red" value="#{bundle.CreateDrinksShowAllLink}" immediate="true"/>
+            </h:form>
+            <script>
+                document.getElementById('nav-drinks').className += " nav-item--active";
+            </script>
+        </ui:define>
+    </ui:composition>
+
+</html>

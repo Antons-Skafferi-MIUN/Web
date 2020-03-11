@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/adminTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewDrinksTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewDrinksLabel_drinkId}"/>
+                    <h:outputText value="#{drinksController.selected.drinkId}" title="#{bundle.ViewDrinksTitle_drinkId}"/>
+                    <h:outputText value="#{bundle.ViewDrinksLabel_drinkName}"/>
+                    <h:outputText value="#{drinksController.selected.drinkName}" title="#{bundle.ViewDrinksTitle_drinkName}"/>
+                    <h:outputText value="#{bundle.ViewDrinksLabel_drinkType}"/>
+                    <h:outputText value="#{drinksController.selected.drinkType}" title="#{bundle.ViewDrinksTitle_drinkType}"/>
+                    <h:outputText value="#{bundle.ViewDrinksLabel_drinkCategory}"/>
+                    <h:outputText value="#{drinksController.selected.drinkCategory}" title="#{bundle.ViewDrinksTitle_drinkCategory}"/>
+                    <h:outputText value="#{bundle.ViewDrinksLabel_drinkPrice}"/>
+                    <h:outputText value="#{drinksController.selected.drinkPrice}" title="#{bundle.ViewDrinksTitle_drinkPrice}"/>
+                </h:panelGrid>
+                <br />
+                <br />
+                <h:commandLink action="#{drinksController.destroyAndView}" class="button-red" value="#{bundle.ViewDrinksDestroyLink}"/>
+                <br />
+                <br />
+                <br />
+                <h:link outcome="Edit" class="button-green" value="#{bundle.ViewDrinksEditLink}"/>
+                <br />
+                <br />
+                <br />
+                <h:commandLink action="#{drinksController.prepareCreate}" class="button-green" value="#{bundle.ViewDrinksCreateLink}" />
+                <br />
+                <br />
+                <br />
+                <h:commandLink action="#{drinksController.prepareList}" class="button-red" value="#{bundle.ViewDrinksShowAllLink}"/>
+            </h:form>
+            <script>
+                document.getElementById('nav-drinks').className += " nav-item--active";
+            </script>
+        </ui:define>
+    </ui:composition>
+
+</html>
