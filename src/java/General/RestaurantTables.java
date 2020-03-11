@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author shawk
+ * @author mahl1400
  */
 @Entity
 @Table(name = "RESTAURANT_TABLES")

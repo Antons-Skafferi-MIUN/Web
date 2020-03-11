@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/adminTemplate.xhtml">
         <ui:define name="title">
@@ -15,10 +16,8 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditShiftsLabel_shiftDate}" for="shiftDate" />
-                    <h:inputText id="shiftDate" value="#{shiftsController.selected.shiftDate}" title="#{bundle.EditShiftsTitle_shiftDate}" required="true" requiredMessage="#{bundle.EditShiftsRequiredMessage_shiftDate}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
+                    <p:outputLabel for="popup" value="#{bundle.CreateReservationsLabel_reservationDate}" />
+		    <p:calendar id="popup" value="#{reservationsController.selected.reservationDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd" requiredMessage="Ange ett datum" pattern="yyyy-MM-dd" mindate="#{dateBean.todaysDate}"/>
                     <h:outputLabel value="#{bundle.EditShiftsLabel_shiftType}" for="shiftType" />
                     <h:inputText id="shiftType" value="#{shiftsController.selected.shiftType}" title="#{bundle.EditShiftsTitle_shiftType}" />
                     <h:outputLabel value="#{bundle.EditShiftsLabel_personnelId}" for="personnelId" />

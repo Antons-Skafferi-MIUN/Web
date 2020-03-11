@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author shawk
+ * @author mahl1400
  */
 @Entity
 @Table(name = "RESERVATIONS")

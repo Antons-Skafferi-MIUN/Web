@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author shawk
+ * @author mahl1400
  */
 @Stateless
 public class RestaurantTablesFacade extends AbstractFacade<RestaurantTables> {
