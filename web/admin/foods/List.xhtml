@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/adminTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListFoodsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListFoodsEmpty}" rendered="#{foodsController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{foodsController.items.rowCount > 0}">
+                    <h:dataTable value="#{foodsController.items}" var="item" cellpadding="2" cellspacing="0" styleClass="main-table" rules="all">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFoodsTitle_foodName}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.foodName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFoodsTitle_foodPrice}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.foodPrice}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFoodsTitle_foodCategory}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.foodCategory}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{foodsController.prepareEdit}">
+                                <h:graphicImage styleClass="icon-edit-pencil" library="images" name="noun_Pencil_629289.svg" />
+                            </h:commandLink>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{foodsController.destroy}">
+                                <h:graphicImage styleClass="icon-remove-trash" name="images/noun_Trash_2117822.svg" />
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <br />
+                <h:commandLink action="#{foodsController.prepareCreate}" class="button-green" value="#{bundle.ListFoodsCreateLink}"/>
+            </h:form>
+            <script>
+                document.getElementById('nav-foods').className += " nav-item--active";
+            </script>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/adminTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewReservationsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewReservationsLabel_reservationName}"/>
+                    <h:outputText value="#{reservationsController.selected.reservationName}" title="#{bundle.ViewReservationsTitle_reservationName}"/>
+                    <h:outputText value="#{bundle.ViewReservationsLabel_reservationPhone}"/>
+                    <h:outputText value="#{reservationsController.selected.reservationPhone}" title="#{bundle.ViewReservationsTitle_reservationPhone}"/>
+                    <h:outputText value="#{bundle.ViewReservationsLabel_reservationDate}"/>
+                    <h:outputText value="#{reservationsController.selected.reservationDate}" title="#{bundle.ViewReservationsTitle_reservationDate}">
+                        <f:convertDateTime pattern="yyyy-MM-dd HH:mm" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewReservationsLabel_tableId}"/>
+                    <h:outputText value="#{reservationsController.selected.tableId}" title="#{bundle.ViewReservationsTitle_tableId}"/>
+                </h:panelGrid>
+                <br />
+                <br />
+                <h:commandLink action="#{reservationsController.destroyAndView}" class="button-red" value="#{bundle.ViewReservationsDestroyLink}"/>
+                <br />
+                <br />
+                <br />
+                <h:link outcome="Edit" class="button-green" value="#{bundle.ViewReservationsEditLink}"/>
+                <br />
+                <br />
+                <br />
+                <h:commandLink action="#{reservationsController.prepareCreate}" class="button-green" value="#{bundle.ViewReservationsCreateLink}" />
+                <br />
+                <br />
+                <br />
+                <h:commandLink action="#{reservationsController.prepareList}" class="button-red" value="#{bundle.ViewReservationsShowAllLink}"/>
+            </h:form>
+            <script>
+                document.getElementById('nav-reservation').className += " nav-item--active";
+            </script>
+        </ui:define>
+    </ui:composition>
+
+</html>

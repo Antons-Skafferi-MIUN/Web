@@ -84,6 +84,26 @@ and open the template in the editor.
                     id="menu-image"
                     />
             </section>
+            <section class="event-container">
+                <ui:repeat var="event" value="#{eventsBean.events}" varStatus="status">
+                    <h:graphicImage styleClass="card-image" library="uploads" name="#{event.eventImage}" />
+                    <div class="event-card">
+                        <div class="event-card-top">
+                            <h1 class="event-title event-title--active">
+                                #{event.eventName}
+                            </h1>
+                            <div class="event-date-time">
+                                Datum: #{event.eventDate}
+                                Tid: #{event.eventTime}
+                            </div>
+                            <h3>Pris: #{event.eventPrice} kronor</h3>
+                            <p class="event-description">
+                                #{event.eventDescription}
+                            </p>
+                        </div>
+                    </div>
+                </ui:repeat>
+            </section>
         </main>
         <footer>
             <div class="footer-overlay">
