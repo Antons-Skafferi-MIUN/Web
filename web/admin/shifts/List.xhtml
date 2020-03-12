@@ -63,9 +63,96 @@
                 <br />
                 <br />
                 <h:commandLink action="#{shiftsController.prepareCreate}" class="button-green" value="#{bundle.ListShiftsCreateLink}"/>
+                <br />
+                <br />
             </h:form>
+            <h:dataTable value="#{columnsBean.rows}" var="row">
+                <f:facet name="header">
+                    <h:panelGrid columns="6" style="width: 100%">
+                        <h:outputLabel style="width: 100%" value="Måndag" />
+                        <h:outputLabel style="width: 100%" value="Tisdag" />
+                        <h:outputLabel style="width: 100%" value="Onsdag" />
+                        <h:outputLabel style="width: 100%" value="Torsdag" />
+                        <h:outputLabel style="width: 100%" value="Fredag" />
+                        <h:outputLabel style="width: 100%" value="Lördag" />
+                    </h:panelGrid>
+                </f:facet>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="L" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col1}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="M" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col2}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="L" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col1}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="M" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col2}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="L" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col1}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="M" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col2}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="L" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col1}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="M" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col2}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="L" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col1}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="M" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col2}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="L" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col1}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="M" />
+                    </f:facet>
+                    <h:outputLabel value="#{row.col2}" />
+                </h:column>
+
+            </h:dataTable>
             <script>
-		document.getElementById('nav-shifts').className += " nav-item--active";
+                document.getElementById('nav-shifts').className += " nav-item--active";
             </script>
         </ui:define>
     </ui:composition>

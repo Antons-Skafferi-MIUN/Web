@@ -99,7 +99,7 @@ public class EventsController implements Serializable {
 
     private Part uploadedFile;
     private String fileName;
-    private String folder = "C:/Users/mahl1400/Documents/GitHub/Web/web/resources/uploads";
+    private String folder = "C:/Users/shawk/Documents/GitHub/Web/web/resources/uploads";
 
     public Part getUploadedFile() {
         return uploadedFile;
