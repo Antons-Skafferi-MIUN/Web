@@ -30,7 +30,8 @@
                     <h:inputText id="eventPrice" value="#{eventsController.selected.eventPrice}" title="#{bundle.CreateEventsTitle_eventPrice}" required="true" requiredMessage="#{bundle.CreateEventsRequiredMessage_eventPrice}"/>
                     <h:outputLabel value="#{bundle.CreateEventsLabel_eventTime}" for="eventTime" />
                     <h:inputText id="eventTime" value="#{eventsController.selected.eventTime}" title="#{bundle.CreateEventsTitle_eventTime}" />
-                    <h:inputFile value="#{eventsController.uploadedFile}"/>
+                    <!--<h:inputFile value="# {eventsController.uploadedFile}"/>-->
+                    <p:fileUpload value="#{eventsController.file}" mode="simple" skinSimple="true"/>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{eventsController.create}" class="button-green" value="#{bundle.CreateEventsSaveLink}" />
