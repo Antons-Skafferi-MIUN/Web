@@ -9,19 +9,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="./resources/css/admin-index.css" />
-        <link rel="stylesheet" href="./resources/css/admin-navbar.css" />
-        
-        <link rel="stylesheet" href="./admin/resources/css/admin-index.css" />
-        <link rel="stylesheet" href="./admin/resources/css/admin-navbar.css" />
+        <h:outputStylesheet library="css" name="admin-index.css"/>
+        <h:outputStylesheet library="css" name="admin-navbar.css"/>
         <link rel="stylesheet" href="https://use.typekit.net/pdn3fnm.css" />
         <title>Admins Skafferi</title>
     </h:head>
     <h:body>
         <nav>
             <h:link outcome="/faces/index.xhtml" class="nav-item" value="Hem"/>
-            <h:link outcome="/faces/admin/lunches.xhtml" class="nav-item nav-item--active" value="Meny"/>
-            <h:link outcome="/faces/admin/lunches.xhtml" class="nav-item" value="Lunch" id="nav-menu"/>
+            <h:link outcome="/faces/admin/lunches.xhtml" class="nav-item nav-item--active" value="Lunch" id="nav-menu"/>
             <h:link outcome="/faces/admin/foods/List.xhtml" class="nav-item" value="Middag" id="nav-foods"/>
             <h:link outcome="/faces/admin/drinks/List.xhtml" class="nav-item" value="Dryck" id="nav-drinks"/>
             <h:link outcome="/faces/admin/events/List.xhtml" class="nav-item" value="Evenemang"/>
@@ -86,7 +82,7 @@
                                 </ui:fragment>
                             </ui:repeat> 
                         </div>
-                        <h:commandButton value="Spara ändringar" type="submit" action="#{editLunchBean.submit}" />
+                        <h:commandButton value="Spara ändringar" class="button-green" type="submit" action="#{editLunchBean.submit}" />
 
                     </h:form>
                 </div>

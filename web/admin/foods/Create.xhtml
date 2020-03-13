@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/adminTemplate.xhtml">
         <ui:define name="title">
@@ -19,8 +20,13 @@
                     <h:inputText id="foodName" value="#{foodsController.selected.foodName}" title="#{bundle.CreateFoodsTitle_foodName}" required="true" requiredMessage="#{bundle.CreateFoodsRequiredMessage_foodName}"/>
                     <h:outputLabel value="#{bundle.CreateFoodsLabel_foodPrice}" for="foodPrice" />
                     <h:inputText id="foodPrice" value="#{foodsController.selected.foodPrice}" title="#{bundle.CreateFoodsTitle_foodPrice}" required="true" requiredMessage="#{bundle.CreateFoodsRequiredMessage_foodPrice}"/>
+
                     <h:outputLabel value="#{bundle.CreateFoodsLabel_foodCategory}" for="foodCategory" />
-                    <h:inputText id="foodCategory" value="#{foodsController.selected.foodCategory}" title="#{bundle.CreateFoodsTitle_foodCategory}" />
+                    <h:selectOneMenu id="foodCategory" value="#{foodsController.selected.foodCategory}" style="width:125px">
+                        <f:selectItem itemLabel="Förrätt" itemValue="starter" />
+                        <f:selectItem itemLabel="Huvudrätt" itemValue="main" />
+                        <f:selectItem itemLabel="Dessert" itemValue="dessert" />
+                    </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{foodsController.create}" class="button-green" value="#{bundle.CreateFoodsSaveLink}" />

@@ -11,7 +11,7 @@ import javax.servlet.http.Part;
 
 /**
  *
- * @author shawk
+ * @author mahl1400
  */
 @Named(value = "uploadedFileBean")
 @ManagedBean

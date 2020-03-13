@@ -17,7 +17,7 @@
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewShiftsLabel_shiftDate}"/>
                     <h:outputText value="#{shiftsController.selected.shiftDate}" title="#{bundle.ViewShiftsTitle_shiftDate}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewShiftsLabel_shiftType}"/>
                     <h:outputText value="#{shiftsController.selected.shiftType}" title="#{bundle.ViewShiftsTitle_shiftType}"/>

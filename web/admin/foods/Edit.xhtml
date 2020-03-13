@@ -19,8 +19,12 @@
                     <h:inputText id="foodName" value="#{foodsController.selected.foodName}" title="#{bundle.EditFoodsTitle_foodName}" required="true" requiredMessage="#{bundle.EditFoodsRequiredMessage_foodName}"/>
                     <h:outputLabel value="#{bundle.EditFoodsLabel_foodPrice}" for="foodPrice" />
                     <h:inputText id="foodPrice" value="#{foodsController.selected.foodPrice}" title="#{bundle.EditFoodsTitle_foodPrice}" required="true" requiredMessage="#{bundle.EditFoodsRequiredMessage_foodPrice}"/>
-                    <h:outputLabel value="#{bundle.EditFoodsLabel_foodCategory}" for="foodCategory" />
-                    <h:inputText id="foodCategory" value="#{foodsController.selected.foodCategory}" title="#{bundle.EditFoodsTitle_foodCategory}" />
+                    <h:outputLabel value="#{bundle.CreateFoodsLabel_foodCategory}" for="foodCategory" />
+                    <h:selectOneMenu id="foodCategory" value="#{foodsController.selected.foodCategory}" style="width:125px">
+                        <f:selectItem itemLabel="Förrätt" itemValue="starter" />
+                        <f:selectItem itemLabel="Huvudrätt" itemValue="main" />
+                        <f:selectItem itemLabel="Dessert" itemValue="dessert" />
+                    </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
                 <br />

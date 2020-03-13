@@ -58,15 +58,34 @@ and open the template in the editor.
                     </div>
 
                     <ul id="dinner-list">
-                        <h3 class="menu-dinner-title">Middag</h3>
-                        <ui:repeat var="dinner" value="#{dinnerBean.dinner}" varStatus="status">
-                            <div class="menu-item-container">
-                                <li class = "dinner-item" >#{dinner.foodName}</li>
-                                <li class="dinner-price"> #{dinner.foodPrice};-</li>
-                            </div>
+                        <h3 class="menu-dinner-title">Förrätt</h3>
+                        <ui:repeat var="starter" value="#{dinnerBean.dinner}" varStatus="status">
+                            <ui:fragment rendered="#{starter.foodCategory == 'starter'}">
+                                <div class="menu-item-container">
+                                    <li class = "dinner-item" >#{starter.foodName}</li>
+                                    <li class="dinner-price"> #{starter.foodPrice};-</li>
+                                </div>
+                            </ui:fragment>
+                        </ui:repeat>
+                        <h3 class="menu-dinner-title">Huvudrätt</h3>
+                        <ui:repeat var="main" value="#{dinnerBean.dinner}" varStatus="status">
+                            <ui:fragment rendered="#{main.foodCategory == 'main'}">
+                                <div class="menu-item-container">
+                                    <li class = "dinner-item" >#{main.foodName}</li>
+                                    <li class="dinner-price"> #{main.foodPrice};-</li>
+                                </div>
+                            </ui:fragment>
+                        </ui:repeat>
+                        <h3 class="menu-dinner-title">Dessert</h3>
+                        <ui:repeat var="dessert" value="#{dinnerBean.dinner}" varStatus="status">
+                            <ui:fragment rendered="#{dessert.foodCategory == 'dessert'}">
+                                <div class="menu-item-container">
+                                    <li class = "dinner-item" >#{dessert.foodName}</li>
+                                    <li class="dinner-price"> #{dessert.foodPrice};-</li>
+                                </div>
+                            </ui:fragment>
                         </ui:repeat>
                     </ul>
-
                     <ul id="drinks-list">
                         <h3 class="menu-drink-title">Dryck</h3>
                         <ui:repeat var="drinks" value="#{drinksBean.drinks}" varStatus="status">

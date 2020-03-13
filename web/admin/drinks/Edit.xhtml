@@ -19,8 +19,13 @@
                     <h:inputText id="drinkName" value="#{drinksController.selected.drinkName}" title="#{bundle.EditDrinksTitle_drinkName}" required="true" requiredMessage="#{bundle.EditDrinksRequiredMessage_drinkName}"/>
                     <h:outputLabel value="#{bundle.EditDrinksLabel_drinkType}" for="drinkType" />
                     <h:inputText id="drinkType" value="#{drinksController.selected.drinkType}" title="#{bundle.EditDrinksTitle_drinkType}" required="true" requiredMessage="#{bundle.EditDrinksRequiredMessage_drinkType}"/>
-                    <h:outputLabel value="#{bundle.EditDrinksLabel_drinkCategory}" for="drinkCategory" />
-                    <h:inputText id="drinkCategory" value="#{drinksController.selected.drinkCategory}" title="#{bundle.EditDrinksTitle_drinkCategory}" />
+                    <h:outputLabel value="#{bundle.CreateDrinksLabel_drinkCategory}" for="drinkCategory" />
+                    <h:selectOneMenu id="drinkCategory" value="#{drinksController.selected.drinkCategory}" style="width:125px">
+                        <f:selectItem itemLabel="Alkohol" itemValue="alkohol" />
+                        <f:selectItem itemLabel="Alkoholfritt" itemValue="alkoholfritt" />
+                        <f:selectItem itemLabel="Kaffe" itemValue="kaffe" />
+                        <f:selectItem itemLabel="Sprit" itemValue="sprit" />
+                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.EditDrinksLabel_drinkPrice}" for="drinkPrice" />
                     <h:inputText id="drinkPrice" value="#{drinksController.selected.drinkPrice}" title="#{bundle.EditDrinksTitle_drinkPrice}" required="true" requiredMessage="#{bundle.EditDrinksRequiredMessage_drinkPrice}"/>
                 </h:panelGrid>

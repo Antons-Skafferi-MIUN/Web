@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form enctype="multipart/form-data"  prependId="false">
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventName}" for="eventName" />
                     <h:inputText id="eventName" value="#{eventsController.selected.eventName}" title="#{bundle.EditEventsTitle_eventName}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventName}"/>
@@ -25,8 +25,7 @@
                     <h:inputText id="eventPrice" value="#{eventsController.selected.eventPrice}" title="#{bundle.EditEventsTitle_eventPrice}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventPrice}"/>
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventTime}" for="eventTime" />
                     <h:inputText id="eventTime" value="#{eventsController.selected.eventTime}" title="#{bundle.EditEventsTitle_eventTime}" />
-                    <h:outputLabel value="#{bundle.EditEventsLabel_eventImage}" for="eventImage" />
-                    <h:inputText id="eventImage" value="#{eventsController.selected.eventImage}" title="#{bundle.EditEventsTitle_eventImage}" />
+                    <h:inputFile value="#{eventsController.uploadedFile}"/>
                 </h:panelGrid>
                 <br />
                 <br />
