@@ -25,7 +25,8 @@
                     <h:inputText id="eventPrice" value="#{eventsController.selected.eventPrice}" title="#{bundle.EditEventsTitle_eventPrice}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventPrice}"/>
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventTime}" for="eventTime" />
                     <h:inputText id="eventTime" value="#{eventsController.selected.eventTime}" title="#{bundle.EditEventsTitle_eventTime}" />
-                    <h:inputFile value="#{eventsController.uploadedFile}"/>
+                    <h:outputLabel value="#{bundle.CreateEventsLabel_eventImage}" for="eventImage" />
+                    <h:inputText id="eventImage" value="#{eventsController.selected.eventImage}" title="#{bundle.CreateEventsTitle_eventImage}" />
                 </h:panelGrid>
                 <br />
                 <br />
