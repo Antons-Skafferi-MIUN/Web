@@ -114,7 +114,7 @@
             </section>
             <section class="event-container">
                 <ui:repeat var="event" value="#{eventsBean.events}" varStatus="status">
-                    <h:graphicImage styleClass="card-image" library="uploads" name="#{event.eventImage}" />
+                    <h:graphicImage styleClass="card-image" value = "#{event.eventImage}"/>
                     <div class="event-card">
                         <div class="event-card-top">
                             <h1 class="event-title event-title--active">
