@@ -6,7 +6,7 @@
 
 .main-section {
     display: grid;
-    padding: 2% 2% 10% 2%;
+    padding: 2% 2% 5% 2%;
     background-color: white;
 }
 
@@ -21,7 +21,7 @@
 .main-table th {
     text-align: left;
     border: none;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .main-table tr td{
@@ -68,16 +68,37 @@
     text-decoration: none;
 }
 
-.button-green, .button-red {
+.button-blue {
+    background-color: #0382A2;
+    box-shadow: 0 3px 0 #03647d;
+    text-decoration: none;
+}
+
+.button-green, .button-red, .button-blue {
     position: relative;
     border: none;
     border-radius: 4px;
     padding: 8px;
     cursor: pointer;
     color: white;
+    font-family: arial
 }
 
-.button-green:active, .button-red:active {
+.button-green:active, .button-red:active, .button-blue:active {
     box-shadow: none;
     top: 3px;
+}
+
+#j_idt17 input, #j_idt17 select, #j_idt17 option, #j_idt17 textarea{
+    border-radius: 3px;
+    border: 1px solid gray;
+    border-top: 2px solid gray;
+    padding: 5px;
+    font-family: arial;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.view-grid td {
+    padding-left: 0px;
 }

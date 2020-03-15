@@ -14,7 +14,7 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
+                <h:panelGrid class="view-grid" columns="2" cellpadding="10">
                     <h:outputText value="#{bundle2.ViewRestaurantTablesLabel_tableId}"/>
                     <h:outputText value="#{restaurantTablesController.selected.tableId}" title="#{bundle2.ViewRestaurantTablesTitle_tableId}"/>
                     <h:outputText value="#{bundle2.ViewRestaurantTablesLabel_tableTotalSeats}"/>

@@ -1,6 +1,7 @@
 package jsf;
 
 import General.Shifts;
+import beans.DayOfWeekBean;
 import jsf.util.JsfUtil;
 import jsf.util.PaginationHelper;
 import session.ShiftsFacade;
@@ -33,6 +34,7 @@ public class ShiftsController implements Serializable {
     private int selectedItemIndex;
     @PersistenceContext(unitName = "AntonSkafferiWebPU")
     private EntityManager em;
+    private DayOfWeekBean dowb = new DayOfWeekBean();
 
     public ShiftsController() {
     }

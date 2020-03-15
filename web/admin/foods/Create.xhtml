@@ -15,7 +15,7 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
+                <h:panelGrid columns="1">
                     <h:outputLabel value="#{bundle.CreateFoodsLabel_foodName}" for="foodName" />
                     <h:inputText id="foodName" value="#{foodsController.selected.foodName}" title="#{bundle.CreateFoodsTitle_foodName}" required="true" requiredMessage="#{bundle.CreateFoodsRequiredMessage_foodName}"/>
                     <h:outputLabel value="#{bundle.CreateFoodsLabel_foodPrice}" for="foodPrice" />

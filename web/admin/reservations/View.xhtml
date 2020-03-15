@@ -14,7 +14,7 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
+                <h:panelGrid class="view-grid" columns="2" cellpadding="10">
                     <h:outputText value="#{bundle.ViewReservationsLabel_reservationName}"/>
                     <h:outputText value="#{reservationsController.selected.reservationName}" title="#{bundle.ViewReservationsTitle_reservationName}"/>
                     <h:outputText value="#{bundle.ViewReservationsLabel_reservationPhone}"/>

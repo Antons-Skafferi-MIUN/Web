@@ -3,6 +3,7 @@ package beans;
 //import General.Event;
 import General.Events;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +21,7 @@ import javax.persistence.TypedQuery;
 @Dependent
 public class EventTableBean implements Serializable{
     private List<Events> eventsList;
-    private String date;
+    private Date date;
     private String time;
     private String name;
     private String description;
@@ -66,10 +67,10 @@ public class EventTableBean implements Serializable{
     public void submitted() {
         System.out.println("Form was submitted!");
         System.out.println(name + ", " + time + ", " + date + ", " + description + ", " + price + ", " + image);
-        Events event = new Events(name, time, date, description, price, image);
+//        Events event = new Events(name, time, date, description, price, image);
         try {
             utx.begin();
-            em.persist(event);
+//            em.persist(event);
             utx.commit();
         } catch (Exception e) {
             System.err.println(e);
@@ -110,11 +111,11 @@ public class EventTableBean implements Serializable{
 	return null;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -160,7 +161,7 @@ public class EventTableBean implements Serializable{
     
     public void addPerson(){
         Events event = new Events();
-        event.setEventDate(date);
+//        event.setEventDate(date);
         event.setEventTime(time);
         event.setEventName(name);
         event.setEventDescription(description);

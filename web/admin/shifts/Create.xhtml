@@ -15,7 +15,7 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
+                <h:panelGrid columns="1">
                     <p:outputLabel for="popup" value="#{bundle.CreateReservationsLabel_reservationDate}" />
 		    <p:calendar id="popup" value="#{reservationsController.selected.reservationDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd" requiredMessage="Ange ett datum" pattern="yyyy-MM-dd" mindate="#{dateBean.todaysDate}"/>
                     <h:outputLabel value="#{bundle.CreateShiftsLabel_shiftType}" for="shiftType" />

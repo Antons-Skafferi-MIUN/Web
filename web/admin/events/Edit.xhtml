@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/adminTemplate.xhtml">
         <ui:define name="title">
@@ -14,11 +14,11 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form enctype="multipart/form-data"  prependId="false">
-                <h:panelGrid columns="2">
+                <h:panelGrid columns="1">
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventName}" for="eventName" />
                     <h:inputText id="eventName" value="#{eventsController.selected.eventName}" title="#{bundle.EditEventsTitle_eventName}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventName}"/>
-                    <h:outputLabel value="#{bundle.EditEventsLabel_eventDate}" for="eventDate" />
-                    <h:inputText id="eventDate" value="#{eventsController.selected.eventDate}" title="#{bundle.EditEventsTitle_eventDate}" required="true" requiredMessage="#{bundle.EditEventsRequiredMessage_eventDate}"/>
+                    <p:outputLabel for="eventDate" value="#{bundle.CreateEventsLabel_eventDate}" />
+		    <p:calendar id="eventDate" value="#{eventsController.selected.eventDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd" requiredMessage="Ange ett datum" pattern="yyyy-MM-dd" mindate="#{dateBean.todaysDate}" locale="se"/>
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventDescription}" for="eventDescription" />
                     <h:inputText id="eventDescription" value="#{eventsController.selected.eventDescription}" title="#{bundle.EditEventsTitle_eventDescription}" />
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventPrice}" for="eventPrice" />
@@ -26,7 +26,7 @@
                     <h:outputLabel value="#{bundle.EditEventsLabel_eventTime}" for="eventTime" />
                     <h:inputText id="eventTime" value="#{eventsController.selected.eventTime}" title="#{bundle.EditEventsTitle_eventTime}" />
                     <h:outputLabel value="#{bundle.CreateEventsLabel_eventImage}" for="eventImage" />
-                    <h:inputText id="eventImage" value="#{eventsController.selected.eventImage}" title="#{bundle.CreateEventsTitle_eventImage}" />
+                    <h:inputTextarea id="eventImage" value="#{eventsController.selected.eventImage}" title="#{bundle.CreateEventsTitle_eventImage}" rows="4" cols="40" style="resize: none;"/>
                 </h:panelGrid>
                 <br />
                 <br />

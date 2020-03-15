@@ -16,6 +16,11 @@
                 </h:panelGroup>
                 <h:outputText escape="false" value="#{bundle.ListEventsEmpty}" rendered="#{eventsController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{eventsController.items.rowCount > 0}">
+		    <h:outputText value="#{eventsController.pagination.itemsCount} resultat"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{eventsController.previous}" value="#{bundle.Previous} #{eventsController.pagination.pageSize}" rendered="#{eventsController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{eventsController.next}" value="#{bundle.Next} #{eventsController.pagination.pageSize}" rendered="#{eventsController.pagination.hasNextPage}"/>&nbsp;
+		    <br />
+		    <br />
                     <h:dataTable value="#{eventsController.items}" var="item" cellpadding="2" cellspacing="0" styleClass="main-table" rules="all">
                         <h:column>
                             <f:facet name="header">
@@ -27,7 +32,9 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEventsTitle_eventDate}"/>
                             </f:facet>
-                            <h:outputText value="#{item.eventDate}"/>
+                            <h:outputText value="#{item.eventDate}">
+				<f:convertDateTime type="date" pattern="yyyy-MM-dd"/>
+			    </h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -70,6 +77,10 @@
                 <br />
                 <br />
                 <h:commandLink action="#{eventsController.prepareCreate}" class="button-green" value="#{bundle.ListEventsCreateLink}"/>
+		<br />
+                <br />
+                <br />
+                <h:commandLink action="#{eventsController.prepareList}" class="button-green" value="Uppdatera lista" immediate="true"/>
             </h:form>
             <script>
                 document.getElementById('nav-events').className += " nav-item--active";

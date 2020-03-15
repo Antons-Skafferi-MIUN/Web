@@ -16,6 +16,11 @@
                 </h:panelGroup>
                 <h:outputText escape="false" value="#{bundle.ListReservationsEmpty}" rendered="#{reservationsController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{reservationsController.items.rowCount > 0}">
+		    <h:outputText value="#{reservationsController.pagination.itemsCount} resultat"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{reservationsController.previous}" value="#{bundle.Previous} #{reservationsController.pagination.pageSize}" rendered="#{reservationsController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{reservationsController.next}" value="#{bundle.Next} #{reservationsController.pagination.pageSize}" rendered="#{reservationsController.pagination.hasNextPage}"/>&nbsp;
+		    <br />
+		    <br />
                     <h:dataTable value="#{reservationsController.items}" var="item" cellpadding="2" cellspacing="0" styleClass="main-table" rules="all">
                         <h:column>
                             <f:facet name="header">
@@ -63,7 +68,7 @@
                 <br />
                 <br />
                 <br />
-                <h:commandLink action="#{reservationsController.prepareList}" class="button-green" value="Uppdatera" immediate="true"/>
+                <h:commandLink action="#{reservationsController.prepareList}" class="button-green" value="Uppdatera lista" immediate="true"/>
             </h:form>
             <script>
                 document.getElementById('nav-reservation').className += " nav-item--active";

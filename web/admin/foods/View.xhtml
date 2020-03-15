@@ -10,20 +10,16 @@
             <h:outputText value="#{bundle.ViewFoodsTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewFoodsLabel_foodId}"/>
-                    <h:outputText value="#{foodsController.selected.foodId}" title="#{bundle.ViewFoodsTitle_foodId}"/>
-                    <h:outputText value="#{bundle.ViewFoodsLabel_foodName}"/>
-                    <h:outputText value="#{foodsController.selected.foodName}" title="#{bundle.ViewFoodsTitle_foodName}"/>
+                <h:panelGrid class="view-grid" columns="2" cellpadding="10">
                     <h:outputText value="#{bundle.ViewFoodsLabel_foodPrice}"/>
                     <h:outputText value="#{foodsController.selected.foodPrice}" title="#{bundle.ViewFoodsTitle_foodPrice}"/>
                     <h:outputText value="#{bundle.ViewFoodsLabel_foodCategory}"/>
                     <h:outputText value="#{foodsController.selected.foodCategory}" title="#{bundle.ViewFoodsTitle_foodCategory}"/>
                 </h:panelGrid>
+		<h:panelGroup id="messagePanel" layout="block">
+		    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+		</h:panelGroup>
                 <br />
                 <br />
                 <h:commandLink action="#{foodsController.destroyAndView}" class="button-red" value="#{bundle.ViewFoodsDestroyLink}"/>
@@ -41,7 +37,7 @@
                 <h:commandLink action="#{foodsController.prepareList}" class="button-red" value="#{bundle.ViewFoodsShowAllLink}"/>
             </h:form>
             <script>
-                document.getElementById('nav-foods').className += " nav-item--active";
+		document.getElementById('nav-foods').className += " nav-item--active";
             </script>
         </ui:define>
     </ui:composition>
