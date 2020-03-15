@@ -6,6 +6,7 @@
 package General;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +16,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -39,6 +42,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Events.findAllReverse", query = "SELECT e FROM Events e ORDER BY e.eventId DESC")})
 public class Events implements Serializable {
 
+    @Column(name = "EVENT_DATE")
+    @Temporal(TemporalType.DATE)
+    private Date eventDate;
+
     @Column(name = "EVENT_EDITABLE")
     private Boolean eventEditable;
 
@@ -53,11 +60,6 @@ public class Events implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "EVENT_NAME")
     private String eventName;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 10)
-    @Column(name = "EVENT_DATE")
-    private String eventDate;
     @Size(max = 100)
     @Column(name = "EVENT_DESCRIPTION")
     private String eventDescription;
@@ -68,7 +70,7 @@ public class Events implements Serializable {
     @Size(max = 5)
     @Column(name = "EVENT_TIME")
     private String eventTime;
-    @Size(max = 100)
+    @Size(max = 255)
     @Column(name = "EVENT_IMAGE")
     private String eventImage;
 
@@ -87,7 +89,7 @@ public class Events implements Serializable {
         this.eventId = eventId;
     }
 
-    public Events(String eventName, String eventTime, String eventDate, String eventDescription, int eventPrice, String eventImage) {
+    public Events(String eventName, String eventTime, Date eventDate, String eventDescription, int eventPrice, String eventImage) {
         this.eventName = eventName;
         this.eventTime = eventTime;
         this.eventDate = eventDate;
@@ -110,14 +112,6 @@ public class Events implements Serializable {
 
     public void setEventName(String eventName) {
         this.eventName = eventName;
-    }
-
-    public String getEventDate() {
-        return eventDate;
-    }
-
-    public void setEventDate(String eventDate) {
-        this.eventDate = eventDate;
     }
 
     public String getEventDescription() {
@@ -184,5 +178,12 @@ public class Events implements Serializable {
     public void setEventEditable(Boolean eventEditable) {
         this.eventEditable = eventEditable;
     }
+    
+    public Date getEventDate() {
+	return eventDate;
+    }
 
+    public void setEventDate(Date eventDate) {
+	this.eventDate = eventDate;
+    }
 }

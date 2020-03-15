@@ -17,7 +17,7 @@
     <h:body>
         <nav>
             <h:link class="nav-item nav-item--active" value="Hem" outcome="faces/index.xhtml"/>
-            <h:link class="nav-item" value="Reservation/Kontakt" outcome="faces/reservation.xhtml"/>
+            <h:link class="nav-item" value="Boka bord" outcome="faces/reservation.xhtml"/>
             <h:link class="nav-item" value="Admin" outcome="faces/admin/lunches.xhtml"/>
         </nav>
         <header class="header">
@@ -50,7 +50,7 @@
                     </div>
                     <h:form>
 
-                        <p class="menu-week">Week <h:outputText value='#{lunchBean.week}'/></p>
+                        <p class="menu-week">Vecka <h:outputText value='#{lunchBean.week}'/></p>
                     </h:form>
                     <ul class="menu-item-list">
                         <li class="menu-item #{lunchBean.getDayClass(2)}">

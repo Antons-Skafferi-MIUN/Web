@@ -14,11 +14,13 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
+                <h:panelGrid class="view-grid" columns="2" cellpadding="10">
                     <h:outputText value="#{bundle.ViewEventsLabel_eventName}"/>
                     <h:outputText value="#{eventsController.selected.eventName}" title="#{bundle.ViewEventsTitle_eventName}"/>
                     <h:outputText value="#{bundle.ViewEventsLabel_eventDate}"/>
-                    <h:outputText value="#{eventsController.selected.eventDate}" title="#{bundle.ViewEventsTitle_eventDate}"/>
+                    <h:outputText value="#{eventsController.selected.eventDate}" title="#{bundle.ViewEventsTitle_eventDate}">
+			<f:convertDateTime type="date" pattern="yyyy-MM-dd"/>
+		    </h:outputText>
                     <h:outputText value="#{bundle.ViewEventsLabel_eventDescription}"/>
                     <h:outputText value="#{eventsController.selected.eventDescription}" title="#{bundle.ViewEventsTitle_eventDescription}"/>
                     <h:outputText value="#{bundle.ViewEventsLabel_eventPrice}"/>
@@ -45,7 +47,7 @@
                 <h:commandLink action="#{eventsController.prepareList}" class="button-red" value="#{bundle.ViewEventsShowAllLink}"/>
             </h:form>
             <script>
-                document.getElementById('nav-events').className += " nav-item--active";
+		document.getElementById('nav-events').className += " nav-item--active";
             </script>
         </ui:define>
     </ui:composition>

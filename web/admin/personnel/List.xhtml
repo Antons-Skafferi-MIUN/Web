@@ -16,6 +16,11 @@
                 </h:panelGroup>
                 <h:outputText escape="false" value="#{bundle.ListPersonnelEmpty}" rendered="#{personnelController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{personnelController.items.rowCount > 0}">
+		    <h:outputText value="#{personnelController.pagination.itemsCount} resultat"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{personnelController.previous}" value="#{bundle.Previous} #{personnelController.pagination.pageSize}" rendered="#{personnelController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{personnelController.next}" value="#{bundle.Next} #{personnelController.pagination.pageSize}" rendered="#{personnelController.pagination.hasNextPage}"/>&nbsp;
+		    <br />
+		    <br />
                     <h:dataTable value="#{personnelController.items}" var="item" cellpadding="2" cellspacing="0" styleClass="main-table" rules="all">
                         <h:column>
                             <f:facet name="header">
@@ -58,6 +63,10 @@
                 <br />
                 <br />
                 <h:commandLink action="#{personnelController.prepareCreate}" class="button-green" value="#{bundle.ListPersonnelCreateLink}"/>
+		<br />
+                <br />
+                <br />
+                <h:commandLink action="#{personnelController.prepareList}" class="button-green" value="Uppdatera lista" immediate="true"/>
             </h:form>
             <script>
                 document.getElementById('nav-personnel').className += " nav-item--active";

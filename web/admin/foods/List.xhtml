@@ -16,6 +16,11 @@
                 </h:panelGroup>
                 <h:outputText escape="false" value="#{bundle.ListFoodsEmpty}" rendered="#{foodsController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{foodsController.items.rowCount > 0}">
+		    <h:outputText value="#{foodsController.pagination.itemsCount} resultat"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{foodsController.previous}" value="#{bundle.Previous} #{foodsController.pagination.pageSize}" rendered="#{foodsController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{foodsController.next}" value="#{bundle.Next} #{foodsController.pagination.pageSize}" rendered="#{foodsController.pagination.hasNextPage}"/>&nbsp;
+		    <br />
+		    <br />
                     <h:dataTable value="#{foodsController.items}" var="item" cellpadding="2" cellspacing="0" styleClass="main-table" rules="all">
                         <h:column>
                             <f:facet name="header">
@@ -52,6 +57,10 @@
                 <br />
                 <br />
                 <h:commandLink action="#{foodsController.prepareCreate}" class="button-green" value="#{bundle.ListFoodsCreateLink}"/>
+		<br />
+                <br />
+                <br />
+                <h:commandLink action="#{foodsController.prepareList}" class="button-green" value="Uppdatera lista" immediate="true"/>
             </h:form>
             <script>
                 document.getElementById('nav-foods').className += " nav-item--active";

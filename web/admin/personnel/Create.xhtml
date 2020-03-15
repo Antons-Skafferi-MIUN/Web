@@ -14,13 +14,16 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">                    
+                <h:panelGrid columns="1">                    
                     <h:outputLabel value="#{bundle.CreatePersonnelLabel_personnelName}" for="personnelName" />
                     <h:inputText id="personnelName" value="#{personnelController.selected.personnelName}" title="#{bundle.CreatePersonnelTitle_personnelName}" required="true" requiredMessage="#{bundle.CreatePersonnelRequiredMessage_personnelName}"/>
                     <h:outputLabel value="#{bundle.CreatePersonnelLabel_personnelPhone}" for="personnelPhone" />
                     <h:inputText id="personnelPhone" value="#{personnelController.selected.personnelPhone}" title="#{bundle.CreatePersonnelTitle_personnelPhone}" required="true" requiredMessage="#{bundle.CreatePersonnelRequiredMessage_personnelPhone}"/>
                     <h:outputLabel value="#{bundle.CreatePersonnelLabel_personnelType}" for="personnelType" />
-                    <h:inputText id="personnelType" value="#{personnelController.selected.personnelType}" title="#{bundle.CreatePersonnelTitle_personnelType}" required="true" requiredMessage="#{bundle.CreatePersonnelRequiredMessage_personnelType}"/>
+		    <h:selectOneMenu id="personnelType" value="#{personnelController.selected.personnelType}" style="width:200px">
+                        <f:selectItem itemLabel="Kökspersonal" itemValue="kitchen" />
+                        <f:selectItem itemLabel="Serveringspersonal" itemValue="restaurant" />
+                    </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{personnelController.create}" class="button-green" value="#{bundle.CreatePersonnelSaveLink}" />

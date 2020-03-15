@@ -14,11 +14,17 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
+                <h:panelGrid columns="1">
                     <h:outputLabel value="#{bundle.CreateDrinksLabel_drinkName}" for="drinkName" />
                     <h:inputText id="drinkName" value="#{drinksController.selected.drinkName}" title="#{bundle.CreateDrinksTitle_drinkName}" required="true" requiredMessage="#{bundle.CreateDrinksRequiredMessage_drinkName}"/>
                     <h:outputLabel value="#{bundle.CreateDrinksLabel_drinkType}" for="drinkType" />
-                    <h:inputText id="drinkType" value="#{drinksController.selected.drinkType}" title="#{bundle.CreateDrinksTitle_drinkType}" required="true" requiredMessage="#{bundle.CreateDrinksRequiredMessage_drinkType}"/>
+                    <h:selectOneMenu id="drinkType" value="#{drinksController.selected.drinkType}" style="width:125px">
+                        <f:selectItem itemLabel="Glas" itemValue="glas" />
+                        <f:selectItem itemLabel="Flaska" itemValue="flaska" />
+                        <f:selectItem itemLabel="Kopp" itemValue="kopp" />
+                        <f:selectItem itemLabel="4cl" itemValue="4cl" />
+                        <f:selectItem itemLabel="6cl" itemValue="6cl" />
+                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.CreateDrinksLabel_drinkCategory}" for="drinkCategory" />
                     <h:selectOneMenu id="drinkCategory" value="#{drinksController.selected.drinkCategory}" style="width:125px">
                         <f:selectItem itemLabel="Alkohol" itemValue="alkohol" />

@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Shifts.findAll", query = "SELECT s FROM Shifts s")
     , @NamedQuery(name = "Shifts.findByShiftId", query = "SELECT s FROM Shifts s WHERE s.shiftId = :shiftId")
     , @NamedQuery(name = "Shifts.findByShiftDate", query = "SELECT s FROM Shifts s WHERE s.shiftDate = :shiftDate")
-    , @NamedQuery(name = "Shifts.findByShiftDateOrder", query = "SELECT s FROM Shifts s ORDER BY s.shiftDate DESC")
+    , @NamedQuery(name = "Shifts.findByShiftDateOrder", query = "SELECT s FROM Shifts s ORDER BY s.shiftDate ASC, s.shiftType ASC")
     , @NamedQuery(name = "Shifts.findByShiftType", query = "SELECT s FROM Shifts s WHERE s.shiftType = :shiftType")})
 public class Shifts implements Serializable {
 

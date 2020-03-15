@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/adminTemplate.xhtml">
         <ui:define name="title">
@@ -16,6 +17,11 @@
                 </h:panelGroup>
                 <h:outputText escape="false" value="#{bundle.ListDrinksEmpty}" rendered="#{drinksController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{drinksController.items.rowCount > 0}">
+		    <h:outputText value="#{drinksController.pagination.itemsCount} resultat"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{drinksController.previous}" value="#{bundle.Previous} #{drinksController.pagination.pageSize}" rendered="#{drinksController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{drinksController.next}" value="#{bundle.Next} #{drinksController.pagination.pageSize}" rendered="#{drinksController.pagination.hasNextPage}"/>&nbsp;
+		    <br />
+		    <br />
                     <h:dataTable value="#{drinksController.items}" var="item" cellpadding="2" cellspacing="0" styleClass="main-table" rules="all">
                         <h:column>
                             <f:facet name="header">
@@ -58,6 +64,10 @@
                 <br />
                 <br />
                 <h:commandLink action="#{drinksController.prepareCreate}" class="button-green" value="#{bundle.ListDrinksCreateLink}"/>
+		<br />
+                <br />
+                <br />
+                <h:commandLink action="#{drinksController.prepareList}" class="button-green" value="Uppdatera lista" immediate="true"/>
             </h:form>
             <script>
                 document.getElementById('nav-drinks').className += " nav-item--active";

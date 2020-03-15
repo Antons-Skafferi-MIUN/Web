@@ -17,6 +17,11 @@
                 </h:panelGroup>
                 <h:outputText escape="false" value="#{bundle.ListShiftsEmpty}" rendered="#{shiftsController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{shiftsController.items.rowCount > 0}">
+		    <h:outputText value="#{shiftsController.pagination.itemsCount} resultat"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{shiftsController.previous}" value="#{bundle.Previous} #{shiftsController.pagination.pageSize}" rendered="#{shiftsController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink class="button-blue" action="#{shiftsController.next}" value="#{bundle.Next} #{shiftsController.pagination.pageSize}" rendered="#{shiftsController.pagination.hasNextPage}"/>&nbsp;
+		    <br />
+		    <br />
                     <h:dataTable value="#{shiftsController.items}" var="item" cellpadding="2" cellspacing="0" styleClass="main-table" rules="all">
                         <h:column>
                             <f:facet name="header">
@@ -64,96 +69,111 @@
                 <br />
                 <h:commandLink action="#{shiftsController.prepareCreate}" class="button-green" value="#{bundle.ListShiftsCreateLink}"/>
                 <br />
-                <br />
-            </h:form>
-            <h:dataTable value="#{columnsBean.rows}" var="row">
-                <f:facet name="header">
-                    <h:panelGrid columns="6" style="width: 100%">
-                        <h:outputLabel style="width: 100%" value="Måndag" />
-                        <h:outputLabel style="width: 100%" value="Tisdag" />
-                        <h:outputLabel style="width: 100%" value="Onsdag" />
-                        <h:outputLabel style="width: 100%" value="Torsdag" />
-                        <h:outputLabel style="width: 100%" value="Fredag" />
-                        <h:outputLabel style="width: 100%" value="Lördag" />
-                    </h:panelGrid>
-                </f:facet>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="L" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col1}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="M" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col2}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="L" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col1}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="M" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col2}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="L" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col1}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="M" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col2}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="L" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col1}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="M" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col2}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="L" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col1}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="M" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col2}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="L" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col1}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="M" />
-                    </f:facet>
-                    <h:outputLabel value="#{row.col2}" />
-                </h:column>
+		<br />
+		<br />
+		<h:commandLink action="#{shiftsController.prepareList}" class="button-green" value="Uppdatera lista" immediate="true"/>
+		<br />
+		<br />
+		<br />
+	    </h:form>
+<!--	    <h:form>
+		<h:dataTable value="# {shiftsController.items}" var="item">
+		    <f:facet name="header">
+			<h:panelGrid columns="7" style="width: 100%">
+			    <h:outputLabel style="width: 100%" value="Schema" />
+			    <h:outputLabel style="width: 100%" value="# {dayOfWeekBean.monday}" />
+			    <h:outputLabel style="width: 100%" value="# {dayOfWeekBean.tuesday}" />
+			    <h:outputLabel style="width: 100%" value="# {dayOfWeekBean.wednesday}" />
+			    <h:outputLabel style="width: 100%" value="# {dayOfWeekBean.thursday}" />
+			    <h:outputLabel style="width: 100%" value="# {dayOfWeekBean.friday}" />
+			    <h:outputLabel style="width: 100%" value="# {dayOfWeekBean.saturday}" />
+			</h:panelGrid>
+		    </f:facet>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="# {bundle.ListShiftsTitle_personnelIdName}"/>
+			</f:facet>
 
-            </h:dataTable>
-            <script>
-                document.getElementById('nav-shifts').className += " nav-item--active";
-            </script>
+			<h:outputText value="# {shiftsController.getNameById(item)}"/>
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="L" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="M" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="L" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="M" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="L" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="M" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="L" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="M" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="L" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="M" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="L" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+		    <h:column>
+			<f:facet name="header">
+			    <h:outputText value="M" />
+			</f:facet>
+			<h:outputLabel value="" />
+		    </h:column>
+
+		</h:dataTable>
+	    </h:form>-->
+	    <script>
+		document.getElementById('nav-shifts').className += " nav-item--active";
+	    </script>
         </ui:define>
     </ui:composition>
 
