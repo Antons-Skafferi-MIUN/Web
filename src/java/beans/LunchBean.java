@@ -38,8 +38,6 @@ public final class LunchBean {
     }
 
     public String getDayClass(int i) {
-        System.out.println(i);
-        System.out.println(getDay());
         if (i == getDay()) {
             return "menu-item--current";
         } else if (i < getDay()) {

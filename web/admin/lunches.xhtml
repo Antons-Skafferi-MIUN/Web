@@ -16,14 +16,14 @@
     </h:head>
     <h:body>
         <nav>
-            <h:link outcome="/faces/index.xhtml" class="nav-item" value="Hem"/>
-            <h:link outcome="/faces/admin/lunches.xhtml" class="nav-item nav-item--active" value="Lunch" id="nav-menu"/>
-            <h:link outcome="/faces/admin/foods/List.xhtml" class="nav-item" value="Middag" id="nav-foods"/>
-            <h:link outcome="/faces/admin/drinks/List.xhtml" class="nav-item" value="Dryck" id="nav-drinks"/>
-            <h:link outcome="/faces/admin/events/List.xhtml" class="nav-item" value="Evenemang"/>
-            <h:link outcome="/faces/admin/shifts/List.xhtml" class="nav-item" value="Schema"/>
-            <h:link outcome="/faces/admin/personnel/List.xhtml" class="nav-item" value="Personal"/>
-            <h:link outcome="/faces/admin/reservations/List.xhtml" class="nav-item" value="Reservation" id="nav-reservation"/>
+            <h:link outcome="/index.xhtml" class="nav-item" value="Hem"/>
+            <h:link outcome="/admin/lunches.xhtml" class="nav-item nav-item--active" value="Lunch" id="nav-menu"/>
+            <h:link outcome="/admin/foods/List.xhtml" class="nav-item" value="Middag" id="nav-foods"/>
+            <h:link outcome="/admin/drinks/List.xhtml" class="nav-item" value="Dryck" id="nav-drinks"/>
+            <h:link outcome="/admin/events/List.xhtml" class="nav-item" value="Evenemang"/>
+            <h:link outcome="/admin/shifts/List.xhtml" class="nav-item" value="Schema"/>
+            <h:link outcome="/admin/personnel/List.xhtml" class="nav-item" value="Personal"/>
+            <h:link outcome="/admin/reservations/List.xhtml" class="nav-item" value="Reservation" id="nav-reservation"/>
         </nav>
         <header class="header">
             <div class="header-title-container">
@@ -82,7 +82,7 @@
                                 </ui:fragment>
                             </ui:repeat> 
                         </div>
-                        <h:commandButton value="Spara ändringar" class="button-green" type="submit" action="#{editLunchBean.submit}" />
+                        <h:commandButton value="Spara ändringar" class="button-green" type="submit" action="#{editLunchBean.submit}"/>
 
                     </h:form>
                 </div>
