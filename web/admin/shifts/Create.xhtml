@@ -16,10 +16,13 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="1">
-                    <p:outputLabel for="popup" value="#{bundle.CreateReservationsLabel_reservationDate}" />
-		    <p:calendar id="popup" value="#{reservationsController.selected.reservationDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd" requiredMessage="Ange ett datum" pattern="yyyy-MM-dd" mindate="#{dateBean.todaysDate}"/>
+                    <p:outputLabel for="shiftDate" value="#{bundle.CreateShiftsLabel_shiftDate}" />
+		    <p:calendar id="shiftDate" value="#{shiftsController.selected.shiftDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd" requiredMessage="Ange ett datum" pattern="yyyy-MM-dd" mindate="#{dateBean.todaysDate}"/>
                     <h:outputLabel value="#{bundle.CreateShiftsLabel_shiftType}" for="shiftType" />
-                    <h:inputText id="shiftType" value="#{shiftsController.selected.shiftType}" title="#{bundle.CreateShiftsTitle_shiftType}" />
+		    <h:selectOneMenu id="shiftType" value="#{shiftsController.selected.shiftType}" style="width:125px">
+                        <f:selectItem itemLabel="Dag" itemValue="day" />
+                        <f:selectItem itemLabel="Kväll" itemValue="evening" />
+                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.CreateShiftsLabel_personnelId}" for="personnelId" />
                     <h:selectOneMenu id="personnelId" value="#{shiftsController.selected.personnelId}" title="#{bundle.CreateShiftsTitle_personnelId}" required="true" requiredMessage="#{bundle.CreateShiftsRequiredMessage_personnelId}">
                         <f:selectItems value="#{personnelController.itemsAvailableSelectOne}"/>
