@@ -2,6 +2,7 @@ package beans;
 
 //import General.Lunch;
 import General.Lunches;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import javax.annotation.Resource;
@@ -15,7 +16,7 @@ import javax.persistence.PersistenceContext;
 @ManagedBean
 @SessionScoped
 
-public class EditLunchBean {
+public class EditLunchBean implements Serializable{
 
     @PersistenceContext(unitName = "AntonSkafferiWebPU")
     private EntityManager em;
