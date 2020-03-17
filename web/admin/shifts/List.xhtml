@@ -41,8 +41,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListShiftsTitle_personnelIdName}"/>
                             </f:facet>
-
-                            <h:outputText value="#{shiftsController.getNameById(item)}"/>
+			    <h:outputText value="#{item.personnelId.personnelName}" />
                         </h:column>
                         <h:column>
                             <f:facet name="header">

@@ -23,9 +23,9 @@
                         <f:selectItem itemLabel="Dag" itemValue="day" />
                         <f:selectItem itemLabel="Kväll" itemValue="evening" />
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateShiftsLabel_personnelId}" for="personnelId" />
-                    <h:selectOneMenu id="personnelId" value="#{shiftsController.selected.personnelId}" title="#{bundle.CreateShiftsTitle_personnelId}" required="true" requiredMessage="#{bundle.CreateShiftsRequiredMessage_personnelId}">
-                        <f:selectItems value="#{personnelController.itemsAvailableSelectOne}"/>
+                    <h:outputLabel value="#{bundle.EditPersonnelLabel_personnelName}" for="personnelId" />
+                    <h:selectOneMenu id="personnelId" value="#{shiftsController.selected.personnelId}" required="true" requiredMessage="#{bundle.CreateShiftsRequiredMessage_personnelId}">
+                        <f:selectItems var="id" value="#{personnelController.itemsAvailableSelectOne}" itemLabel="#{id.personnelName}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />

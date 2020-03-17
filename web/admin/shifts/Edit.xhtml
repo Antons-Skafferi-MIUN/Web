@@ -23,9 +23,9 @@
                         <f:selectItem itemLabel="Dag" itemValue="day" />
                         <f:selectItem itemLabel="Kväll" itemValue="evening" />
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.EditShiftsLabel_personnelId}" for="personnelId" />
-                    <h:selectOneMenu id="personnelId" value="#{shiftsController.selected.personnelId}" title="#{bundle.EditShiftsTitle_personnelId}" required="true" requiredMessage="#{bundle.EditShiftsRequiredMessage_personnelId}">
-                        <f:selectItems value="#{personnelController.itemsAvailableSelectOne}"/>
+                    <h:outputLabel value="#{bundle.EditPersonnelLabel_personnelName}" for="personnelId" />
+                    <h:selectOneMenu id="personnelId" value="#{shiftsController.selected.personnelId}" required="true" requiredMessage="#{bundle.EditShiftsRequiredMessage_personnelId}">
+                        <f:selectItems var="id" value="#{personnelController.itemsAvailableSelectOne}" itemLabel="#{id.personnelName}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
@@ -37,7 +37,7 @@
                 <h:commandLink action="#{shiftsController.prepareList}" class="button-red" value="#{bundle.EditShiftsShowAllLink}" immediate="true"/>
             </h:form>
             <script>
-                document.getElementById('nav-shifts').className += " nav-item--active";
+		document.getElementById('nav-shifts').className += " nav-item--active";
             </script>
         </ui:define>
     </ui:composition>
