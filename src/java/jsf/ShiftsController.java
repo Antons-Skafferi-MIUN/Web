@@ -36,12 +36,6 @@ public class ShiftsController implements Serializable {
 
     public ShiftsController() {
     }
-    
-    public String getNameById(Shifts temp) {
-	Integer pid = temp.getPersonnelId().getPersonnelId();
-	Query query = em.createNamedQuery("Personnel.findByPersonnelId").setParameter("personnelId", pid);
-	return query.getSingleResult().toString();
-    }
 
     public Shifts getSelected() {
         if (current == null) {

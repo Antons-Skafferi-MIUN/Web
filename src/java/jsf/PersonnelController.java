@@ -6,6 +6,7 @@ import jsf.util.PaginationHelper;
 import session.PersonnelFacade;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -184,8 +185,8 @@ public class PersonnelController implements Serializable {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), false);
     }
 
-    public SelectItem[] getItemsAvailableSelectOne() {
-        return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
+    public List<Personnel> getItemsAvailableSelectOne() {
+	return ejbFacade.findAll();
     }
 
     public Personnel getPersonnel(java.lang.Integer id) {
