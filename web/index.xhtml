@@ -121,7 +121,10 @@
                                 #{event.eventName}
                             </h1>
                             <div class="event-date-time">
-                                Datum: #{event.eventDate}
+                                Datum: 
+				<h:outputText value="#{event.eventDate}">
+				    <c:convertDateTime pattern="yyyy-MM-dd" />
+				</h:outputText>
                                 Tid: #{event.eventTime}
                             </div>
                             <h3>Pris: #{event.eventPrice} kronor</h3>
