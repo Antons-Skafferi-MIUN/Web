@@ -18,7 +18,8 @@
                     <h:outputLabel value="#{bundle.CreateEventsLabel_eventName}" for="eventName" />
                     <h:inputText id="eventName" value="#{eventsController.selected.eventName}" title="#{bundle.CreateEventsTitle_eventName}" required="true" requiredMessage="#{bundle.CreateEventsRequiredMessage_eventName}"/>
 		    <p:outputLabel for="eventDate" value="#{bundle.CreateEventsLabel_eventDate}" />
-		    <p:calendar id="eventDate" value="#{eventsController.selected.eventDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd" requiredMessage="Ange ett datum" pattern="yyyy-MM-dd" mindate="#{dateBean.todaysDate}" locale="se"/>
+		    <p:calendar id="eventDate" value="#{eventsController.selected.eventDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd" validatorMessage="Ange ett framtida datum."
+				requiredMessage="Ange ett datum" pattern="yyyy-MM-dd" mindate="#{dateBean.todaysDate}" locale="se"/>
                     <h:outputLabel value="#{bundle.CreateEventsLabel_eventDescription}" for="eventDescription" />
                     <h:inputText id="eventDescription" value="#{eventsController.selected.eventDescription}" title="#{bundle.CreateEventsTitle_eventDescription}" />
                     <h:outputLabel value="#{bundle.CreateEventsLabel_eventPrice}" for="eventPrice" />
