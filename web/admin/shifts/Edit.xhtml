@@ -17,7 +17,8 @@
             <h:form>
                 <h:panelGrid columns="1">
                     <p:outputLabel for="shiftDate" value="#{bundle.CreateShiftsLabel_shiftDate}" />
-		    <p:calendar id="shiftDate" value="#{shiftsController.selected.shiftDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd" requiredMessage="Ange ett datum" pattern="yyyy-MM-dd" mindate="#{dateBean.todaysDate}"/>
+		    <p:calendar id="shiftDate" value="#{shiftsController.selected.shiftDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd" validatorMessage="Ange ett framtida datum."
+				requiredMessage="Ange ett datum" pattern="yyyy-MM-dd" mindate="#{dateBean.todaysDate}"/>
                     <h:outputLabel value="#{bundle.EditShiftsLabel_shiftType}" for="shiftType" />
                     <h:selectOneMenu id="shiftType" value="#{shiftsController.selected.shiftType}" style="width:125px">
                         <f:selectItem itemLabel="Dag" itemValue="day" />

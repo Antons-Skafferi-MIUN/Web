@@ -21,7 +21,8 @@
                     <h:outputLabel value="#{bundle.CreateReservationsLabel_reservationPhone}" for="reservationPhone" />
                     <h:inputText id="reservationPhone" value="#{reservationsController.selected.reservationPhone}" title="#{bundle.CreateReservationsTitle_reservationPhone}" required="true" requiredMessage="#{bundle.CreateReservationsRequiredMessage_reservationPhone}"/>
 		    <p:outputLabel for="datetime" value="#{bundle.CreateReservationsLabel_reservationDate}" />
-		    <p:calendar id="datetime" value="#{reservationsController.selected.reservationDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd HH:mm" requiredMessage="Ange ett datum" pattern="yyyy-MM-dd HH:mm" defaultHour="16" mindate="#{dateBean.todaysDate}"/>
+		    <p:calendar id="datetime" value="#{reservationsController.selected.reservationDate}" converterMessage="Ange ett datum enligt yyyy-MM-dd HH:mm" validatorMessage="Ange ett framtida datum."
+				requiredMessage="Ange ett datum" pattern="yyyy-MM-dd HH:mm" defaultHour="16" mindate="#{dateBean.todaysDate}"/>
                     <h:outputLabel value="#{bundle.CreateReservationsLabel_tableId}" for="tableId" />
                     <h:selectOneMenu id="tableId" value="#{reservationsController.selected.tableId}" title="#{bundle.CreateReservationsTitle_tableId}" required="true" requiredMessage="#{bundle.CreateReservationsRequiredMessage_tableId}">
                         <f:selectItems value="#{restaurantTablesController.itemsAvailableSelectOne}"/>
